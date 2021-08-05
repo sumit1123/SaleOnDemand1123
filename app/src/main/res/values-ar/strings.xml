@@ -1,0 +1,453 @@
+<resources>
+    <string name="app_name">Sushil Creations</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="action_settings">Settings</string>
+    <string name="edittext_hint"><font size="13">Quantity</font></string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--Navigation Labels-->
+    <string name="navigation_label_id">4</string>
+    <string name="language_id">4</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="home">الصفحة الرئسية</string>
+    <string name="welcome">أهلا بك</string>
+    <string name="more">المزيد</string>
+    <string name="notifications">الاشعارات</string>
+    <string name="my_wishlist">قائمة مرغوباتي</string>
+    <string name="my_cart"> عربة التسوق</string>
+    <string name="my_orders">طلباتي </string>
+    <string name="my_wallet">المحفظة </string>
+    <string name="razorpay">RazorPay</string>
+    <string name="my_account">الحساب </string>
+    <string name="share">مشاركة</string>
+    <string name="msg">مرحبًا بكم في</string>
+    <string name="msg_2">آمل أن تحبها ، سجل واستخدم رمز الإحالة كـ -</string>
+    <string name="msg_3">للحصول على فوائد إضافية زيارة</string>
+    <string name="img"></string>
+    <string name="ref_id">الرقم المرجعي</string>
+    <string name="language_label">اللغات</string>
+    <string name="support">خدمة العملاء</string>
+    <string name="about_us">معلومات عنا </string>
+    <string name="policy">سياسة الموقع</string>
+    <string name="logout">تسجيل الخروج </string>
+    <string name="terms_and_conditions">الحكام و الشروط</string>
+    <string name="return_policy">خاصية الاسترجاع</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="download_our_app">تحميل تطبيق ماااي كاب</string>
+    <string name="switch_to_admin">التبديل إلى الادارة</string>
+    <string name="referyourfrnd">إحالة أصدقائك</string>
+    <string name="seller_register">تسجيل البائع</string>
+    <string name="optional">اختياري</string>
+    <string name="seller_website">موقع البائع</string>
+    <string name="local_id_registration_number">رقم تسجيل الهوية المحلية</string>
+    <string name="local_id_registration_certificate">شهادة تسجيل الهوية المحلية</string>
+    <string name="tax_registration_certificate">شهادة التسجيل الضريبي</string>
+    <string name="cancelled_check_copy">إلغاء شيك نسخة</string>
+    <string name="created_at">2019-07-01 20:42:53</string>
+    <string name="updated_at">2019-07-01 20:42:53</string>
+    <string name="vendor"> بائع</string>
+    <string name="redeem">خلص</string>
+    <string name="enter_bank_details">أدخل تفاصيل البنك</string>
+    <string name="return_and_replace">العودة واستبدال</string>
+
+
+
+
+
+
+
+    <!--Order Labels-->
+    <string name="order_label_id">4</string>
+    <string name="delivery_details">डتفاصيل توصيل الشحنة</string>
+    <string name="select_delivery_address">أختار عنوان التوصيل</string>
+    <string name="new_address">عنوان جديد</string>
+    <string name="name">الاسم</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="password">كلمة السر</string>
+    <string name="address">عنوان</string>
+    <string name="pincode">الرمز البريدي</string>
+    <string name="gst_number"> الرقم الضريبي</string>
+    <string name="DOB"> تاريخ الميلاد</string>
+    <string name="cash_on_delivery">دفع عند الاستلام</string>
+    <string name="order_id">رقم الطلب</string>
+    <string name="pay_now">أتمام عملية الدفع الان</string>
+    <string name="order_detail">تفاصيل الطلب</string>
+    <string name="cancel_order">الغاء الطلب</string>
+    <string name="need_help">؟طلب مساعدة</string>
+    <string name="shipping_details">تفاصيل الشحنة</string>
+    <string name="item_count">عدد الاصناف</string>
+    <string name="payment_mode">طريقة الدفع</string>
+    <string name="order_cancel_msg">هل أنت متأكد من الغاء هذا الطلب</string>
+    <string name="ordered">أؤمر</string>
+    <string name="gst">ضريبة السلع والخدمات</string>
+    <string name="order_failed"> الطلب لم يكتمل</string>
+    <string name="order_failed_msg">الطلب لم يكتمل لعدم توفر المنتج</string>
+    <string name="order_success">تم الطلب</string>
+    <string name="order_success_msg">لقد تم قبول طلبك بنجاح</string>
+    <string name="empty_order_title">قائمة الطلبات خالية</string>
+    <string name="empty_order_description">أضف طلبك الان</string>
+    <string name="place_order"> اكمال عملية الشراء</string>
+    <string name="total_amount_to_be_pay">المبلغ الكلي للدفع</string>
+    <string name="change_delivery_details">تغير عنوان استلام الشحنة</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا </string>
+    <string name="confirm_your_order">يرجي تأكيد طلبط</string>
+    <string name="select">أختار</string>
+    <string name="please_enter_new_delivery_details">فضلا ادخال بيانات التوصيل</string>
+    <string name="please_provide_rating">فضلا اضيف تقيمك</string>
+    <string name="change">تفير</string>
+    <string name="add_new_address">اضف عنوان جديد</string>
+    <string name="select_country">اختار الدولة</string>
+    <string name="select_state">اختار الولاية</string>
+    <string name ="select_city">اختار المدينة</string>
+    <string name="select_pincode">رقم البريدي</string>
+    <string name="select_area"> اسم المنطقة</string>
+    <string name="change_pincode">تغيير الرمز السري</string>
+    <string name="please_select_country_from_list">فضلا اختار دولة من القائمة</string>
+    <string name ="please_select_state_from_list">فضلا اختار ولاية من القائمة</string>
+    <string name="please_select_city_from_list">فضلا اختار مدينو من القائمة</string>
+    <string name="please_select_pincode_from_list">اضف رقم البريدي</string>
+    <string name="please_select_area_from_list">ادخل اسم المنطقة</string>
+    <string name="continue_with">تابع التسجيل</string>
+    <string name ="enter_delivery_pincode">ادخل رمز الوصيل</string>
+    <string name="enter_pincode">ادخل الرمز</string>
+    <string name="status">الحالة</string>
+    <string name="date">تاريخ</string>
+    <string name="action">عمل</string>
+    <string name ="invoice_number">رقم الفاتورة</string>
+    <string name="existing_addresses">العناوين الموجودة</string>
+    <string name="deliver_here">توصيل هنا</string>
+    <string name="delivery_charges">رسوم التوصيل</string>
+    <string name="choose_payment_option"> اختر خيار الدفع</string>
+    <string name ="repayment">اعادة الدفع</string>
+    <string name="payment_status">حالة الدفع</string>
+    <string name="please_give_reason_for_cancellation">الرجاء ذكر سبب الإلغاء </string>
+    <string name ="order_status">حالة الطلب</string>
+    <string name="order_placed">تم الطلب </string>
+    <string name="pending">معلق</string>
+    <string name="delivered">سلمت</string>
+    <string name="cancelled">ألغي</string>
+    <string name="COD">COD</string>
+    <string name="order_attachment">مرفقات الطلب</string>
+    <string name="order_placed_successfully">تمت عملية الشراء بنجاح</string>
+    <string name="transaction_number">رقم المعاملة</string>
+    <string name ="thank_you_for_placing_order_at"> شكرًا علي الشراء عبر مااااي كاب </string>
+    <string name="cancel_reason">سبب الإلغاء</string>
+
+
+
+    <!--wishlist_labels-->
+    <string name="wishlist_label_id">4</string>
+    <string name="wishlist">قائمة المرغوبات</string>
+    <string name="clear_wishlist">مسح قائمة المرغوبات </string>
+    <string name="empty_wishlist_title">قائمة المرغوبات خالية</string>
+    <string name="empty_wishlist_description">ا توجد منتجات في قائمة المرغوبات</string>
+    <string name="move_to_wishlist">أضافة الي قائمة المرغوبات</string>
+
+
+
+
+
+    <!--User_Labels-->
+    <string name="user_label_id">4</string>
+    <string name="enter_password">أدخل كلمة المرور</string>
+    <string name="change_password"> تغير كلمة السر</string>
+    <string name="update_profile">تحديث الصفحة الشخصية </string>
+    <string name="my_addresses">العنوان </string>
+    <string name="sign_up_with">تسجيل الدخول عبر</string>
+    <string name= "or">أو</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="sign_up">أنشاء حساب الان</string>
+    <string name="forgot_password">هل نسيت كلمة السر</string>
+    <string name="register">سجل الان</string>
+    <string name="country"> بلد</string>
+    <string name="new_password">كلمة سر جديدة </string>
+    <string name="confirm_password">تأكيد كلمة السر </string>
+    <string name="submit">قبول</string>
+    <string name="verification">التحقق</string>
+    <string name="otp_verification"> رمز التعريف</string>
+    <string name= "otp_msg">لقد ارسلنا اليك رمز التعريف عبر رسالة نصية الي هاتفك الجوال</string>
+    <string name="otp">رمز التتعريف </string>
+    <string name="resend_otp">أعادة ارسال رمز التعريف </string>
+    <string name="retry"> محاولة</string>
+    <string name="password_empty">كلمة السر لا يمكن ان تترك خالية</string>
+    <string name="pincode_empty">الرمز البريدي لايمكن أن يترك خالي</string>
+    <string name="review_empty">الملاحظات لايمكن أن تترك خالية</string>
+    <string name= "email_empty">الاميل لا يمكن ان يترك خالي</string>
+    <string name="dob_empty">تاريخ الميلاد لا يمكن ان يترك خالي</string>
+    <string name="password_length_should_be_8_characters">كلمة السر يجيب أن تكون من ثمانيةحروف"</string>
+    <string name="address_empty">العنوان لا يمكن أن يترك خال</string>
+    <string name="please_enter_GST_number">يرجي ادخل الرقم الضريبي</string>
+    <string name="description_empty">التفاصيل لا يمكن أن تترك خالية</string>
+    <string name="name_empty">الاسم لا يمكن أن يترك خال</string>
+    <string name="do_you_want_to_logout">هل ترغب بالخروج</string>
+    <string name="continue_as_guest">متابعة كضيف</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name= "dob">تاريخ الولادة</string>
+    <string name="area">منطقة</string>
+    <string name="state">ولاية</string>
+    <string name="city"> مدينة</string>
+    <string name="business_name">الاسم التجاري </string>
+    <string name="remember_me"> تذكر تسجيل الدخول</string>
+    <string name= "sign_in_with_your_regular_account">تسجيل الدخول بحسابك الخاص</string>
+    <string name="guest">زائر</string>
+    <string name="do_not_have_an_account">ا تملك حساب؟</string>
+    <string name="register_now"> سجل الان</string>
+    <string name="i_read_and_accept_terms_conditions">أقرات وأقبل الشروط والأحكام</string>
+    <string name="send_me_the_newsletter_weekly">أرسل لي النشرة الأسبوعية</string>
+    <string name="if_you_have_an_account">إذا كان لديك حساب؟</string>
+
+
+
+
+    <!--Notification Labels-->
+    <string name="notification_label_id">4</string>
+    <string name="empty_notification_title">ا يوجد اشعار</string>
+    <string name="empty_notification_description">ستتلقي اشعار قريبا</string>
+
+
+    <!--Gateway labels-->
+    <string name="gateway_label_id">4</string>
+    <string name="payment_options">Payment Options</string>
+    <string name="pay_u_money">Pay U Money</string>
+    <string name="pay_pal">باي بال </string>
+    <string name="paytm">PayTM </string>
+    <string name="mobi_kwik">Mobikwik</string>
+    <string name="c_c_avenue">Cc Avenue</string>
+
+
+
+
+
+    <!--Complaint labels-->
+    <string name="complaint_label_id">4</string>
+    <string name="add_complaint"> أضافة بلاغ</string>
+    <string name="select_complaint_type">أختار نوع البلاغ</string>
+    <string name="complaint_description">تفاصيل البلاغ </string>
+    <string name="do_you_have_any_query">هل يوجد لديك اي استفسار</string>
+    <string name="complaint_list_empty">قائمة البلاغات</string>
+    <string name ="online_payment">الدفع الألكتروني</string>
+    <string name="please_type_your_query">فضلا أكتب استفسارك</string>
+    <string name="please_select_complaint_type">رجاء اختار نوع البلاغ</string>
+    <string name="customer_complaints">بلاغات العملاء</string>
+    <string name="subject">موضوع</string>
+    <string name="your_complaints">البلاغات </string>
+    <string name="message">رسالة</string>
+
+    <string name="contact_details">بيانات المتصل </string>
+
+
+
+    <!--Cart labels-->
+    <string name="cart_label_id">4</string>
+    <string name="qty">العدد</string>
+    <string name="remove_lower">حذف</string>
+    <string name="remove_item">حذف المنتج</string>
+    <string name="do_you_really_want_remove_this_product">هل أنت متأكد من حذف هذا المنتج</string>
+    <string name="remove_upper">حذف الاعلي</string>
+    <string name="price_details">تفاصيل السعر</string>
+    <string name="price">السعر</string>
+    <string name="items">المنتجات</string>
+    <string name="delivery">توصيل الشحنة</string>
+    <string name="free">مجانا</string>
+    <string name="total_amount"> المبلغ الاجمالي</string>
+    <string name="you_will_save">خصم</string>
+    <string name="on_this_order">في هذا الطلب </string>
+    <string name="cart_secure_msg">نظام دفع ألكتروني أمن و مضمون .أرجاع سهل بائعون موثوق بهم 100%</string>
+    <string name="view_price_details">عرض تفاصيل السعر</string>
+    <string name="out_of_stock">المنتج غير متوفر</string>
+    <string name="is_available">المنتج متوفر</string>
+    <string name="only">فقط</string>
+    <string name="do_you_have_promocode"> هل لديك كبون كود </string>
+    <string name="any_special_comment_for_this_order">أي تعليق خاص لهذا الطلب</string>
+    <string name="update"> تحديث</string>
+    <string name="order_description">تفاصيل الطلب </string>
+    <string name="view_cart">عربة التسوق</string>
+    <string name="add_to_cart">أضف الي  العربة</string>
+    <string name="update_cart">تحدث عربة التسوق</string>
+    <string name="empty_cart_title">عربة التسوق خالية</string>
+    <string name="empty_cart_description">أضف منتج الان</string>
+    <string name="please_enter_quantity">رجاء أدخال العدد</string>
+    <string name="edit"> تعديل</string>
+
+
+
+
+    <!--Global labels-->
+    <string name="global_label_id">4</string>
+    <string name="continue_shopping">متابعة التسوق</string>
+    <string name="no_internet_connection">ايوجد اتصال انترنت</string>
+    <string name="please_check_your_internet_connectivity_and_try_again">Please check your internet connectivity and try again</string>
+    <string name="back">رجوع</string>
+    <string name="cancel">الغاء</string>
+    <string name="save">حفظ</string>
+    <string name="comming_soon">قريبا</string>
+    <string name="please_enter_valid_quantity">الرجاء إدخال كمية صحيحة</string>
+    <string name="choose_file_to_upload">اختر ملفًا لتحميله</string>
+    <string name="please_fill_out_name_field">الرجاء ملء حقل الاسم</string>
+    <string name="please_fill_out_email_field">يرجى ملء حقل البريد الإلكتروني</string>
+    <string name="please_fill_out_delivery_address_field">يرجى ملء حقل عنوان التسليم </string>
+    <string name="please_enter_valid_email">الرجاء إدخال بريد إلكتروني صالح</string>
+    <string name="please_enter_valid_mobile_number">الرجاء إدخال رقم جوال صالح </string>
+    <string name="no_any_payment_method_option_are_available">لا توجد خاصية دفع متوفرة</string>
+    <string name="please_login_first">"الرجاء تسجيل الدخول أولاً</string>
+    <string name="please_give_rating">فضلا اضف تصنيفك</string>
+    <string name="please_give_review">فضلا اضف تقيمك</string>
+    <string name="message_can_not_be_empty">لا يمكن أن تكون الرسالة فارغة</string>
+    <string name="see_all_notification">مشاهدات جميع الاشعارات</string>
+    <string name="registration_successfull">تمت عملية التسجيل</string>
+    <string name="profile_updated_successfully">تم تحديث البروفايل</string>
+    <string name="if_you_have_any_question_quote">اذا لديك استفسار او مشاركة لمساعدتنا لتطوير الموقع تكرم بمحادثة خدمة العملاء</string>
+    <string name="complaint_number">رقم البلاغ </string>
+    <string name="complaint_title"> عنوان البلاغ</string>
+    <string name="created_at_label">انشئت </string>
+    <string name="updated_at_label">تجديث</string>
+    <string name="about">عنا</string>
+    <string name="disclaimer">تنازل</string>
+    <string name="quick_links">روابط سريعة </string>
+    <string name="thank_you_for_contacting_us">شكرا للتواصل معنا فضلا انتظر قريبا سوف يكون معك موظف خدمة العملاء</string>
+    <string name="search_for_product"> بحث عن منتج </string>
+    <string name="choose_file">اختار ملف </string>
+    <string name="get_invoice">احصل علي فاتورة </string>
+    <string name="ordered_on"> تم طلبه مسبقًا</string>
+    <string name="delivered_on"> تم التسليم</string>
+    <string name="total">توتال</string>
+    <string name="saved">المحفوظة</string>
+    <string name="adhar_card">بطاقة أدهار</string>
+    <string name="food_license">ترخيص طعام</string>
+
+
+    <!--Product labels-->
+    <string name="product_label_id">4</string>
+    <string name="latest_products"> المنتجات الحديثة</string>
+    <string name="recently_viewed_products">منتجات تم مشاهدتها حديثا </string>
+    <string name="sort">فرز</string>
+    <string name="sort_by">فرز حسب</string>
+    <string name="newest_first"> الحديثة اولا</string>
+    <string name="ascending_order"> ترتيب الطلبيات</string>
+    <string name="low_to_high">سعرمن الاقل للاعلي</string>
+    <string name="high_to_low"> سعر من الاعلي للاقل </string>
+    <string name="filter">تصفية</string>
+    <string name="min">الحد الادني</string>
+    <string name="max">الحد الاعلي</string>
+    <string name="search_by_brand_name">البحث عن طريق الماركة التجارية</string>
+    <string name="select_brands">أختيار الماركة التجارية</string>
+    <string name="none_selected">عناصر غير المختارة</string>
+    <string name="selected">أختيار</string>
+    <string name="apply">اضف</string>
+    <string name="off">خصم</string>
+    <string name="add_more">اضف المزيد </string>
+    <string name="enter_quantity">ادخل الكمية </string>
+    <string name="quantity">الكمية</string>
+    <string name="reviews_and_ratings">التعليقات و التصنيف  </string>
+    <string name="similar">مماثلة</string>
+    <string name="highlights">المميزات</string>
+    <string name="ratings_and_reviews">التصنيف و التعليقات</string>
+    <string name="your_rating">تقييمك </string>
+    <string name="rate_and_write_a_review">التصنيف و كتابة التعليق</string>
+    <string name="enter_your_review">اكتب تعليقك</string>
+    <string name="add_review">أضف تعليقك</string>
+    <string name="view_all_reviews">عرض كل التعليقات</string>
+    <string name="all_reviews">كل التعليقات</string>
+    <string name="search">بحث</string>
+    <string name="products">منتجات</string>
+    <string name="similar_products_of">منتجات مماثلة من</string>
+    <string name="similar_products">منتجات مماثلة</string>
+    <string name="available_variations_for">الخيارات المتاحة</string>
+    <string name="empty_category_product_title">عنوان فئة المنتجات خالي</string>
+    <string name="empty_category_product_description">فئة المنتجات خالية من التفاصيل</string>
+    <string name="no_more_products_available">لا توجد منتجات متوفرة</string>
+    <string name="max_viewed_products">المنتجات الاكثر مشاهداه</string>
+    <string name="shop_by_category">تسوق حسب الاقسام</string>
+    <string name="all_categories">كل الاقسام</string>
+    <string name="buy_now">اشتري الآن</string>
+    <string name="search_empty_title">عذرا لم يتم العثور علي نتيجة</string>
+    <string name="search_empty_description">تفاصيل البحث فارغة</string>
+    <string name="max_viewed">الأكثر مشاهدة</string>
+    <string name="featured_brands">الماركات التجاريةالمميزة</string>
+    <string name="write_a_review">أضف تقييمك</string>
+    <string name="review">استعراض</string>
+    <string name="product_code">رمز المنتج </string>
+    <string name="availablity">متوفر</string>
+    <string name="stock_in">متوفر </string>
+    <string name="description">وصف</string>
+    <string name="specifications">مواصفات</string>
+    <string name="questions_and_answers">أسئلة وأجوبة  </string>
+    <string name="customer_reviews">آراء العملاء </string>
+    <string name="offers_block"> حظر العروضات</string>
+    <string name="image">صورة</string>
+    <string name="stock">مخزون</string>
+    <string name="product_list">قائمة المنتجات </string>
+    <string name="description_not_available">الوصف غير متوفر لهذا المنتج</string>
+    <string name="detail">التفاصيل</string>
+    <string name="popular_brands"> الماركات التجارية الاكثر شهرة</string>
+    <string name="coming_soon">قريبا </string>
+    <string name="quantity_should_be_greater_than_zero"> يجيب ان يكون العدد اكثر من الصف</string>
+    <string name="quick_view">تصفح سريع </string>
+    <string name="see_product_details"> معاينة تفاصيل المنتج </string>
+    <string name="comment">تعليق</string>
+    <string name="username">اسم المستخدم</string>
+
+    <!--Wallet labels-->
+    <string name="wallet_label_id">4</string>
+    <string name="transfer">نقل</string>
+    <string name="to">إلى</string>
+    <string name="send">إرسال</string>
+    <string name="sent">أرسلت</string>
+    <string name="successfully">بنجاح</string>
+    <string name="you_have_successfully_paid">لقد دفعت بنجاح</string>
+    <string name="transaction_id">معرف المعاملة</string>
+    <string name="wallet_transfer">تحويل المحفظة</string>
+    <string name="wallet_transfer_confirmation">تأكيد تحويل المحفظة</string>
+    <string name="wallet_transfer_sucessful">نقل المحفظة بنجاح</string>
+    <string name="transaction_list_empty">قائمة المعاملات فارغة</string>
+    <string name="wallet_amount">مبلغ المحفظة</string>
+    <string name="have_a_promocode_Enter_here">هل يمتلك الرمز الترويجي؟ أدخل هنا</string>
+    <string name="please_enter_amount">يرجى إدخال المبلغ</string>
+    <string name="enter_amount">أدخل المبلغ</string>
+    <string name="narration">رواية</string>
+    <string name="mobile_number">رقم الهاتف المحمول</string>
+    <string name="add">إضافة</string>
+    <string name="contact_number_empty">رقم الاتصال لا يمكن أن يكون فارغا</string>
+    <string name="please_enter_a_valid_number">من فضلك أدخل رقما صالحا</string>
+    <string name="transfer_money">تحويل أموال</string>
+    <string name="amount">كمية</string>
+    <string name="confirm"> تؤكد </string>
+    <string name="total_balance">الرصيد الإجمالي </string>
+    <string name="add_money"> إضافة المال</string>
+    <string name="transaction_history">تاريخ المعاملة</string>
+    <string name="description_optional">وصف (اختياري)</string>
+    <string name="proceed">تقدم</string>
+    <string name="confirm_payment">تأكيد الدفع</string>
+    <string name="proceed_to_pay">المضي قدما في الدفع</string>
+    <string name="wallet">محفظة نقود</string>
+    <string name="continue_to_pay">مواصلة الدفع</string>
+    <string name="cancel_payment">الغاء الدفع</string>
+    <string name="pay_using">Pay using</string>
+    <string name="pay_using_wallet">ادفع باستخدام المحفظة</string>
+    <string name="order_amount">كمية الطلب</string>
+    <string name="pay_without_wallet">ادفع بدون محفظة</string>
+    <string name="place_order_with_wallet">قم بوضع الطلب باستخدام المحفظة</string>
+
+
+
+    <!--Promocode labels-->
+    <string name="promocode_label_id">4</string>
+    <string name="add_new">إضافة رمز الكوبون</string>
+    <string name="promocode">رمز الكوبون </string>
+    <string name="have_promocode">Have promocode?</string>
+    <string name="promocode_has_been_expired"> Promocode has been expired</string>
+    <string name="upcomming_promocode">Upcomming promocode</string>
+    <string name="limit_of_promo_code_usage_exceeded">Limit of promocode usage exceeded</string>
+    <string name="this_promocode">This promocode is only valid for first order</string>
+    <string name="sorry_you_are_not_eligible">Sorry, You are not eligible for this promocode</string>
+    <string name="you_have_already_used">You have already used that promocode</string>
+    <string name="invalid_amount">Invalid amount for applied promocode</string>
+    <string name="invalid_promocode">Invalid promocode</string>
+    <string name="your_promocode_discount">Your promocode discount</string>
+    <string name="promocode_applied_successfully">Promocode Applied Successfully..!</string>
+    <string name="connectuswith">Connect Us With</string>
+    <string name="send_message"> ارسل رسالة</string>
+    <string name="sellers">الباعة</string>
+</resources>

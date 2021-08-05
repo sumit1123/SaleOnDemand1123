@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.Addmoney">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <include
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context="com.example.grocery.Activities.OnlineSupportActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/coins"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/coins" />
+
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:id="@+id/quantityadd"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:background="@drawable/edittextselector"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/wallet"
+                    android:gravity="center"
+                    android:hint="@string/amount"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/card_name_et"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/payumoney_black"
+                    android:textSize="16sp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/one"
+                        android:layout_width="70dp"
+                        android:layout_height="@dimen/dimen_30dp"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:background="@drawable/darkborder"
+                        android:gravity="center"
+                        android:text="$ 100"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/two"
+                        android:layout_width="70dp"
+                        android:layout_height="@dimen/dimen_30dp"
+
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:background="@drawable/darkborder"
+
+                        android:gravity="center"
+                        android:text="$ 200"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/five"
+                        android:layout_width="70dp"
+                        android:layout_height="@dimen/dimen_30dp"
+
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:background="@drawable/darkborder"
+
+                        android:gravity="center"
+                        android:text="$ 500"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/ten"
+                        android:layout_width="70dp"
+                        android:layout_height="@dimen/dimen_30dp"
+
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:background="@drawable/darkborder"
+
+                        android:gravity="center"
+                        android:text="$ 1000"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+
+
+                    <com.example.grocery.CustomViews.CustomButton
+                        android:id="@+id/cpupdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="27dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/buttonshape"
+                        android:text="@string/add"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

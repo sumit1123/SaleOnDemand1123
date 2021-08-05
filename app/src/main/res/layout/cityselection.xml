@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.LoginActivity">
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.design.widget.TextInputLayout
+                    android:theme="@style/AppTheme.EditTextOverlay"
+
+                    android:id="@+id/sfdc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:theme="@style/AppTheme.EditTextOverlay"
+
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:id="@+id/updateprofileusername"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Username"
+                            android:textSize="12dp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <com.example.grocery.CustomViews.CustomTextView
+                            android:id="@+id/textcode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="bottom"
+                            android:text="IN +91" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:theme="@style/AppTheme.EditTextOverlay"
+
+                            android:id="@+id/fulllnamelay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp">
+
+                                <EditText
+                                    android:theme="@style/AppTheme.EditTextOverlay"
+
+                                    android:layout_marginRight="20dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:id="@+id/updatemobile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Mobile Number"
+                                    android:inputType="number"
+                                    android:paddingLeft="50dp"
+                                    android:textSize="12dp" />
+                        </android.support.design.widget.TextInputLayout>
+
+                </RelativeLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:theme="@style/AppTheme.EditTextOverlay"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:theme="@style/AppTheme.EditTextOverlay"
+
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:id="@+id/updateaddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Address"
+                            android:textSize="12dp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:theme="@style/AppTheme.EditTextOverlay"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp">
+
+                        <EditText
+android:inputType="number"
+                            android:theme="@style/AppTheme.EditTextOverlay"
+
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:id="@+id/updatepincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Pincode"
+                            android:textSize="12dp" />
+                </android.support.design.widget.TextInputLayout>
+                <com.example.grocery.CustomViews.CustomButton
+                    android:id="@+id/updateprofile"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorPrimary"
+                    android:text="Update"
+                    android:textColor="#fff"
+                    android:textSize="12dp" />
+
+                <com.example.grocery.CustomViews.CustomButton
+                    android:id="@+id/cancelupdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+
+                    android:background="@drawable/custom_border"
+                    android:text="cancel"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+</LinearLayout>

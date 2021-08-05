@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.example.grocery.Activities.SearchActivity">
+
+    <com.example.grocery.CustomViews.CustomTextView
+        android:id="@+id/noproductavailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No products available with your search"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/searchtool"
+        layout="@layout/searchactivitytoolbar" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/searchtool"
+        android:orientation="vertical">
+
+        <!-- Editext for Search -->
+
+        <!-- List View -->
+        <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardall"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="0dp"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="5dp"
+            card_view:cardPreventCornerOverlap="true"
+            card_view:contentPadding="0dp"
+            card_view:contentPaddingBottom="-3dp"
+            card_view:contentPaddingLeft="-3dp"
+            card_view:contentPaddingRight="-3dp"
+            card_view:contentPaddingTop="-3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/changelayout"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/changeview"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/navigation" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <RelativeLayout
+                        android:id="@+id/sortingbutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5">
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#ededed">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imagesort"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="@dimen/dimen_5dp"
+                                android:layout_marginRight="5dp"
+                                app:srcCompat="@drawable/sort" />
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/sortText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:layout_toRightOf="@+id/imagesort"
+                                android:text="@string/sort"
+                                android:textColor="#000"
+                                android:textSize="15dp" />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/filterButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5">
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#ededed"></LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imagefilter"
+                                android:layout_width="15dp"
+                                android:layout_height="13dp"
+                                android:layout_marginLeft="@dimen/dimen_5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/filter" />
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/filterText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:layout_toRightOf="@+id/imagefilter"
+                                android:text="@string/filter"
+                                android:textColor="#000"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/visibilitysimilar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@color/backgroundfaint"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dimen_20dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:visibility="gone" />
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardall">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/searchrec"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <include
+
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader" />
+
+    </RelativeLayout>
+
+
+    <include
+        android:id="@+id/loaderBlurred"
+        layout="@layout/blurredloader" />
+
+
+    <include
+        android:id="@+id/noitemavalable"
+        layout="@layout/noitemavalable" />
+</RelativeLayout>

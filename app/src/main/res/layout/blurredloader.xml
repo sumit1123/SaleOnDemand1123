@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:clickable="true"
+android:visibility="gone"
+    android:id="@+id/progressBar"
+    android:background="@color/loadercolorblurr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ProgressBar
+        android:id="@+id/blurredloaderprogressbar"
+        android:backgroundTint="@color/colorPrimary"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:theme="@style/AppTheme.EditTextOverlay"
+        android:visibility="visible">
+
+    </ProgressBar>
+</RelativeLayout>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="fill_parent"
+    android:background="#fff">
+
+    <com.example.grocery.CustomViews.CustomTextView
+        android:layout_width="wrap_content"
+          android:id="@+id/cancelOrderText"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/cancel_order"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+    <com.example.grocery.CustomViews.CustomTextView
+       
+
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:id="@+id/cabncelOrderDescription"
+        android:text="Are you sure to cancel this order?"
+        android:layout_below="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.example.grocery.CustomViews.CustomButton
+            android:layout_weight="1"
+            android:id="@+id/canceldialogue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_border"
+            android:text="cancel"
+            android:textColor="@color/black"
+            android:textSize="16sp"  />
+        <com.example.grocery.CustomViews.CustomButton
+            android:layout_weight="1"
+            android:id="@+id/dialogButtonOK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_border"
+            android:text="confirm"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"  />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

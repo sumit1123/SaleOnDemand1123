@@ -1,0 +1,450 @@
+<resources>
+    <string name="app_name">Sushil Creations</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="action_settings">Settings</string>
+    <string name="edittext_hint"><font size="13">Quantity</font></string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--Navigation Labels-->
+    <string name="navigation_label_id">8</string>
+    <string name="language_id">8</string>
+    <string name="login">ግባ</string>
+    <string name="home">ቤት</string>
+    <string name="welcome">እንኳን ደህና መጣህ</string>
+    <string name="more">ተጨማሪ</string>
+    <string name="notifications">ማሳወቂያዎች</string>
+    <string name="my_wishlist">የእኔ የምኞት ዝርዝር</string>
+    <string name="my_cart">የእኔ ካርታ</string>
+    <string name="my_orders">የእኔ ትዕዛዞች</string>
+    <string name="my_wallet">የኔ ተቀማጭ ሂሳብ</string>
+    <string name="my_account">የኔ ተቀማጭ ሂሳብ</string>
+    <string name="share">መጋሪያ</string>
+    <string name="language_label">ቋንቋ</string>
+    <string name="support">ድጋፍ</string>
+    <string name="msg">ታዲያስ እንኳን በደህና መጡ ወደ</string>
+    <string name="msg_2">እንደምትወዱት ተስፋ አደርጋለሁ ፣ የምዝገባ ኮድን እንደ ይመዝገቡ እና ይጠቀሙበት እንደ - </string>
+    <string name="msg_3">ተጨማሪ ጥቅሞችን ለማግኘት ጎብኝ።</string>
+    <string name="about_us">ስለኛ</string>
+    <string name="img"></string>
+    <string name="ref_id">የማጣቀሻ መታወቂያ</string>
+    <string name="policy">መመሪያ</string>
+    <string name="logout">ውጣ</string>
+    <string name="terms_and_conditions">ውሎች እና ሁኔታዎች</string>
+    <string name="return_policy">የተመላሽ እቃ አፈፃፀም ሂደት</string>
+    <string name="contact_us">አግኙ</string>
+    <string name="download_our_app">የእኛን መተግበሪያ ያውርዱ</string>
+    <string name="switch_to_admin">ወደ አስተዳዳሪ ይቀይሩ</string>
+    <string name="seller_register">የሻጭ ምዝገባ</string>
+    <string name="referyourfrnd">ጓደኞችዎን ይጠቁሙ።</string>
+    <string name="optional">አማራጭ</string>
+    <string name="seller_website">የሻጭ-ድር ጣቢያ</string>
+    <string name="local_id_registration_number">አካባቢያዊ መታወቂያ ምዝገባ ቁጥር</string>
+    <string name="local_id_registration_certificate">አካባቢያዊ መታወቂያ ምዝገባ የምስክር ወረቀት</string>
+    <string name="tax_registration_certificate">ግብር የምስክር ወረቀት</string>
+    <string name="cancelled_check_copy">ተሰርዟል ፈትሽ  ቅጂ</string>
+    <string name="created_at">2019-07-01 20:42:53</string>
+    <string name="updated_at">2019-07-01 20:42:53</string>
+    <string name="vendor"> አቅራቢ</string>
+    <string name="redeem">ያስመልሱ።</string>
+    <string name="enter_bank_details">የባንክ ዝርዝሮችን ያስገቡ።</string>
+    <string name="return_and_replace">ተመለስ እና ተካ።</string>
+
+
+
+
+
+    <!--Order Labels-->
+    <string name="order_label_id">8</string>
+    <string name="delivery_details">የመላኪያ ዝርዝሮች</string>
+    <string name="select_delivery_address">የመላኪያ አድራሻ ይምረጡ</string>
+    <string name="new_address">አዲስ አድራሻ</string>
+    <string name="name">ስም</string>
+    <string name="email">ኢሜይል</string>
+    <string name="password">የይለፍ ቃል</string>
+    <string name="address">የይለፍ ቃል</string>
+    <string name="pincode">ፒንዴዴ</string>
+    <string name="gst_number">እቃ እና አገልግሎት ታክስ ቁጥር</string>
+    <string name="DOB">የተወለዱበት ቀን</string>
+    <string name="cash_on_delivery">ብር በመላክ ላይ ነው</string>
+    <string name="order_id">መለያ አሁኑኑ እዘዝ</string>
+    <string name="pay_now">አሁኑኑ ክፈል</string>
+    <string name="order_detail">ማብራሪያ እዘዝ</string>
+    <string name="cancel_order">ትእዛዝ ሰርዝ</string>
+    <string name="need_help">እገዛ ይፈልጋሉ?</string>
+    <string name="shipping_details">የመጓጓዧ ማብራሪያዎች</string>
+    <string name="item_count">የእቃ ቆጠራ</string>
+    <string name="payment_mode">የክፍያ አይነት</string>
+    <string name="order_cancel_msg">ይህን ትእዛዝ መሰረዝ ይፈልጋሉ?</string>
+    <string name="ordered">ታዟል</string>
+    <string name="gst">እቃ እና አገልግሎት</string>
+    <string name="order_failed">ትእዛዝ አልተሳካም</string>
+    <string name="order_failed_msg">ትእዛዙ ያልተሳካው ውጤቱ ወይም መጠኑ ስላልተገኘ ነው</string>
+    <string name="order_success">ትእዛዝዎ ተሳክቷል</string>
+    <string name="order_success_msg">ትእዛዝዎ በሚገባ ሁኔታ ተቀምጧል</string>
+    <string name="empty_order_title">ምንም አይነት ትእዛዝ ያሎት አይመስልም</string>
+    <string name="empty_order_description">ትእዛዝዎን አሁን ያስገቡ</string>
+    <string name="place_order">ቦታ አያያዝ</string>
+    <string name="total_amount_to_be_pay">ሚከፈለው አጠቃላይ ብር</string>
+    <string name="change_delivery_details">የመላኪያ ማብራሪያ ይቀይሩ</string>
+    <string name="yes">አዎ</string>
+    <string name="no">አይ</string>
+    <string name="confirm_your_order">እባክዎ ትእዛዝዎን ያረጋግጡ</string>
+    <string name="select">ይምረጡ</string>
+    <string name="please_enter_new_delivery_details">Plእባክዎ የመላኪያ ማብራሪያ ያስገቡ</string>
+    <string name="please_provide_rating">እባክዎ ደረጃ ያቅርቡ</string>
+    <string name="change">ቀይር</string>
+    <string name="add_new_address">አዲስ አድራሻ ያስገቡ</string>
+    <string name="select_country">ሃገር ይምረጡ</string>
+    <string name="select_state">ብሄር ይምረጡ</string>
+    <string name ="select_city">ከተማ ይምረጡ</string>
+    <string name="select_pincode">ፒን ኮድ ይምረጡ</string>
+    <string name="select_area">አካባቢ ይምረጡ</string>
+    <string name="change_pincode">ፒን ኮድዎን ይቀይሩ</string>
+    <string name="please_select_country_from_list">እባክዎን ሃገሮትን ከዝርዝሩ ይምረጡ</string>
+    <string name ="please_select_state_from_list">እባክዎን ብሄርዎን ከዝርዝሩ ይምረጡ</string>
+    <string name="please_select_city_from_list">እባክዎ ከተማዎትን ከዝርዝሩ ይምረጡ</string>
+    <string name="please_select_pincode_from_list">እባክዎ ፒን ኮድዎን ከዝርዝሩ ይምረጡ</string>
+    <string name="please_select_area_from_list">እባክዎ አከባቢዎትን ከዝርዝሩ ይምረጡ</string>
+    <string name="continue_with">በዚህ ይቀጥሉ</string>
+    <string name ="enter_delivery_pincode">የማድረሻ ፒን ኮድዎን ያስገቡ</string>
+    <string name="enter_pincode">ፒን ኮድዎን ያስገቡ</string>
+    <string name="status">ሁኔታ</string>
+    <string name="date">ቀን</string>
+    <string name="action">ተግባር</string>
+    <string name ="invoice_number">የክፍያ መጠየቂያ ቁጥር</string>
+    <string name="existing_addresses">ነባር አድራሻዎች</string>
+    <string name="deliver_here">እዚህ ያቅርቡ</string>
+    <string name="delivery_charges">የማጓጓዣ ክፍያዎች</string>
+    <string name="choose_payment_option">የክፍያ አማራጭ ይምረጡ</string>
+    <string name ="repayment">መክፈል</string>
+    <string name="payment_status">የክፍያ ሁኔታ</string>
+    <string name="please_give_reason_for_cancellation">እባክዎ ለመሰረዝ ምክንያት ይስጡ</string>
+    <string name ="order_status">የትዕዛዝ ሁኔታ</string>
+    <string name="order_placed">ትዕዛዝ ተይዟል</string>
+    <string name="pending">በመጠባበቅ ላይ</string>
+    <string name="delivered">ደርሷል</string>
+    <string name="cancelled">ተሰርዟል</string>
+    <string name="COD">COD</string>
+    <string name="order_attachment">የትዕዛዝ ዓባሪ</string>
+    <string name="order_placed_successfully">ትዕዛዝ በተሳካ ሁኔታ ተቀምጧል</string>
+    <string name="transaction_number">የግብይት ቁጥር</string>
+    <string name ="thank_you_for_placing_order_at">ቅደም ተከተልን ስላስቀመጡ እናመሰግናለን</string>
+    <string name="cancel_reason">የስረዛ ምክንያት</string>
+    <string name="razorpay">RazorPay</string>
+
+
+
+    <!--wishlist_labels-->
+    <string name="wishlist_label_id">8</string>
+    <string name="wishlist">የምኞት ዝርዝር</string>
+    <string name="clear_wishlist">የምኞት ዝርዝር ሰርዝ</string>
+    <string name="empty_wishlist_title">ምንም የምኞት ዝርዝር አልተገኘም</string>
+    <string name="empty_wishlist_description">የምኞት ዝርዝር ውስጥ ምንም ውጤት የለም</string>
+    <string name="move_to_wishlist">ወደ የምኞት ዝርዝር አዘዋውር</string>
+
+
+
+
+
+    <!--User_Labels-->
+    <string name="user_label_id">8</string>
+    <string name="enter_password">የይለፍ ቃል ያስገቡ</string>
+    <string name="change_password">የሚስጥር ቁልፍ ይቀይሩ </string>
+    <string name="update_profile">መገለጫ አዘምን</string>
+    <string name="my_addresses">የእኔ አድራሻዎች</string>
+    <string name="sign_up_with">ይመዝገቡ በ</string>
+    <string name= "or">ወይም</string>
+    <string name="sign_in">ስግን እን</string>
+    <string name="sign_up">ተመዝገቢ</string>
+    <string name="forgot_password">መክፈቻ ቁልፉን ረሳኽው?</string>
+    <string name="register">መዝግብ</string>
+    <string name="country">አገር</string>
+    <string name="new_password">አዲስ የይለፍ ቃል</string>
+    <string name="confirm_password">የይለፍ ቃል አረጋግጥ</string>
+    <string name="submit">አስገባ</string>
+    <string name="verification">ማረጋገጥ</string>
+    <string name="otp_verification">የአንድ ጊዜ መለያ ቁጥር ማረጋገጫ</string>
+    <string name= "otp_msg">በስልክዎት መልክት ሳጥን የአንድ ጊዜ መለያ ቁጥር ልከናል</string>
+    <string name="otp">የአንድ ጊዜ መለያ ቁጥር</string>
+    <string name="resend_otp">የአንድ ጊዜ መለያ ቁጥሩን ድጋሚ ላክ</string>
+    <string name="retry">ድጋሚ ሞክር</string>
+    <string name="password_empty">የሚስጥር ቁጥር ባዶ መሆን አይችልም</string>
+    <string name="pincode_empty">ፒን ኮድ</string>
+    <string name="review_empty">ክለሳ ባዶ መሆን አይችልም</string>
+    <string name= "email_empty">Email ባዶ መሆን አይችልም</string>
+    <string name="dob_empty">የተወለዱበት ቀን ባዶ መሆን አይችልም</string>
+    <string name="password_length_should_be_8_characters">የሚስጥር ቁጥርዎ 8 ቃል መሆን አለበት</string>
+    <string name="address_empty">አድራሻዎ ባዶ መሆን አይችልም</string>
+    <string name="please_enter_GST_number">እባክዎ እቃ እና አገልግሎት ታክስ ቁጥር ያስገቡ</string>
+    <string name="description_empty">ገለጻ ባዶ መሆን አይችልም</string>
+    <string name="name_empty">ስምባዶ መሆን አይችልም</string>
+    <string name="do_you_want_to_logout">መውጣት ይፈልጋሉ?</string>
+    <string name="continue_as_guest">እንደ እንግዳ ይቀጥሉ</string>
+    <string name="profile">መገለጫ</string>
+    <string name= "dob">ጊዜያት</string>
+    <string name="area">አካባቢ</string>
+    <string name="state">ግዛት</string>
+    <string name="city">ከተማ</string>
+    <string name="business_name">የንግድ ስም</string>
+    <string name="remember_me">አስታወስከኝ</string>
+    <string name= "sign_in_with_your_regular_account">በመደበኛ መለያዎ ይግቡ</string>
+    <string name="guest">እንግዳ</string>
+    <string name="do_not_have_an_account">መለያ የለዎትም?</string>
+    <string name="register_now">አሁን መመዝገብ</string>
+    <string name="i_read_and_accept_terms_conditions">ውሎች እና ሁኔታዎች አንብቤ ተስማምቼያለሁ</string>
+    <string name="send_me_the_newsletter_weekly">ጋዜጣ በየሳምንቱ እኔን ላኩልኝ</string>
+    <string name="if_you_have_an_account">መለያ ካለዎት?</string>
+
+
+
+
+    <!--Notification Labels-->
+    <string name="notification_label_id">8</string>
+    <string name="empty_notification_title">ገና ምንም ማሳወቂያ የለም</string>
+    <string name="empty_notification_description">ማሳወቂያውን በቅርቡ ይቀበላሉ</string>
+
+
+    <!--Gateway labels-->
+    <string name="gateway_label_id">8</string>
+    <string name="payment_options">የክፍያ አማራጮች</string>
+    <string name="pay_u_money">ገንዘብዎን በዚህ ይክፈሉ </string>
+    <string name="pay_pal">ፔይ ፓል </string>
+    <string name="paytm">ፔይቲኤም </string>
+    <string name="mobi_kwik">ሞቢክዊክ</string>
+    <string name="c_c_avenue">ስኢስኢ አቬኑ</string>
+
+
+
+
+
+    <!--Complaint labels-->
+    <string name="complaint_label_id">8</string>
+    <string name="add_complaint"> ቅሬታዎችን ያክሉ</string>
+    <string name="select_complaint_type">የቅሬታ ዓይነት ይምረጡ</string>
+    <string name="complaint_description">የቅሬታ ማብራሪያ </string>
+    <string name="do_you_have_any_query">ምንም ጥያቄ አለዎት?</string>
+    <string name="complaint_list_empty">የአቤቱታ ዝርዝር ባዶ ነው</string>
+    <string name ="online_payment">የመስመር ላይ ክፍያ</string>
+    <string name="please_type_your_query">እባክዎ ጥያቄዎን ይተይቡ</string>
+    <string name="please_select_complaint_type">እባክዎ የቅሬታ ዓይነት ይምረጡ</string>
+    <string name="customer_complaints">የደንበኛ ቅሬታዎች</string>
+    <string name="subject">ርዕሰ ጉዳይ</string>
+    <string name="your_complaints">የእርስዎ ቅሬታዎች </string>
+    <string name="message">መልዕክት</string>
+    <string name="contact_details">የዕውቂያ ዝርዝሮች </string>
+
+
+
+    <!--Cart labels-->
+    <string name="cart_label_id">8</string>
+    <string name="qty">መጠን</string>
+    <string name="remove_lower">አስወግድ</string>
+    <string name="remove_item">አይነቱን አስወግድ</string>
+    <string name="do_you_really_want_remove_this_product">ይሄንን ውጤት የምር ማስወገድ ይፈልጋሉ?</string>
+    <string name="remove_upper">አስወግድ</string>
+    <string name="price_details">የዋጋ ገለጻ</string>
+    <string name="price">ዋጋ</string>
+    <string name="items">አይነቶች</string>
+    <string name="delivery">አቀራረብ</string>
+    <string name="free">ነፃ</string>
+    <string name="total_amount">አጠቃላይ መጠን</string>
+    <string name="you_will_save">ይህን ያክል ያተርፋሉ</string>
+    <string name="on_this_order">በዚህ ትእዛዝ</string>
+    <string name="cart_secure_msg">አስተማማኝ እና የተጠበቀ ክፍያ። 100% ቀላል እና እውነተኛ ውጤቶች</string>
+    <string name="view_price_details">የዎጋ ማብራሪያ አሳይ</string>
+    <string name="out_of_stock">ከመጋዘን ተጠናቀቀ</string>
+    <string name="is_available">ይገኛል</string>
+    <string name="only">ብቻ</string>
+    <string name="do_you_have_promocode">ፒን ኮድ አሎት  </string>
+    <string name="any_special_comment_for_this_order">ለዚህ ትእዛዝ የተለየ አስተያየት አሎት</string>
+    <string name="update">አሻሽል</string>
+    <string name="order_description">ገለጻ እዘዝ </string>
+    <string name="view_cart">ጋሪ አሳይ</string>
+    <string name="add_to_cart">ወደ ጋሪ ጨምር</string>
+    <string name="update_cart">ጋሪን አሻሽል</string>
+    <string name="empty_cart_title">ጋሪዎት ባዶ ነው</string>
+    <string name="empty_cart_description">ወደ አይነት አሁኑኑ ያስገቡ</string>
+    <string name="please_enter_quantity">እባክዎ መጠኑን ያስገቡ</string>
+    <string name="edit">አርትዕ</string>
+
+
+
+
+    <!--Global labels-->
+    <string name="global_label_id">8</string>
+    <string name="continue_shopping">መሸጥ ቀጥል</string>
+    <string name="no_internet_connection">ምንም የበይነመረብ ግንኙነት የለም</string>
+    <string name="please_check_your_internet_connectivity_and_try_again">እባክዎ የበይነመረብዎን ግንኙነት ይፈትሹ እና እንደገና ይሞክሩ</string>
+    <string name="back">ተመለስ</string>
+    <string name="cancel">ውድቅ</string>
+    <string name="save">አስቀምጥ</string>
+    <string name="comming_soon">በቅርብ ቀን</string>
+    <string name="please_enter_valid_quantity">እባክዎ ትክክለኛ መጠን ያስገቡ</string>
+    <string name="choose_file_to_upload">ለመስቀል ፋይል ምረጥ</string>
+    <string name="please_fill_out_name_field">እባክዎ የስም መስክ መሙላት</string>
+    <string name="please_fill_out_email_field">እባክዎ የኢሜል መስኩን ይሙሉት</string>
+    <string name="please_fill_out_delivery_address_field">ባክዎ የመላኪያ አድራሻ መስክ ይሙሉ </string>
+    <string name="please_enter_valid_email">እባክዎ ትክክለኛ ኢሜይል ያስገቡ</string>
+    <string name="please_enter_valid_mobile_number">እባክዎ ትክክለኛ የሞባይል ቁጥር ያስገቡ </string>
+    <string name="no_any_payment_method_option_are_available">ምንም የክፍያ አማራጭ አማራጭ የለም</string>
+    <string name="please_login_first">እባክዎ መጀመሪያ ይግቡ</string>
+    <string name="please_give_rating">እባክዎ ደረጃ ይስጡን</string>
+    <string name="please_give_review">እባክዎ ይገምግሙ</string>
+    <string name="message_can_not_be_empty">መልዕክቱ ባዶ መሆን አይችልም</string>
+    <string name="see_all_notification">ሁሉንም ማሳወቂያ አሳይ</string>
+    <string name="registration_successfull">ምዝገባው በተሳካ ሁኔታ</string>
+    <string name="profile_updated_successfully">መገለጫ በተሳካ ሁኔታ ተሻሽሏል</string>
+    <string name="if_you_have_any_question_quote">የአቤቱታ ቁጥር</string>
+    <string name="complaint_number">"የቅሬታ ርዕስ </string>
+    <string name="complaint_title">የቅሬታ ቁጥር </string>
+    <string name="created_at_label">በ የተፈጠረ </string>
+    <string name="updated_at_label">በ ን ዘምኗል</string>
+    <string name="about">ስለ</string>
+    <string name="disclaimer">የኃላፊነት ማስተማመኛ</string>
+    <string name="quick_links">ፈጣን አገናኞች</string>
+    <string name="thank_you_for_contacting_us">እኛን ስላገኘን እናመሰግናለን! በቅርቡ ወደ እርስዎ እንመለሳለን</string>
+    <string name="search_for_product">ምርትን ፈልግ</string>
+    <string name="choose_file">ፋይል ምረጥ</string>
+    <string name="get_invoice">ደረሰኝ ያግኙ</string>
+    <string name="ordered_on">የተከፈለ</string>
+    <string name="delivered_on"> ማስተላለፉ በ</string>
+    <string name="total">ጠቅላላ</string>
+    <string name="saved">ተቀምጧል</string>
+    <string name="adhar_card">የአድባር ካርድ።</string>
+    <string name="food_license">የምግብ ፈቃድ</string>
+
+
+    <!--Product labels-->
+    <string name="product_label_id">8</string>
+    <string name="latest_products">አዳዲስ እቃዎች </string>
+    <string name="recently_viewed_products">በቅርብ የታዩ </string>
+    <string name="sort">ደርድር</string>
+    <string name="sort_by">እንደዚህ ደርድር</string>
+    <string name="newest_first">አዳዲሶቹን መጀመሪያ </string>
+    <string name="ascending_order"> ከመጀመሪያ ወደ መጨረሻ</string>
+    <string name="low_to_high">ከትንሽ ትልቅ</string>
+    <string name="high_to_low">ከትልቅ ትንሽ</string>
+    <string name="filter">ማጣርያ</string>
+    <string name="min">አነስተኛ</string>
+    <string name="max">የመጨረሻ ትልቅ</string>
+    <string name="search_by_brand_name">በታዋቂ ስም ፈልግ</string>
+    <string name="select_brands">ታዋቂ ስም ምረጥ</string>
+    <string name="none_selected">ምንም አልተመረጠም</string>
+    <string name="selected">ተመርጧል</string>
+    <string name="apply">ተግብር</string>
+    <string name="off">አጥፋ</string>
+    <string name="add_more">ሌላ ጨምር </string>
+    <string name="enter_quantity">የብዛት መጠን አስገባ </string>
+    <string name="quantity">መጠን</string>
+    <string name="reviews_and_ratings">ግምገማ እና ደረጃ  </string>
+    <string name="similar">ተመሳሳይ</string>
+    <string name="highlights">ምርጥ ወይም ደማቅ</string>
+    <string name="ratings_and_reviews">ደረጃ እና ግምገማ</string>
+    <string name="your_rating">እርስዎ የሚሰጡት ደረጃ </string>
+    <string name="rate_and_write_a_review">ደረጃ ሰተው ይገምግሙ</string>
+    <string name="enter_your_review">ግምገማዎትን ያስገቡ</string>
+    <string name="add_review">ግምገማ ያስገቡ</string>
+    <string name="view_all_reviews">ሁሉንም ግምገማ አሳይ</string>
+    <string name="all_reviews">ሁሉም ግምገማዎች</string>
+    <string name="search">ፈልግ</string>
+    <string name="products">ውጤቶች</string>
+    <string name="similar_products_of">የዚህ ተመሳሳይ ውጤት</string>
+    <string name="similar_products">ተመሳሳይ ምርቶች</string>
+    <string name="available_variations_for">ለዚህ የተገኙት ልዩነቶች</string>
+    <string name="empty_category_product_title">ምንም አይነት ውጤት የለም</string>
+    <string name="empty_category_product_description">እባክዎ ሌላ መደብ ያጣሩ</string>
+    <string name="no_more_products_available">ምንም አይነት ውጤት የለም</string>
+    <string name="max_viewed_products">በጣም በብዛት የታዩት ውጤቶች</string>
+    <string name="shop_by_category">በአይነት ይገብዩ</string>
+    <string name="all_categories">ሁሉም አይነቶች</string>
+    <string name="buy_now">አሁኑኑ ይግዙ</string>
+    <string name="search_empty_title">ይቅርታ ምንም አይነት ውጤት አልተገኘም</string>
+    <string name="search_empty_description">እባክዎ በተለየ የቁልፍ ሰሌዳ ይፈልጉት</string>
+    <string name="max_viewed">በጣም በብዛት የታየው</string>
+    <string name="featured_brands">ተለይተው የታዩ ወይም የተወደዱ እቃዎች</string>
+    <string name="write_a_review">ገምግም</string>
+    <string name="review">ግምገማ</string>
+    <string name="product_code">የምርት ኮድ </string>
+    <string name="availablity">መገኘት</string>
+    <string name="stock_in"> ለሽያጭ የቀረበ እቃ</string>
+    <string name="description">መግለጫ</string>
+    <string name="specifications">ዝርዝሮች</string>
+    <string name="questions_and_answers">ጥያቄዎች እና መልሶች  </string>
+    <string name="customer_reviews">የደንበኞች ግምገማዎች </string>
+    <string name="offers_block">ቅናሽ አግድ </string>
+    <string name="image">ምስል</string>
+    <string name="stock">አክሲዮን</string>
+    <string name="product_list">የምርት ዝርዝር </string>
+    <string name="description_not_available">መግለጫ ለዚህ ምርት አይገኝም</string>
+    <string name="detail">ዝርዝር</string>
+    <string name="popular_brands">ታዋቂ የንግድ ምልክቶች </string>
+    <string name="coming_soon">በቅርብ ቀን </string>
+    <string name="quantity_should_be_greater_than_zero">መጠኑ ከዜሮ መብለጥ አለበት</string>
+    <string name="quick_view">ፈጣን ዕይታ </string>
+    <string name="see_product_details">የምርት ዝርዝሮችን ይመልከቱ  </string>
+    <string name="comment">አስተያየት ፡፡</string>
+    <string name="username">የተጠቃሚ ስም</string>
+
+    <!--Wallet labels-->
+    <string name="wallet_label_id">8</string>
+    <string name="transfer">አዘዋውር</string>
+    <string name="to">ወደ</string>
+    <string name="send">ላክ</string>
+    <string name="sent">ተልኳል</string>
+    <string name="successfully">በሚገባ</string>
+    <string name="you_have_successfully_paid">በሚገባ ከፍለዋል</string>
+    <string name="transaction_id">የመገበያያ መለያ</string>
+    <string name="wallet_transfer">የገንዘብ ቦርሳ ዝውውር</string>
+    <string name="wallet_transfer_confirmation">የገንዘብ ቦርሳ ዝውውር ማረጋገጫ</string>
+    <string name="wallet_transfer_sucessful">የገንዘብ ቦርሳ ተዘዋውሯል</string>
+    <string name="transaction_list_empty">የመገበያያ ዝርዝር ባዶ ነው</string>
+    <string name="wallet_amount">የገንዘብ ቦርሳ መጠን</string>
+    <string name="have_a_promocode_Enter_here">ፕሮሞ ኮድ አሎት? እዚህ ያስገቡ</string>
+    <string name="please_enter_amount">እባክዎ መጠኑን ያስገቡ</string>
+    <string name="enter_amount">መጠኑን ያስገቡ</string>
+    <string name="narration">ትረካ</string>
+    <string name="mobile_number">ስልክ ቁጥር</string>
+    <string name="add">አስገባ</string>
+    <string name="contact_number_empty">መገናኛ ቁጥር ባዶ መሆን አይችልም</string>
+    <string name="please_enter_a_valid_number">እባክዎ ትክክለኛ ቁጥር ያስገቡ</string>
+    <string name="transfer_money">ብሩን ያስተላልፉ</string>
+    <string name="amount">መጠን</string>
+    <string name="confirm">አረጋገጥ</string>
+    <string name="total_balance">አጠካላይ መጠን </string>
+    <string name="add_money">ብር አስገቡ </string>
+    <string name="transaction_history">የዝውውር ታሪክ</string>
+    <string name="description_optional">ገለጻ (ግድ ያልሆነ)</string>
+    <string name="proceed">ይቀጥሉ።</string>
+    <string name="confirm_payment">ወደፊት ቀጥል</string>
+    <string name="proceed_to_pay">ክፍያ አረጋግጥ</string>
+    <string name="wallet">የገንዘብ ቦርሳ</string>
+    <string name="continue_to_pay">ለመክፈል ይቀጥሉ</string>
+    <string name="cancel_payment">ክፍያውን ይሰርዙ</string>
+    <string name="pay_using">ከፍያ ለመክፈል ይህን ይጠቀሙ</string>
+    <string name="pay_using_wallet">ከፍያ ለመክፈል የገንዘብ ቦርሳ ይጠቀሙ</string>
+    <string name="order_amount">መጠኑን ይዘዙ</string>
+    <string name="pay_without_wallet">ካለ ገንዘብ ቦርሳ ይክፈሉ</string>
+    <string name="place_order_with_wallet">በገንዘብ ቦርሳ ትእዛዝ አስገባ</string>
+
+
+
+    <!--Promocode labels-->
+    <string name="promocode_label_id">8</string>
+    <string name="add_new">አዲስ የማስተዋወቂያ ኮዶችን ያክሉ</string>
+    <string name="promocode">የማስተዋወቂያ ኮድ</string>
+    <string name="have_promocode">Have promocode?</string>
+    <string name="promocode_has_been_expired"> Promocode has been expired</string>
+    <string name="upcomming_promocode">Upcomming promocode</string>
+    <string name="limit_of_promo_code_usage_exceeded">Limit of promocode usage exceeded</string>
+    <string name="this_promocode">This promocode is only valid for first order</string>
+    <string name="sorry_you_are_not_eligible">Sorry, You are not eligible for this promocode</string>
+    <string name="you_have_already_used">You have already used that promocode</string>
+    <string name="invalid_amount">Invalid amount for applied promocode</string>
+    <string name="invalid_promocode">Invalid promocode</string>
+    <string name="your_promocode_discount">Your promocode discount</string>
+    <string name="promocode_applied_successfully">Promocode Applied Successfully..!</string>
+    <string name="connectuswith">Connect Us With</string>
+    <string name="send_message">መልዕክት ላክ </string>
+    <string name="sellers">ሻጮች</string>
+</resources>

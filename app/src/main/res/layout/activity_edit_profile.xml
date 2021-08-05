@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.example.grocery.Activities.EditProfileActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.grocery.Activities.EditProfileActivity">
+
+        <include
+
+            android:id="@+id/toolbar"
+            layout="@layout/toolbarback" />
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.example.grocery.Activities.EditProfileActivity">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_gravity="center"
+                            android:layout_height="150dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:id="@+id/profile_pic"
+                                android:layout_gravity="center"
+                                app:civ_border_width="2dp"
+                                app:civ_border_color="#FF000000"/>
+
+                         <ImageView
+                            android:id="@+id/outside_imageview"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/update_profile"
+                            android:scaleType="fitXY" />
+
+                        </RelativeLayout>
+                        <com.example.grocery.CustomViews.CustomEditText
+                            android:id="@+id/updateprofileusername"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="@dimen/dimen_20dp"
+                            android:layout_marginTop="@dimen/dimen_20dp"
+                            android:background="@drawable/edittextselector"
+                            android:hint="@string/username"
+                            android:paddingStart="@dimen/dimen_10dp"
+                            android:textColorHighlight="@color/errorColor"
+                            android:textSize="15dp"
+                            android:theme="@style/AppTheme.EditTextOverlay" />
+
+
+                        <com.example.grocery.CustomViews.CustomEditText
+                            android:id="@+id/updatemobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="@dimen/dimen_20dp"
+                            android:layout_marginTop="@dimen/dimen_20dp"
+                            android:background="@drawable/edittextselector"
+                            android:hint="@string/mobile_number"
+                            android:inputType="number"
+                            android:paddingStart="@dimen/dimen_10dp"
+                            android:textSize="15dp"
+                            android:theme="@style/AppTheme.EditTextOverlay" />
+
+
+                        <com.example.grocery.CustomViews.CustomEditText
+                            android:id="@+id/updateaddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="@dimen/dimen_20dp"
+                            android:layout_marginTop="@dimen/dimen_20dp"
+                            android:background="@drawable/edittextselector"
+                            android:hint="@string/address"
+                            android:minLines="2"
+                            android:paddingBottom="13dp"
+                            android:paddingEnd="@dimen/dimen_10dp"
+                            android:paddingStart="@dimen/dimen_10dp"
+                            android:paddingTop="13dp"
+                            android:textSize="15dp"
+                            android:theme="@style/AppTheme.EditTextOverlay" />
+
+
+                        <Spinner
+                            android:id="@+id/countrySignUp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:drawablePadding="10dp"
+                            android:drawableStart="@drawable/addressicon"
+                            android:hint="@string/country"
+                            android:inputType="text"
+                            android:paddingStart="10dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                        <Spinner
+                            android:id="@+id/stateSignUp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:drawablePadding="10dp"
+                            android:drawableStart="@drawable/addressicon"
+                            android:hint="@string/state"
+                            android:inputType="text"
+                            android:paddingStart="10dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                        <Spinner
+                            android:id="@+id/citySignUp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:drawablePadding="10dp"
+                            android:drawableStart="@drawable/addressicon"
+                            android:hint="@string/city"
+                            android:inputType="text"
+                            android:paddingStart="10dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                        <Spinner
+                            android:id="@+id/pinsignup"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:drawableStart="@drawable/addressicon"
+                            android:hint="@string/pincode"
+                            android:inputType="text"
+                            android:paddingStart="10dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                        <Spinner
+                            android:id="@+id/areaSignUp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:drawableStart="@drawable/addressicon"
+                            android:hint="@string/pincode"
+                            android:inputType="text"
+                            android:paddingStart="10dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                        <com.example.grocery.CustomViews.CustomButton
+                            android:id="@+id/submitText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/dimen_20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="@dimen/dimen_20dp"
+                            android:background="@drawable/buttonshape"
+                            android:paddingEnd="@dimen/dimen_15dp"
+                            android:paddingStart="@dimen/dimen_15dp"
+                            android:shadowRadius="@integer/int_5"
+                            android:text="@string/change"
+                            android:textColor="@color/white"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/loaderBlurred"
+        layout="@layout/blurredloader" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp">
+
+        <include
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader" />
+    </RelativeLayout>
+
+</RelativeLayout>

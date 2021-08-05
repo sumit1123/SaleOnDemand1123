@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.grocery.Activities.PolicyActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text=""
+            android:textColor="#1A1A1A"
+            android:textSize="16sp" />
+    </ScrollView>
+
+
+    <include
+
+        android:id="@+id/whiteloader"
+        layout="@layout/whiteloader" />
+
+</LinearLayout>

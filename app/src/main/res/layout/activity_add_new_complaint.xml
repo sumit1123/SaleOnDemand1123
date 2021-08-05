@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.grocery.Activities.AddNewComplaint">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar">
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.grocery.Activities.OnlineSupportActivity">
+
+            <RelativeLayout
+                android:layout_marginStart="@dimen/dimen_15dp"
+             android:layout_marginEnd="@dimen/dimen_15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:background="@drawable/add_complaint"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:layout_gravity="center"
+                        android:id="@+id/addComplaintText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/add_complaint"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:id="@+id/sfdc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="10dp"
+                        android:theme="@style/TextLabel">
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/spinnerline"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:focusableInTouchMode="true"
+android:focusable="true"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/background_spinner">
+
+                        <Spinner
+
+                            android:dropDownVerticalOffset="50dp"
+                        android:id="@+id/complaintType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                           
+                            android:textDirection="locale">
+
+
+                        </Spinner>
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/complaintdetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_gravity="start"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/edittextselector"
+                        android:gravity="start"
+                        android:hint="@string/complaint_description"
+                        android:maxLines="2"
+                        android:padding="@dimen/dimen_10dp"
+                        android:textSize="15dp"
+                        android:theme="@style/AppTheme.EditTextOverlay" />
+
+
+
+
+                        <com.example.grocery.CustomViews.CustomButton
+                            android:id="@+id/cpupdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/buttonshape"
+                            android:gravity="center"
+                            android:paddingEnd="@dimen/dimen_10dp"
+                            android:paddingStart="@dimen/dimen_10dp"
+                            android:text="@string/send"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12dp" />
+
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

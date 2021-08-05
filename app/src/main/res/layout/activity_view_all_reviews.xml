@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.ViewAllReviews">
+
+    <include
+
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+
+    <include
+
+        android:id="@+id/whiteloader"
+        layout="@layout/whiteloader"
+        />
+    <include
+
+        android:id="@+id/loaderBlurred"
+        layout="@layout/blurredloader"
+        />
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/reviewsrec"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:id="@+id/noreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="No Reviews Available"
+            android:textColor="#000"
+            android:visibility="gone" />
+
+</LinearLayout>

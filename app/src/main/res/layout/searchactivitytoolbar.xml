@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/cccc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10">
+
+            <RelativeLayout
+                android:id="@+id/toolimage"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/searchback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#fff"
+                    app:srcCompat="@drawable/back" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/toolmic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/toolimage"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/searchmic"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#fff"
+                    app:srcCompat="@drawable/mic" />
+
+            </RelativeLayout>
+
+            <com.example.grocery.CustomViews.CustomEditText
+                android:id="@+id/inputSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_gravity="start"
+                android:layout_marginRight="10dp"
+                android:layout_toEndOf="@+id/toolmic"
+                android:layout_toStartOf="@+id/options"
+                android:layout_weight="9"
+                android:background="@android:color/transparent"
+               
+                android:imeOptions="actionSearch"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:textAlignment="viewStart"
+                android:textColor="#fff"
+                android:textColorHint="#d3d3d3"
+                android:textSize="12dp" />
+
+            <LinearLayout
+                android:id="@+id/options"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dimen_5dp">
+
+                <ImageView
+                    android:id="@+id/cancel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_toEndOf="@+id/inputSearch"
+                    android:padding="@dimen/dimen_5dp"
+                    app:srcCompat="@drawable/close" />
+
+                <RelativeLayout
+                    android:id="@+id/searchbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/searchsearch"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:backgroundTint="#fff"
+                        app:srcCompat="@drawable/searchwhite" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:id="@+id/cart"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:clickable="true">
+
+                    <!-- Menu Item Image -->
+                    <ImageView
+                        android:id="@+id/toolcart"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        app:srcCompat="@drawable/cart" />
+
+                    <!-- Badge Count -->
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/actionbar_notifcation_textview"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/circle"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:textSize="8dp"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.OnlineChatActivity">
+    <include
+
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+    <RelativeLayout
+        android:layout_below="@+id/toolbar"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginBottom="60dp"
+            android:id="@+id/reconlinechat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <RelativeLayout
+            android:background="#d3d3d3"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:background="#d3d3d3"
+android:fontFamily="@font/roboto"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="start"
+
+                android:paddingStart="20dp"
+                android:hint="please type your query here..."
+                android:id="@+id/messege"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_toLeftOf="@+id/sendmessege"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <ImageView
+
+android:textDirection="locale"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/sendmessege"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/send"
+                android:layout_width="27dp"
+                android:layout_height="27dp" />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

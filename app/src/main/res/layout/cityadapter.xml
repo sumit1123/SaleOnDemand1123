@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.example.grocery.CustomViews.CustomTextView
+        android:layout_alignParentStart="true"
+        android:id="@+id/textcity"
+        android:layout_width="wrap_content"
+       
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:gravity="center"
+        android:text="ascxdasxas"
+        android:textColor="#000000"
+        android:textSize="15dp" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cb"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cb_unchecked"
+        android:button="@drawable/cb_selector"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:backgroundTint="#000"
+        android:gravity="center"
+     />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1dp"
+        android:layout_below="@+id/textcity"
+        android:background="@color/grey">
+
+    </LinearLayout>
+</RelativeLayout>
+
+
+

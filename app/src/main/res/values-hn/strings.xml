@@ -1,0 +1,454 @@
+<resources>
+    <string name="app_name">Sushil Creations</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="action_settings">Settings</string>
+    <string name="edittext_hint"><font size="13">Quantity</font></string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--Navigation Labels-->
+    <string name="navigation_label_id">2</string>
+    <string name="language_id">2</string>
+    <string name="login">लॉग इन</string>
+    <string name="home">होम</string>
+    <string name="welcome">स्वागत हे</string>
+    <string name="more">अधिक</string>
+    <string name="notifications">सूचनाएं</string>
+    <string name="my_wishlist">मेरी विशलिस्ट</string>
+    <string name="my_cart">मेरा कार्ट</string>
+    <string name="my_orders">मेरे ऑर्डर्स</string>
+    <string name="my_wallet">मेरा वॉलेट</string>
+    <string name="my_account">मेरा खाता</string>
+    <string name="share">शेयर</string>
+    <string name="razorpay">RazorPay</string>
+    <string name="language_label">भाषा</string>
+    <string name="support">सहायता</string>
+    <string name="about_us">हमारे बारे में</string>
+    <string name="policy">नीति</string>
+    <string name="msg">नमस्ते, में आपका स्वागत है</string>
+    <string name="img"></string>
+    <string name="ref_id">संदर्भ पहचान पत्र</string>
+    <string name="msg_2">मुझे आशा है कि आप इसे पसंद करेंगे, रजिस्टर करें और रेफरल कोड का उपयोग करें -</string>
+    <string name="msg_3">अतिरिक्त लाभ प्राप्त करने के लिए जाएँ</string>
+    <string name="logout">लोग आउट</string>
+    <string name="terms_and_conditions"> नियम एवं शर्तें</string>
+    <string name="return_policy">वापसी नीति</string>
+    <string name="contact_us">हमसे संपर्क करें</string>
+    <string name="download_our_app">हमारी ऐप डाउनलोड करें</string>
+    <string name="switch_to_admin">व्यवस्थापक करने के लिए स्विच</string>
+    <string name="seller_register">विक्रेता पंजीकरण</string>
+    <string name="optional">ऐच्छिक</string>
+    <string name="referyourfrnd">अपने दोस्तों को देखें</string>
+    <string name="seller_website">विक्रेता वेबसाइट</string>
+    <string name="local_id_registration_number">स्थानीय आईडी पंजीकरण संख्या</string>
+    <string name="local_id_registration_certificate">स्थानीय आईडी पंजीकरण प्रमाणपत्र</string>
+    <string name="tax_registration_certificate">कर पंजीकरण प्रमाण पत्र</string>
+    <string name="cancelled_check_copy">चेक कॉपी रद्द कर दी</string>
+    <string name="created_at">2019-07-01 20:42:53</string>
+    <string name="updated_at">2019-07-01 20:42:53</string>
+    <string name="vendor"> विक्रेता</string>
+    <string name="redeem">रीडीम</string>
+    <string name="enter_bank_details">बैंक विवरण दर्ज करें</string>
+    <string name="return_and_replace">वापसी और बदलें</string>
+
+
+
+
+
+
+
+    <!--Order Labels-->
+    <string name="order_label_id">2</string>
+    <string name="delivery_details">डिलिवरी का विवरण</string>
+    <string name="select_delivery_address">डिलीवरी पता चुनें</string>
+    <string name="new_address">नया पता</string>
+    <string name="name">नाम</string>
+    <string name="email">ईमेल</string>
+    <string name="password">पासवर्ड</string>
+    <string name="address">पता</string>
+    <string name="pincode">पिन कोड</string>
+    <string name="gst_number"> जीएसटी नंबर</string>
+    <string name="DOB">जन्म की तारीख</string>
+    <string name="cash_on_delivery">डिलवरी पर पैसे</string>
+    <string name="order_id">आर्डर आईडी</string>
+    <string name="pay_now">अब भुगतान करें</string>
+    <string name="order_detail">आर्डर विवरण</string>
+    <string name="cancel_order">आर्डर रद्द</string>
+    <string name="need_help">मदद चाहिए?</string>
+    <string name="shipping_details">शिपिंग विवरण</string>
+    <string name="item_count">आइटम की गिन्ती</string>
+    <string name="payment_mode">भुगतान का प्रकार</string>
+    <string name="order_cancel_msg">क्या आप वाकई इस आर्डर को रद्द करना चाहते हैं?</string>
+    <string name="ordered">आदेश दिया</string>
+    <string name="gst">जीएसटी</string>
+    <string name="order_failed"> आर्डर असफल</string>
+    <string name="order_failed_msg">प्रोडक्ट या क्वांटिटी अनुपलब्ध के कारण आदेश असफल रहा</string>
+    <string name="order_success">ऑर्डर सफलता</string>
+    <string name="order_success_msg">आपकी आर्डर सफलतापूर्वक रखा गया है</string>
+    <string name="empty_order_title">ऐसा लगता है कि आपके पास कोई आदेश नहीं है</string>
+    <string name="empty_order_description">अब अपना ऑर्डर जोड़ें</string>
+    <string name="place_order"> प्लेस ऑर्डर</string>
+    <string name="total_amount_to_be_pay">भुगतान की कुल राशि</string>
+    <string name="change_delivery_details">डिलीवरी विवरण बदलें</string>
+    <string name="yes">हां</string>
+    <string name="no">नहीं </string>
+    <string name="confirm_your_order">अपने ऑर्डर की पुष्टि करें</string>
+    <string name="select">चुनिए</string>
+    <string name="please_enter_new_delivery_details">कृपया नई डिलीवरी जानकारी दर्ज करें</string>
+    <string name="please_provide_rating">कृपया रेटिंग प्रदान करें</string>
+    <string name="change">परिवर्तन</string>
+    <string name="add_new_address">नया पता जोड़ें</string>
+    <string name="select_country">देश चुनिए</string>
+    <string name="select_state">राज्य चुनें</string>
+    <string name ="select_city">शहर चुनें</string>
+    <string name="select_pincode">पिनकोड चुनें</string>
+    <string name="select_area">क्षेत्र का चयन करें </string>
+    <string name="change_pincode">पिनकोड बदलें</string>
+    <string name="please_select_country_from_list">कृपया सूची से देश चुनें</string>
+    <string name ="please_select_state_from_list">कृपया सूची से राज्य का चयन करें</string>
+    <string name="please_select_city_from_list">कृपया सूची से शहर का चयन करें</string>
+    <string name="please_select_pincode_from_list">कृपया सूची से पिनकोड चुनें</string>
+    <string name="please_select_area_from_list">कृपया सूची से क्षेत्र का चयन करें</string>
+    <string name="continue_with">जारी रखें</string>
+    <string name ="enter_delivery_pincode">डिलीवरी पिनकोड दर्ज करें</string>
+    <string name="enter_pincode">पिनकोड दर्ज करें</string>
+    <string name="status">स्थिति</string>
+    <string name="date">तारीख"</string>
+    <string name="action">कार्य</string>
+    <string name ="invoice_number">चालान संख्या</string>
+    <string name="existing_addresses">मौजूदा पते</string>
+    <string name="deliver_here">यहाँ पहुंचे</string>
+    <string name="delivery_charges">पहुंचाने का शुल्क</string>
+    <string name="choose_payment_option">भुगतान विकल्प का चयन करें</string>
+    <string name ="repayment">चुकौती</string>
+    <string name="payment_status">भुगतान स्थिति</string>
+    <string name="please_give_reason_for_cancellation"> कृपया रद्द करने का कारण दें</string>
+    <string name ="order_status">ऑर्डर की स्थिति</string>
+    <string name="order_placed"> ऑर्डर प्लेस</string>
+    <string name="pending">लंबित</string>
+    <string name="delivered">वितरित</string>
+    <string name="cancelled">रद्द</string>
+    <string name="COD">सीओडी</string>
+    <string name="order_attachment">ऑर्डर अटैचमेंट</string>
+    <string name="order_placed_successfully">ऑर्डर सफलतापूर्वक रखा गया</string>
+    <string name="transaction_number">लेनदेन संख्या</string>
+    <string name ="thank_you_for_placing_order_at">  ऑर्डर देने के लिए धन्यवाद</string>
+    <string name="cancel_reason">रद्द करने का कारण</string>
+
+
+
+    <!--wishlist_labels-->
+    <string name="wishlist_label_id">2</string>
+    <string name="wishlist">विशलिस्ट</string>
+    <string name="clear_wishlist"> साफ विशलिस्ट</string>
+    <string name="empty_wishlist_title">कोई विशलिस्ट उपलब्ध नहीं है</string>
+    <string name="empty_wishlist_description">इच्छा सूची में कोई भी प्रोडक्ट नहीं है</string>
+    <string name="move_to_wishlist">विशलिस्ट की ओर बढें</string>
+
+
+
+
+
+    <!--User_Labels-->
+    <string name="user_label_id">2</string>
+    <string name="enter_password">पासवर्ड दर्ज करें</string>
+    <string name="change_password"> पासवर्ड बदलें</string>
+    <string name="update_profile">प्रोफ़ाइल अपडेट करें</string>
+    <string name="my_addresses">मेरे पते</string>
+    <string name="sign_up_with">इसके साथ साइन अप करें</string>
+    <string name= "or">या</string>
+    <string name="sign_in">साइन इन</string>
+    <string name="sign_up">साइन अप</string>
+    <string name="forgot_password">पासवर्ड भूल गए?</string>
+    <string name="register">रजिस्टर</string>
+    <string name="country"> देश</string>
+    <string name="new_password"> नया पासवर्ड</string>
+    <string name="confirm_password"> पासवर्ड की पुष्टि कीजिये</string>
+    <string name="submit">जमा करें</string>
+    <string name="verification">व्हेरिफिकेशन</string>
+    <string name="otp_verification">ओटीपी व्हेरिफिकेशन </string>
+    <string name= "otp_msg">हमने आपके मोबाइल नंबर पर एसएमएस के माध्यम से एक ओटीपी पर भेजा है</string>
+    <string name="otp">ओटीपी </string>
+    <string name="resend_otp">पुन: भेजें ओटीपी </string>
+    <string name="retry">पुन: प्रयास करें </string>
+    <string name="password_empty">पासवर्ड रिक्त नहीं हो सकता</string>
+    <string name="pincode_empty">पिनकोड रिक्त नहीं हो सकता</string>
+    <string name="review_empty">आपका अभिप्राय रिक्त नहीं हो सकता</string>
+    <string name= "email_empty">ईमेल रिक्त  नहीं हो सकता</string>
+    <string name="dob_empty">जन्म तिथि रिक्त नहीं हो सकती</string>
+    <string name="password_length_should_be_8_characters">पासवर्ड की लंबाई 8 वर्णों का होना चाहिए</string>
+    <string name="address_empty">पता रिक्त नहीं हो सकता</string>
+    <string name="please_enter_GST_number">कृपया जीएसटी नंबर दर्ज करें</string>
+    <string name="description_empty">विवरण रिक्त नहीं हो सकता</string>
+    <string name="name_empty">नाम रिक्त नहीं हो सकता</string>
+    <string name="do_you_want_to_logout">क्या आप लॉगआउट करना चाहते हैं?</string>
+    <string name="continue_as_guest">अतिथि के रूप में जारी रखें</string>
+    <string name="profile"> प्रोफ़ाइल</string>
+    <string name= "dob">जन्म की तारीख</string>
+    <string name="area">क्षेत्र</string>
+    <string name="state">राज्य</string>
+    <string name="city">शहर </string>
+    <string name="business_name">व्यवास्यक नाम </string>
+    <string name="remember_me">मुझे याद रखना </string>
+    <string name= "sign_in_with_your_regular_account">अपने नियमित खाते से साइन इन करें</string>
+    <string name="guest">अतिथि</string>
+    <string name="do_not_have_an_account">क्या आपका कोई खाता नहीं है?</string>
+    <string name="register_now"> अभी पंजीकरण करें</string>
+    <string name="i_read_and_accept_terms_conditions">मैं नियम और शर्तें पढ़ता हूं और स्वीकार करता हूं</string>
+    <string name="send_me_the_newsletter_weekly">मुझे न्यूजलेटर साप्ताहिक भेजें</string>
+    <string name="if_you_have_an_account">यदि आपके पास खाता है?</string>
+
+
+
+
+    <!--Notification Labels-->
+    <string name="notification_label_id">2</string>
+    <string name="empty_notification_title">अभी तक कोई सूचना नहीं</string>
+    <string name="empty_notification_description">आपको जल्द ही सूचना प्राप्त होगी</string>
+
+
+    <!--Gateway labels-->
+    <string name="gateway_label_id">2</string>
+    <string name="payment_options">भुगतान विकल्प</string>
+    <string name="pay_u_money">पे यु मनी</string>
+    <string name="pay_pal">पे पाल</string>
+    <string name="paytm">पेटीएम</string>
+    <string name="mobi_kwik">मोबिक्विक</string>
+    <string name="c_c_avenue">सीसी अवेनुए</string>
+
+
+
+    <!--Complaint labels-->
+    <string name="complaint_label_id">2</string>
+    <string name="add_complaint">शिकायत जोड़ें</string>
+    <string name="select_complaint_type">शिकायत प्रकार चुनें</string>
+    <string name="complaint_description">शिकायत विवरण</string>
+    <string name="do_you_have_any_query">क्या आपके पास कोई प्रश्न है?</string>
+    <string name="complaint_list_empty">शिकायत सूची खाली</string>
+    <string name ="online_payment">ऑनलाइन भुगतान</string>
+    <string name="please_type_your_query">कृपया अपने प्रश्न टाइप करें</string>
+    <string name="please_select_complaint_type">कृपया शिकायत प्रकार चुनें</string>
+    <string name="customer_complaints">ग्राहक की शिकायत</string>
+    <string name="subject">विषय</string>
+    <string name="your_complaints">आपकी शिकायतें</string>
+    <string name="message">संदेश</string>
+
+    <string name="contact_details">संपर्क विवरण</string>
+
+
+
+    <!--Cart labels-->
+    <string name="cart_label_id">2</string>
+    <string name="qty">क्वांटिटी</string>
+    <string name="remove_lower">हटाना</string>
+    <string name="remove_item">वस्तु निकालो</string>
+    <string name="do_you_really_want_remove_this_product">क्या आप वाकई इस उत्पाद को हटाना चाहते हैं?</string>
+    <string name="remove_upper">हटाना</string>
+    <string name="price_details">कीमत विवरण</string>
+    <string name="price">कीमत</string>
+    <string name="items">आइटमस</string>
+    <string name="delivery">डिलीवरी</string>
+    <string name="free">निःशुल्क</string>
+    <string name="total_amount">कुल रकम</string>
+    <string name="you_will_save">आपकी होनेवाली बचत</string>
+    <string name="on_this_order">इस आर्डर पर </string>
+    <string name="cart_secure_msg">सुरक्षित भुगतान आसान रिटर्न 100% प्रामाणिक प्रोडक्ट्स</string>
+    <string name="view_price_details">कीमत तपशील देखें</string>
+    <string name="out_of_stock">स्टॉक ख़त्म</string>
+    <string name="is_available">उपलब्ध है</string>
+    <string name="only">केवल</string>
+    <string name="do_you_have_promocode">क्या आपके पास प्रोमोकोड है</string>
+    <string name="any_special_comment_for_this_order">इस ऑर्डर के लिए कोई विशेष टिप्पणी</string>
+    <string name="update">अद्यतन करे</string>
+    <string name="order_description">आदेश विवरण</string>
+    <string name="view_cart">कार्ट देंखे</string>
+    <string name="add_to_cart">कार्ट में डालें</string>
+    <string name="update_cart">कार्ट अपडेट करें</string>
+    <string name="empty_cart_title">आपकी गाड़ी खाली है!</string>
+    <string name="empty_cart_description">आपकी कार्ट खाली है!</string>
+    <string name="please_enter_quantity">कृपया क्वांटिटी दर्ज करें</string>
+    <string name="edit">संपादित करें</string>
+
+
+
+    <!--Global labels-->
+    <string name="global_label_id">2</string>
+    <string name="continue_shopping">खरीदारी जारी रखें</string>
+    <string name="no_internet_connection">इंटरनेट कनेक्शन नहीं है</string>
+    <string name="please_check_your_internet_connectivity_and_try_again">कृपया अपने इंटरनेट कनेक्टिविटी की जांच करें और फिर से प्रयास करें</string>
+    <string name="back">मागे</string>
+    <string name="cancel">रद्द करे</string>
+    <string name="save">बचत</string>
+    <string name="comming_soon">जल्द आ रहा है</string>
+    <string name="please_enter_valid_quantity">कृपया एक मान्य मात्रा दर्ज करें</string>
+    <string name="choose_file_to_upload">अपलोड करने के लिए फ़ाइल चुनें</string>
+    <string name="please_fill_out_name_field">कृपया नाम फ़ील्ड भरें</string>
+    <string name="please_fill_out_email_field">कृपया ईमेल फ़ील्ड भरें</string>
+    <string name="please_fill_out_delivery_address_field">कृपया वितरण पता फ़ील्ड भरें</string>
+    <string name="please_enter_valid_email">कृपया मान्य ईमेल दर्ज करें</string>
+    <string name="please_enter_valid_mobile_number">कृपया एक मान्य मोबाइल नंबर दर्ज करें </string>
+    <string name="no_any_payment_method_option_are_available">कोई भुगतान विधि विकल्प उपलब्ध नहीं हैं</string>
+    <string name="please_login_first">कृपया पहले लॉगिन करें</string>
+    <string name="please_give_rating">कृपया रेटिंग दें</string>
+    <string name="please_give_review">कृपया समीक्षा दें</string>
+    <string name="message_can_not_be_empty">संदेश रिक्त नहीं हो सकता</string>
+    <string name="see_all_notification">सभी अधिसूचना देखें</string>
+    <string name="registration_successfull">पंजीकरण सफलतापूर्वक</string>
+    <string name="profile_updated_successfully">प्रोफ़ाइल सफलतापूर्वक अपडेट की गई</string>
+    <string name="if_you_have_any_question_quote">यदि आपके कोई प्रश्न हैं या अतिरिक्त जानकारी चाहिए तो कृपया हमारी रचनात्मक सहायता टीम के साथ चैट करें</string>
+    <string name="complaint_number">शिकायत संख्या</string>
+    <string name="complaint_title">शिकायत शीर्षक</string>
+    <string name="created_at_label">पर बनाया गया</string>
+    <string name="updated_at_label">अपडेट किया गया</string>
+    <string name="about">बारे में</string>
+    <string name="disclaimer">अस्वीकरण</string>
+    <string name="quick_links"> क्विक लिंक्स</string>
+    <string name="thank_you_for_contacting_us">हमसे संपर्क करने के लिए धन्यवाद! हम शीघ्र ही आपसे वापस मिलेंगे</string>
+    <string name="search_for_product">उत्पाद खोजें</string>
+    <string name="choose_file"> फ़ाइल चुनें</string>
+    <string name="get_invoice">चालान प्राप्त करें </string>
+    <string name="ordered_on">पर आदेश दिया गया</string>
+    <string name="delivered_on">डिलीवर ऑन</string>
+    <string name="total">कुल</string>
+    <string name="saved">सहेजी गई</string>
+    <string name="adhar_card">आधार कार्ड </string>
+    <string name="food_license">फूड लाइसेंस</string>
+
+
+    <!--Product labels-->
+    <string name="product_label_id">2</string>
+    <string name="latest_products">नवीनतम प्रोडक्ट्स</string>
+    <string name="recently_viewed_products">अभी देखे प्रोडक्ट्स</string>
+    <string name="sort">सॉर्ट</string>
+    <string name="sort_by">इसके अनुसार सॉर्ट करें</string>
+    <string name="newest_first">नवीनतम पहले </string>
+    <string name="ascending_order">चढ़ता क्रम</string>
+    <string name="low_to_high">नीचे से ऊपर तक</string>
+    <string name="high_to_low"> ऊपर से नीचा तक</string>
+    <string name="filter">फ़िल्टर</string>
+    <string name="min">मिन</string>
+    <string name="max">मैक्स</string>
+    <string name="search_by_brand_name">ब्रांड के नाम द्वारा खोजें</string>
+    <string name="select_brands">"ब्रांड्स चुनें</string>
+    <string name="none_selected">कोई भी नहीं चुना गया</string>
+    <string name="selected">चयनित</string>
+    <string name="apply">लागू करें</string>
+    <string name="off">सूट</string>
+    <string name="add_more">अधिक जोड़ें </string>
+    <string name="enter_quantity">क्वांटिटी दर्ज करें</string>
+    <string name="quantity">क्वांटिटी</string>
+    <string name="reviews_and_ratings"> रेविएवस और रेटिंग</string>
+    <string name="similar">समान</string>
+    <string name="highlights">हाइलाइट</string>
+    <string name="ratings_and_reviews">अभिप्राय और रेविएवस</string>
+    <string name="your_rating"> तुम्हारी रेटिंग</string>
+    <string name="rate_and_write_a_review">दर और अभिप्राय लिखें</string>
+    <string name="enter_your_review">अपना अभिप्राय दर्ज करें</string>
+    <string name="add_review">अपना अभिप्राय दर्ज करें</string>
+    <string name="view_all_reviews">सभी अभिप्राय देखें</string>
+    <string name="all_reviews">सभी अभिप्राय</string>
+    <string name="search">खोज</string>
+    <string name="products">प्रोडक्ट्स</string>
+    <string name="similar_products_of">इसी तरह के प्रोडक्ट्स</string>
+    <string name="similar_products">इसी तरह के उत्पादों</string>
+    <string name="available_variations_for">के लिए उपलब्ध विचरण</string>
+    <string name="empty_category_product_title">कोई प्रोडक्ट उपलब्ध नहीं है</string>
+    <string name="empty_category_product_description">कृपया अन्य केटेगरी के लिए जांच करें</string>
+    <string name="no_more_products_available">कोई और प्रोडक्ट्स उपलब्ध नहीं है</string>
+    <string name="max_viewed_products">अधिकतम देखे गए प्रॉडक्ट्स</string>
+    <string name="shop_by_category">केटेगरी के अनुसार खरीदारी</string>
+    <string name="all_categories">सब केटेगरी</string>
+    <string name="buy_now">अभी खरीदें</string>
+    <string name="search_empty_title">क्षमा करें, कोई परिणाम नहीं मिला</string>
+    <string name="search_empty_description">कृपया अलग कीवर्ड खोज से जांच करें</string>
+    <string name="max_viewed">अधिकतम देखा गया</string>
+    <string name="featured_brands">फिचर्ड ब्रॅण्ड्स</string>
+    <string name="write_a_review">एक अभिप्राय लिखे</string>
+    <string name="review">अभिप्राय</string>
+    <string name="product_code"> उत्पाद कोड</string>
+    <string name="availablity">उपलब्धता</string>
+    <string name="stock_in">भंडार में</string>
+    <string name="description">विवरण</string>
+    <string name="specifications">विशेष विवरण</string>
+    <string name="questions_and_answers"> प्रश्न एवं उत्तर </string>
+    <string name="customer_reviews"> ग्राहक समीक्षा</string>
+    <string name="offers_block">ऑफ़र ब्लॉक</string>
+    <string name="image">छवि</string>
+    <string name="stock">भण्डार</string>
+    <string name="product_list">उत्पादन सूची</string>
+    <string name="description_not_available">विवरण इस उत्पाद के लिए उपलब्ध नहीं हैं</string>
+    <string name="detail">विवरण</string>
+    <string name="popular_brands"> लोकप्रिय ब्रांड</string>
+    <string name="coming_soon"> जल्द आ रहा है</string>
+    <string name="quantity_should_be_greater_than_zero">मात्रा शून्य से अधिक होनी चाहिए</string>
+    <string name="quick_view">त्वरित दृश्य</string>
+    <string name="see_product_details">प्रॉडक्ट विवरण देखें</string>
+    <string name="comment">टिप्पणी</string>
+    <string name="username">उपयोगकर्ता नाम</string>
+
+    <!--Wallet labels-->
+    <string name="wallet_label_id">2</string>
+    <string name="transfer">ट्रान्सफर</string>
+    <string name="to">के लिये</string>
+    <string name="send">भेजना</string>
+    <string name="sent">भेज दिया</string>
+    <string name="successfully">सफलतापूर्वक</string>
+    <string name="you_have_successfully_paid">आपने सफलतापूर्वक भुगतान किया है</string>
+    <string name="transaction_id">लेनदेन आईडी</string>
+    <string name="wallet_transfer">वॉलेट ट्रान्सफर</string>
+    <string name="wallet_transfer_confirmation">वॉलेट ट्रान्सफर पुष्टि</string>
+    <string name="wallet_transfer_sucessful">वॉलेट ट्रान्सफर सफलतापूर्वक</string>
+    <string name="transaction_list_empty">लेनदेन की सूची खाली है</string>
+    <string name="wallet_amount">वॉलेट राशि</string>
+    <string name="have_a_promocode_Enter_here">क्या प्रोमो कोड है? यहाँ दर्ज करें</string>
+    <string name="please_enter_amount">कृपया राशि दर्ज करें</string>
+    <string name="enter_amount">राशि दर्ज करें</string>
+    <string name="narration">कथन</string>
+    <string name="mobile_number">मोबाइल नंबर</string>
+    <string name="add">जोड़ना</string>
+    <string name="contact_number_empty">संपर्क नंबर रिक्त नहीं हो सकता</string>
+    <string name="please_enter_a_valid_number">कृपया एक सही संख्या डालिये</string>
+    <string name="transfer_money">पैसे हस्तांतरण</string>
+    <string name="amount">रकम</string>
+    <string name="confirm">पुष्टि करें</string>
+    <string name="total_balance">कुल शेष</string>
+    <string name="add_money">पैसे जमा करे</string>
+    <string name="transaction_history">लेनदेन की जानकारी</string>
+    <string name="description_optional">विवरण (वैकल्पिक)</string>
+    <string name="proceed">आगे बढिये</string>
+    <string name="confirm_payment">भुगतान की पुष्टि करें</string>
+    <string name="proceed_to_pay">भुगतान के लिए कार्रवाई शुरू करो</string>
+    <string name="wallet">वॉलेट</string>
+    <string name="continue_to_pay">भुगतान करने के लिए जारी रखें</string>
+    <string name="cancel_payment">भुगतान रद्द करें</string>
+    <string name="pay_using">का उपयोग करके भुगतान करें</string>
+    <string name="pay_using_wallet">वॉलेट का उपयोग करके भुगतान करें</string>
+    <string name="order_amount">ऑर्डर करने की राशि</string>
+    <string name="pay_without_wallet">वॉलेट के बिना भुगतान करें</string>
+    <string name="place_order_with_wallet">वॉलेट के साथ ऑर्डर करें</string>
+
+
+
+    <!--Promocode labels-->
+    <string name="promocode_label_id">2</string>
+    <string name="add_new">नया प्रोमो कोड जोड़ें</string>
+    <string name="promocode">प्रोमो कोड</string>
+    <string name="have_promocode">Have promocode?</string>
+    <string name="promocode_has_been_expired"> Promocode has been expired</string>
+    <string name="upcomming_promocode">Upcomming promocode</string>
+    <string name="limit_of_promo_code_usage_exceeded">Limit of promocode usage exceeded</string>
+    <string name="this_promocode">This promocode is only valid for first order</string>
+    <string name="sorry_you_are_not_eligible">Sorry, You are not eligible for this promocode</string>
+    <string name="you_have_already_used">You have already used that promocode</string>
+    <string name="invalid_amount">Invalid amount for applied promocode</string>
+    <string name="invalid_promocode">Invalid promocode</string>
+    <string name="your_promocode_discount">Your promocode discount</string>
+    <string name="promocode_applied_successfully">Promocode Applied Successfully..!</string>
+    <string name="connectuswith">हमें कनेक्ट करें</string>
+    <string name="send_message">मेसेज भेजें</string>
+
+
+
+
+    <string name="sellers">सेलर्स</string>
+</resources>

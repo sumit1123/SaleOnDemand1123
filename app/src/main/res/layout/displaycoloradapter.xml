@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_marginLeft="@dimen/dimen_10dp"
+
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/linea"
+        android:background="@drawable/custom_border"
+
+        android:layout_width="70dp"
+        android:layout_height="70dp">
+
+
+        <ImageView
+
+android:background="@drawable/changecolor"
+            android:id="@+id/diplayimageicon"
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+    <com.example.grocery.CustomViews.CustomTextView
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:id="@+id/colorname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        </LinearLayout>
+
+</LinearLayout>

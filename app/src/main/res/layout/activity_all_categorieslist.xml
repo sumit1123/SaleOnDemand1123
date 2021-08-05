@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F1F3"
+    android:orientation="vertical"
+    tools:context="com.example.grocery.Activities.Categories">
+
+    <include
+
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+
+    <include
+
+        android:id="@+id/whiteloader"
+        layout="@layout/whiteloader" />
+
+    <include
+
+        android:id="@+id/noitemavalable"
+        layout="@layout/noitemavalable" />
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reccate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F0F1F3">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

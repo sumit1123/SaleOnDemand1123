@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Top Sliding Banners -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+
+        <RelativeLayout
+            android:id="@+id/sharelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+<RelativeLayout
+    android:layout_alignParentStart="true"
+    android:id="@+id/toolimage"
+    android:padding="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/shareback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/back"
+        android:backgroundTint="#fff" />
+</RelativeLayout>
+
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:layout_toStartOf="@+id/toolnotification"
+                android:layout_toEndOf="@+id/toolimage"
+android:textDirection="locale"
+                android:ellipsize="end"
+               
+                android:id="@+id/titlebar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                android:textColor="#fff"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:id="@+id/toolnotification"
+                android:layout_width="50dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp">
+
+
+
+                <ImageView
+                    android:id="@+id/shareshare"
+                    android:layout_width="20dp"
+                     android:backgroundTint="#fff"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/sharegrey"
+                    />
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true" />
+
+        <com.example.grocery.utils.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="bottom"
+            android:padding="10dip"
+            app:centered="true"
+            app:fillColor="@color/colorPrimary"
+            app:pageColor="@color/grey"
+            app:snap="false" />
+        <include
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader"/>
+        <include
+            android:id="@+id/loaderBlurred"
+            layout="@layout/blurredloader"/>
+    </RelativeLayout>
+
+</LinearLayout>

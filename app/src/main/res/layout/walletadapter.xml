@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <RelativeLayout
+            android:id="@+id/hhh"
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_alignParentStart="true">
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/currencytext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/blackcircleborder"
+                android:gravity="center"
+                android:text="$"
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_toStartOf="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_toEndOf="@+id/hhh"
+            android:orientation="vertical">
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/title"
+               
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ewdsklxz"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ewdsklxz"
+
+                android:textSize="12dp" />
+
+
+            <com.example.grocery.CustomViews.CustomTextView
+               
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:drawablePadding="10dp"
+                android:text="ewdsklxz" />
+
+        </LinearLayout>
+
+
+
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:layout_marginTop="15dp"
+                android:layout_alignParentEnd="true"
+               
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60 rs"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+               />
+
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/amount"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/backgroundfaint"></LinearLayout>
+</LinearLayout>

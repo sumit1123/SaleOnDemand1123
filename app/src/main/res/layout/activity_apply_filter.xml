@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundfaint"
+    android:orientation="vertical"
+    tools:context="com.example.grocery.Activities.ApplyFilter">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/asd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:orientation="horizontal">
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/textMin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:text="@string/min" />
+
+
+                    <me.bendik.simplerangeview.SimpleRangeView
+                        android:id="@+id/rangeSeekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@+id/textMin"
+                        android:layout_toStartOf="@+id/textMax"
+                        app:activeLineThickness="1dp"
+                        app:activeTickColor="@android:color/transparent"
+                        app:activeLineColor="@color/backgroundfaint"
+                        app:activeThumbColor="#A9A9A9"
+                        app:count="5001"
+                        app:end="5001"
+                        app:fixedLineThickness="1dp"
+                        app:lineThickness="1dp"
+                        app:showLabels="false"
+                        app:showTicks="false"
+                        app:start="0" />
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/textMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:text="@string/max" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/minimumText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#000" />
+
+                    <com.example.grocery.CustomViews.CustomTextView
+                        android:id="@+id/maximumText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="5000+"
+                        android:textColor="#000" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:id="@+id/cardbrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/asd"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/select_brands"
+            android:textColor="#000"
+            android:textSize="17dp"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dczx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardbrand"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+
+            <com.example.grocery.CustomViews.CustomEditText
+                android:id="@+id/searchBrands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardbrand"
+                android:layout_gravity="start"
+                android:height="45dp"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/searchicongrey_content"
+                android:hint="@string/search_by_brand_name"
+                android:paddingEnd="@dimen/dimen_10dp"
+                android:paddingStart="10dp"
+                android:textColorHighlight="#fff"
+                android:textColorHint="#d3d3d3"
+                android:textSize="14dp"
+                android:visibility="gone" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/brandvisibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dczx"
+            android:layout_marginBottom="52dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.example.grocery.CustomViews.CustomTextView
+
+                    android:id="@+id/selectBrandText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/asd"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/select_brands"
+                    android:textSize="10dp"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/grey">
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recbrands"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/addbrands"
+                    >
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <com.example.grocery.CustomViews.CustomTextView
+
+                android:id="@+id/selectedbrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/none_selected"
+                android:textColor="#000"
+                android:textSize="15dp" />
+
+            <com.example.grocery.CustomViews.CustomButton
+
+                android:id="@+id/apply"
+                android:layout_width="140dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="7dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/apply"
+                android:textColor="#fff" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp">
+
+        <include
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

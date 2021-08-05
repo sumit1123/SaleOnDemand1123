@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:actionLayout="@layout/actionbar_badge_layout"
+
+        android:id="@+id/search_tool"
+        android:icon="@drawable/searchwhite"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="Cart"/>
+    <item
+        android:actionLayout="@layout/actionbar_badge_layout"
+android:icon="@drawable/notification"
+        android:id="@+id/notification_tool"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="Cart"/>
+    <item
+        android:actionLayout="@layout/actionbar_badge_layout"
+
+        android:id="@+id/cart"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="Cart"/>
+    <item
+        android:id="@+id/profile"
+        android:orderInCategory="100"
+        android:title="Profile"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/wishlist"
+        android:orderInCategory="100"
+        android:title="Wishlist"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/chaangepassword"
+        android:orderInCategory="100"
+        android:title="Change Password"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="100"
+        android:title="Logout"
+        app:showAsAction="never" />
+</menu>

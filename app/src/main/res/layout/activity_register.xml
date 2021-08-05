@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.grocery.Activities.LoginActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:clipToPadding="true"
+        app:layout_scrollFlags="scroll|enterAlways"
+        android:gravity="center"
+        app:titleTextColor="@color/white"
+        android:background="@color/colorPrimary"
+        app:title="     Register"
+        app:popupTheme="@style/ToolbarTheme">
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context="com.example.grocery.Activities.LoginActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            tools:context="com.example.grocery.Activities.LoginActivity">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/profileimage" />
+
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="Shopy"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/tagLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:text="Online Shopping"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <FrameLayout
+                android:id="@+id/buttonlayout"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tagLine">
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/login_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:id="@+id/facebookLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:gravity="end">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:layout_marginRight="5dp"
+
+                            android:background="@drawable/facebookcurvedborder"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true">
+
+                                <com.example.grocery.CustomViews.CustomTextView
+                                    android:id="@+id/facebooktext"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+
+                                    android:gravity="center"
+                                    android:text="Sign up with"
+                                    android:textColor="@color/white" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/dimen_30dp"
+                                    android:layout_height="25dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_toRightOf="@id/facebooktext"
+                                    android:background="@drawable/facebookicon" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/googleSignIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5">
+
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/googlebuttonbackfround"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:gravity="center">
+
+                                <com.example.grocery.CustomViews.CustomTextView
+                                    android:id="@+id/googletext"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+
+                                    android:gravity="center"
+                                    android:text="Sign up with"
+                                    android:textColor="@color/white" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/dimen_30dp"
+                                    android:layout_height="@dimen/dimen_30dp"
+                                    android:layout_toRightOf="@id/googletext"
+                                    android:background="@drawable/googleicon" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/orText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/buttonlayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                 android:text="or"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orText"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:id="@+id/usernamesignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/edittextselector"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/accountloginstart"
+                    android:hint="Name"
+                    android:paddingStart="10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:visibility="gone" />
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:id="@+id/numbersignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/edittextselector"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/mobileiconstart"
+                    android:hint="Mobile Number"
+                    android:inputType="number"
+                    android:paddingStart="10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:visibility="gone" />
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:id="@+id/emailsignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/edittextselector"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/emailiconstart"
+
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/passwordsignuprel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:visibility="gone">
+
+                    <com.example.grocery.CustomViews.CustomEditText
+                        android:id="@+id/passwordsignup"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:background="@drawable/edittextselector"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/passed"
+
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:paddingStart="10dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/eyedrawableold"
+                        android:layout_width="@dimen/dimen_20dp"
+                        android:layout_height="@dimen/dimen_20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        app:srcCompat="@drawable/eye" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/ref"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Do You Have Referrel code?"
+                    android:textSize="13dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/greendark"
+                    android:visibility="gone"/>
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:id="@+id/referrel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:background="@drawable/edittextselector"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/accountloginstart"
+                    android:hint="Refferal ID"
+                    android:paddingStart="10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:visibility="gone" />
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:id="@+id/dateofBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/edittextselector"
+                    android:baselineAligned="false"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/calender"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/birthday"
+                    android:editable="false"
+
+                    android:hint="Date of Birth"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:visibility="gone" />
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:id="@+id/addresssignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/edittextselector"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/addressicon"
+                    android:hint="Address"
+                    android:paddingStart="10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/countrySignUprel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/background_spinner"
+                    android:visibility="gone">
+
+                    <Spinner
+                        android:id="@+id/countrySignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/addressicon"
+                        android:dropDownVerticalOffset="50dp"
+
+                        android:hint="Country"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/stateSignUprel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/background_spinner"
+                    android:visibility="gone">
+
+                    <Spinner
+                        android:id="@+id/stateSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+
+                        android:hint="State"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/citySignUprel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/background_spinner"
+                    android:visibility="gone">
+
+                    <Spinner
+                        android:id="@+id/citySignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:drawablePadding="10dp"
+
+                        android:hint="City"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/pinsignuprel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/background_spinner"
+                    android:visibility="gone">
+
+                    <Spinner
+                        android:id="@+id/pinsignup"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:hint="Pincode"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/areaSignUprel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/background_spinner"
+                    android:visibility="gone">
+
+                    <Spinner
+                        android:id="@+id/areaSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:hint="Pincode"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:id="@+id/gstnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/edittextselector"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/calender"
+                    android:hint="Enter your gst number"
+                    android:inputType="number"
+                    android:paddingStart="10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:visibility="gone" />
+
+                <com.example.grocery.CustomViews.CustomButton
+                    android:id="@+id/registersignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:text="Sign Up"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <com.example.grocery.CustomViews.CustomTextView
+                    android:layout_marginTop="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:id="@+id/registersignin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="10dp"
+                    android:text="Existing User? Sign In"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <com.example.grocery.CustomViews.CustomTextView
+                    android:id="@+id/guest"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Continue as a Guest"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>>
+
+    <include
+        android:id="@+id/loaderBlurred"
+        layout="@layout/blurredloader" />
+
+    <include
+        android:id="@+id/whiteloader"
+        layout="@layout/whiteloader" />
+
+</RelativeLayout>

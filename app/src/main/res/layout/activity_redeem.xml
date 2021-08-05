@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.Redeem">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="@dimen/dimen_15dp"
+        android:layout_marginRight="@dimen/dimen_15dp"
+        android:orientation="vertical">
+
+        <com.example.grocery.CustomViews.CustomEditText
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/linearLayout2"
+            android:layout_gravity="start"
+            android:background="@drawable/edittextselector"
+            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawableStart="@drawable/money"
+            android:gravity="center"
+            android:hint="@string/enter_amount"
+            android:inputType="number"
+            android:paddingStart="@dimen/dimen_10dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+        <com.example.grocery.CustomViews.CustomEditText
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="start"
+            android:background="@drawable/edittextselector"
+            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawableStart="@drawable/redeem_desc"
+            android:hint="Bank Account. OR Google Pay Number"
+            android:paddingStart="10dp"
+            android:textAlignment="viewStart"
+            android:textSize="15dp"
+            tools:ignore="MissingPrefix" />
+        </RelativeLayout>
+
+        <com.example.grocery.CustomViews.CustomButton
+            android:id="@+id/Redeem"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/desc"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/buttonshape"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/redeem"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:layout_marginLeft="120dp"/>
+
+    </LinearLayout>
+    <include
+        android:id="@+id/whiteloader"
+        layout="@layout/whiteloader" />
+
+    <include
+        android:id="@+id/loaderBlurred"
+        layout="@layout/blurredloader" />
+
+
+</RelativeLayout>

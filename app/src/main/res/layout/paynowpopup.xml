@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/calculation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_marginBottom="13dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="@dimen/dimen_10dp"
+    android:layout_marginTop="13dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.grocery.CustomViews.CustomTextView
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/wallet"
+        android:id="@+id/priceDetailsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:drawablePadding="@dimen/dimen_10dp"
+        android:gravity="center"
+        android:text="PRICE DETAILS"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e4e4"></LinearLayout>
+
+    <LinearLayout
+        android:weightSum="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_25dp"
+        android:orientation="horizontal">
+        <com.example.grocery.CustomViews.CustomTextView
+            android:layout_gravity="center"
+            android:gravity="center"
+           
+            android:layout_weight="5"
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/order_amount"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_15dp" />
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:textStyle="bold"
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="5"
+            android:id="@+id/resultamount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="100$"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_25dp"
+        android:orientation="horizontal">
+        <com.example.grocery.CustomViews.CustomTextView
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:lineSpacingExtra="5dp"
+           
+            android:id="@+id/walletAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/wallet_amount"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_15dp" />
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="5"
+            android:id="@+id/wallet_amountnet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="100$"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/toatalpricetobepayed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone">
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:id="@+id/totalPriceText"
+            android:layout_width="wrap_content"
+           
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:text="@string/total_amount_to_be_pay"
+            android:textColor="#000" />
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:id="@+id/totalprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/item_count"
+            android:textColor="#000"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+
+    <com.example.grocery.CustomViews.CustomButton
+        android:stateListAnimator="@null"
+        android:layout_marginEnd="@dimen/dimen_10dp"
+       
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_marginTop="25dp"
+        android:textSize="15dp"
+        android:padding="@dimen/dimen_0dp"
+        android:background="@drawable/buttonshape"
+        android:id="@+id/paywithwallet"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="Pay Now"
+        android:textColor="@color/black" />
+    <com.example.grocery.CustomViews.CustomButton
+        android:stateListAnimator="@null"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:padding="@dimen/dimen_0dp"
+        android:background="@drawable/buttonshape"
+        android:id="@+id/paywithoutwallet"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Pay without wallet"
+        android:textColor="@color/white" />
+    <com.example.grocery.CustomViews.CustomButton
+        android:textSize="15dp"
+android:padding="0dp"
+        android:id="@+id/cancel"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:text="cancel"
+       
+        android:layout_marginEnd="@dimen/dimen_10dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+</LinearLayout>

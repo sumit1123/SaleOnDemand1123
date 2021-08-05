@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.Addmoney">
+    <include
+        android:id="@+id/whiteloader"
+        layout="@layout/whiteloader" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+    <ImageView
+        android:background="@drawable/sharingmoney"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/image"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+    <include
+        android:id="@+id/loaderBlurred"
+        layout="@layout/blurredloader" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mobile"
+     >
+
+        <include
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.grocery.Activities.OnlineSupportActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:background="@drawable/edittextselector"
+                    android:inputType="number"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="start"
+                    android:textAlignment="viewStart"                    android:paddingStart="10dp"
+                    android:drawableStart="@drawable/wallet"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/amountTobeTransfered"
+                    android:textSize="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Amount"/>
+                <com.example.grocery.CustomViews.CustomEditText
+                    android:background="@drawable/edittextselector"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                   
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="start"
+                    android:textAlignment="viewStart"                    android:paddingStart="10dp"
+                    android:drawableStart="@drawable/chatbubbel"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/messege"
+                    android:textSize="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Type messege..."/>
+<com.example.grocery.CustomViews.CustomTextView
+    android:textStyle="bold"
+    android:id="@+id/amounttotal"
+    android:layout_marginTop="10dp"
+android:visibility="gone"
+    android:layout_gravity="center"
+    android:textColor="@color/black"
+    android:textSize="@dimen/dimen_30dp"
+    android:text="$60"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <com.example.grocery.CustomViews.CustomButton
+                        android:id="@+id/transferButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/dimen_20dp"
+                        android:layout_marginRight="@dimen/dimen_20dp"
+
+                        android:background="@drawable/buttonshape"
+                        android:text="Send"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+
+                </LinearLayout>
+
+                <com.example.grocery.CustomViews.CustomButton
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/confirm"
+                    android:layout_width="match_parent"
+                   
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/buttonshape"
+                    android:text="Confirm"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.example.grocery.CustomViews.CustomTextView
+       
+
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/image"
+        android:id="@+id/name"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dimen_20dp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+    <com.example.grocery.CustomViews.CustomTextView
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/name"
+        android:id="@+id/mobile"
+       
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dimen_20dp"
+        android:layout_marginTop="20dp"
+        android:text="7566500977"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+</RelativeLayout>
+

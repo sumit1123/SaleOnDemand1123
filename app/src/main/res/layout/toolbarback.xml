@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    android:weightSum="8">
+
+
+    <LinearLayout
+
+        android:id="@+id/icons"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:id="@+id/toolsearch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:paddingEnd="@dimen/dimen_10dp"
+            android:paddingStart="@dimen/dimen_10dp">
+
+            <ImageView
+                android:id="@+id/searchicon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                app:srcCompat="@drawable/searchwhite" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/toolnotification"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:clickable="true"
+            android:paddingEnd="@dimen/dimen_10dp"
+            android:paddingStart="@dimen/dimen_10dp">
+
+            <ImageView
+                android:id="@+id/notificationicon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                app:srcCompat="@drawable/notificationwhite" />
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/notification_count_textview"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="end"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:visibility="gone"
+                 />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_10dp">
+
+            <!-- Menu Item Image -->
+            <ImageView
+                android:id="@+id/toolcart"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:clickable="false"
+                app:srcCompat="@drawable/cart" />
+
+            <!-- Badge Count -->
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/actionbar_notifcation_textview"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="end"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:visibility="gone"
+            />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/icons">
+
+        <RelativeLayout
+
+            android:id="@+id/toolimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dimen_15dp">
+
+            <ImageView
+                android:id="@+id/backicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/back" />
+        </RelativeLayout>
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:id="@+id/titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/toolimage"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#fff"
+            android:textDirection="locale"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

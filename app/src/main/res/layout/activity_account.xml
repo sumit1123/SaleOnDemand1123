@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.AccountActivity">
+
+    <include
+
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarback" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/toolbar">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backgroundfaint"
+                android:orientation="vertical"
+                tools:context="com.example.grocery.Activities.AccountActivity">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@color/white">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/acccntimmage"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/profileimage" />
+
+
+
+                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/acccntimmage"
+                            android:orientation="vertical"
+                            android:stretchColumns="1">
+
+                        </LinearLayout>
+
+                        <com.example.grocery.CustomViews.CustomTextView
+                            android:id="@+id/acntname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/acccntimmage"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/name"
+                            android:textColor="@color/black"
+                            android:textSize="20dp" />
+
+                        <com.example.grocery.CustomViews.CustomTextView
+                            android:id="@+id/accntnumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/acntname"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/mobile_number"
+                            android:textColor="@color/black" />
+
+                        <com.example.grocery.CustomViews.CustomTextView
+                            android:id="@+id/emailid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/accntnumber"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:text="mohd.afzal16@gmail.com"
+                            android:textColor="@color/black" />
+                        
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="218dp"
+                            android:layout_marginLeft="120dp">
+
+                        <com.example.grocery.CustomViews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/emailid"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/ref_id"
+                            android:textColor="@color/black" />
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/refid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/emailid"
+                                android:layout_centerHorizontal="true"
+                                android:text="2"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/changepassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            app:cardElevation="@dimen/dimen_10dp"
+
+                            app:cardUseCompatPadding="true">
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/changePasswordText"
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingBottom="@dimen/dimen_10dp"
+                                android:paddingTop="@dimen/dimen_10dp"
+                                android:text="@string/change_password"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/editnamenumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            app:cardElevation="@dimen/dimen_10dp"
+                            app:cardUseCompatPadding="true">
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/updateProfileText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/update_profile"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+
+                        <LinearLayout
+                            android:id="@+id/cardorders"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/ordrs"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                app:srcCompat="@drawable/myorders" />
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/myOrderText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/my_orders"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_1dp"
+                            android:background="@color/backgroundfaint">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myaddresses"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/addresses"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                app:srcCompat="@drawable/home" />
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/myaddressesText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/my_addresses"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_1dp"
+                            android:background="@color/backgroundfaint">
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/cardcart"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/cart"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                app:srcCompat="@drawable/cart_default" />
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/myCartText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/my_cart"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_1dp"
+                            android:background="@color/backgroundfaint">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/cardwishlist"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/wishlist"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/wishlist_default" />
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/myWishText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/my_wishlist"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_1dp"
+                            android:background="@color/backgroundfaint">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/cardlogout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.38"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/logout"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                app:srcCompat="@drawable/logoutgrey" />
+
+                            <com.example.grocery.CustomViews.CustomTextView
+                                android:id="@+id/logoutText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/logout"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="55dp">
+
+
+        <include
+            android:id="@+id/whiteloader"
+            layout="@layout/whiteloader" />
+    </RelativeLayout>
+</RelativeLayout>

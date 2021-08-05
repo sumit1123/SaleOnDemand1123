@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.OnlineSupportActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:layout_marginRight="@dimen/dimen_20dp"
+            android:id="@+id/enterQuantityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+
+            android:text="Enter Quantity"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <com.example.grocery.CustomViews.CustomEditText
+            android:padding="@dimen/dimen_10dp"
+            android:id="@+id/quantityadd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:background="@drawable/edittextselector"
+
+            android:gravity="top"
+            android:layout_gravity="start"
+            android:textAlignment="viewStart"
+            android:hint="@string/edittext_hint"
+            android:inputType="number"
+            android:maxLength="5"
+            android:maxLines="2"
+            android:textColorHint="#d3d3d3"
+            android:textSize="15dp"
+             />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.example.grocery.CustomViews.CustomButton
+
+                android:id="@+id/cpcancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+
+
+                android:background="@drawable/custom_border"
+                android:text="cancel"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.example.grocery.CustomViews.CustomButton
+                android:id="@+id/cpupdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+
+                android:background="@drawable/custom_border"
+                android:text="SAVE"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

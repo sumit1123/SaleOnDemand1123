@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.MyAddress">
+    <include
+        layout="@layout/toolbarback"
+        android:id="@+id/toolbar"/>
+    <RelativeLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_height="match_parent">
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/myaddressRecycler"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+</androidx.recyclerview.widget.RecyclerView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <include
+            layout="@layout/whiteloader"
+            android:id="@+id/whiteloader"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_above="@id/addnewAddressText"
+        android:background="@color/backgroundfaint"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1dp"></LinearLayout>
+    <com.example.grocery.CustomViews.CustomTextView
+        android:drawablePadding="@dimen/dimen_10dp"
+        android:layout_centerHorizontal="true"
+        android:drawableEnd="@drawable/location"
+android:fontFamily="@font/roboto"
+        android:id="@+id/addnewAddressText"
+        android:gravity="center"
+        android:padding="@dimen/dimen_10dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:text="Add new Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

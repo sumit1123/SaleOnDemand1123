@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cart"
+    android:layout_width="20dp"
+    android:layout_height="fill_parent"
+    android:layout_gravity="right">
+
+    <!-- Menu Item Image -->
+    <ImageView
+
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:clickable="true" />
+
+    <!-- Badge Count -->
+    <com.example.grocery.CustomViews.CustomTextView
+        android:id="@+id/actionbar_notifcation_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:visibility="gone" />
+
+</RelativeLayout>

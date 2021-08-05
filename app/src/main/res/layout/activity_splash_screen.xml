@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel_layout"
+    android:background="@drawable/learn"
+    tools:context="com.example.grocery.Activities.SplashScreen">
+
+
+    <RelativeLayout
+        android:id="@+id/spalasha"
+        android:layout_width="600dp"
+        android:layout_height="1500dp"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/splash"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/circular_background"
+            android:adjustViewBounds="true" />
+
+
+
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/splash"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:id="@+id/tagLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:textAlignment="center"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/whiteloader"
+        layout="@layout/whiteloader" />
+
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:id="@+id/relativeClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+
+        <com.example.grocery.CustomViews.CustomTextView
+            android:layout_toEndOf="@+id/radioaddress"
+
+            android:textDirection="locale"
+            android:id="@+id/textaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="2704A1 new Adand Nagar Adhartal"
+
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:layout_alignParentStart="true"
+            android:id="@+id/radioaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:clickable="false" />
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:background="@color/silvr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1dp">
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="#fafafa">
+
+    <ProgressBar
+        android:layout_centerInParent="true"
+        android:id="@+id/loadmore_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:background="#d3d3d3"
+                android:textColor="#000"
+                android:text="No More Products Available"
+                android:visibility="gone"
+                android:id="@+id/loadmore_errorlayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+              />
+
+
+
+</RelativeLayout>

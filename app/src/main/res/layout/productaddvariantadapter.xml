@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/curved_border"
+            android:id="@+id/variantlayout"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.example.grocery.CustomViews.CustomTextView
+                android:text="one"
+                android:textAlignment="center"
+               
+                android:textColor="#000"
+                android:textSize="12dp"
+                android:id="@+id/textvariant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:layout_marginStart="15dp"
+                android:text="one"
+                android:textAlignment="center"
+               
+                android:textSize="12dp"
+                android:id="@+id/textvariantpriceactual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.example.grocery.CustomViews.CustomTextView
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"
+                android:text="one"
+               
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="12dp"
+                android:id="@+id/textvariantpriceselling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+<com.example.grocery.CustomViews.CustomTextView
+    android:visibility="gone"
+    android:textColor="@color/errorColor"
+    android:textSize="12dp"
+    android:layout_gravity="center"
+    android:text="Out of stock"
+    android:id="@+id/outofstock"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent" />
+
+    </LinearLayout>
+<LinearLayout
+    android:background="@color/variantRecyclerSeperation"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_1dp">
+
+</LinearLayout>
+</LinearLayout>

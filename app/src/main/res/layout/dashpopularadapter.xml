@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:paddingBottom="5dp"
+        android:orientation="vertical"
+        android:background="@drawable/custom_border"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:scaleType="fitXY"
+        android:id="@+id/productimage"
+        android:layout_width="match_parent"
+        android:layout_height="160dp" />
+    <com.example.grocery.CustomViews.CustomTextView
+        android:layout_marginBottom="5dp"
+        android:maxLines="1"
+        android:layout_gravity="center"
+       
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        android:id="@+id/productname"
+        android:textSize="15dp"
+        android:text="SubCateName"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.example.grocery.CustomViews.CustomTextView
+       
+
+        android:layout_gravity="center"
+        android:textSize="12dp"
+        android:textColor="@color/green"
+        android:text="off"
+        android:id="@+id/off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</LinearLayout>
+

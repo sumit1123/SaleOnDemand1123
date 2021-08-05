@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.grocery.Activities.WalletTransferSucessful">
+    <include
+        layout="@layout/whiteloader"
+        android:id="@+id/whiteloader"/>
+    <include
+        layout="@layout/toolbarback"
+        android:id="@+id/toolbar"/>
+<com.example.grocery.CustomViews.CustomTextView
+    android:layout_below="@+id/toolbar"
+    android:id="@+id/sent"
+   
+    android:textColor="@color/colorPrimary"
+    android:textSize="@dimen/dimen_30dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="@dimen/dimen_20dp"
+    android:text="Sent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+    <com.example.grocery.CustomViews.CustomTextView
+        android:id="@+id/sucessful"
+        android:layout_below="@+id/sent"
+       
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/dimen_30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Sucessfully"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.example.grocery.CustomViews.CustomTextView
+        android:textColor="@color/black"
+        android:id="@+id/txnid"
+        android:layout_below="@+id/sucessful"
+       
+        android:textSize="@dimen/dimen_15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Transaction ID : 2255FF6G66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.example.grocery.CustomViews.CustomTextView
+        android:id="@+id/date"
+        android:layout_below="@+id/txnid"
+        android:textSize="@dimen/dimen_10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="26 feb 20111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/image"
+        android:background="@drawable/check"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/date"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <com.example.grocery.CustomViews.CustomTextView
+        android:textAlignment="center"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:layout_marginStart="@dimen/dimen_20dp"
+       
+        android:textDirection="locale"
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="You have Sucessfully paid $2000 to"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_15dp" />
+    <com.example.grocery.CustomViews.CustomTextView
+        android:textDirection="locale"
+        android:textColor="@color/black"
+       
+        android:id="@+id/name"
+        android:layout_below="@+id/text"
+        android:textSize="@dimen/dimen_15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Afzal Khan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.grocery.CustomViews.CustomButton
+        android:textSize="14dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:id="@+id/home"
+        android:text="HOME"
+       
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+</RelativeLayout>

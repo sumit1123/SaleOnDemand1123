@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/custom_border"
+    android:orientation="vertical"
+    android:adjustViewBounds="true"
+    android:maxHeight="350dp"
+
+    android:minHeight="100dp"
+    android:layout_height="300dp">
+    <RelativeLayout
+        android:adjustViewBounds="true"
+        android:maxHeight="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@color/backgroundfaint"
+            android:id="@+id/layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+        <com.example.grocery.CustomViews.CustomTextView
+
+android:textStyle="bold"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:gravity="center"
+            android:text="Available variations for"
+            android:textColor="@color/silvr"
+            android:textSize="12dp"
+            android:id="@+id/availableVariationforText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.example.grocery.CustomViews.CustomTextView
+            android:textStyle="bold"
+            android:layout_below="@+id/availableVariationforText"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:gravity="center"
+            android:text="Red Color Tshrt"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:id="@+id/productName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/line"
+            android:background="@color/backgroundfaint"
+            android:layout_below="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:paddingBottom="50dp"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="false"
+            android:scrollIndicators="end"
+            android:layout_below="@+id/line"
+            android:id="@+id/productAddRecycler"
+            android:adjustViewBounds="true"
+            android:maxHeight="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <com.example.grocery.CustomViews.CustomButton
+            android:id="@+id/dialogButtonOK"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+           
+
+            android:background="@drawable/checked_bg"
+            android:text="Scroll for more variations"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+</RelativeLayout>

@@ -89,7 +89,7 @@
                         android:layout_centerVertical="true"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginRight="@dimen/dimen_5dp"
+                        android:layout_marginRight="5dp"
                         android:layout_toRightOf="@+id/sellingprice"
                        
                         android:text="actualprice"
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rel1"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="@dimen/dimen_10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:text="1 Offer Aplied, 1 Offer Available > "
                 android:textColor="@color/green"
@@ -132,7 +132,7 @@
                 android:layout_below="@+id/gstvisibility"
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="@dimen/dimen_10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFeatureSettings=""
                 android:text="10 days replacement warranty"
@@ -152,7 +152,7 @@
                 android:layout_height="60dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="@dimen/dimen_40dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginTop="10dp">
 
@@ -185,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginStart="@dimen/dimen_5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp">
 
                     <com.example.grocery.CustomViews.CustomTextView

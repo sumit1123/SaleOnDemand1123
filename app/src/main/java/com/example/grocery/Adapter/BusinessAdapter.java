@@ -89,7 +89,6 @@ public class BusinessAdapter extends RecyclerView.Adapter<BusinessAdapter.InfoHo
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ProductActivity.class);
@@ -101,13 +100,13 @@ public class BusinessAdapter extends RecyclerView.Adapter<BusinessAdapter.InfoHo
                 ApplyFilter.minimumSeekBar = "0";
                 ProductDetails.productid = 0;
                 ProductActivity.sortedid = 0;
-                SellerActivity.sellerid=list.get(position).getSeller_detail_translation_id();
+                SellerActivity.sellerid=list.get(position).getUser_id();
                 ProductActivity.name = buisnessTranslation.getSeller_name();
                 ProductActivity.sucat_id = 0;
                 image = "true";
                 SearchActivity.page_count = 1;
                 context.startActivity(intent);
-              //  Toast.makeText(context, ""+SellerActivity.sellerid, Toast.LENGTH_SHORT).show();
+               //Toast.makeText(context, ""+list.get(position).getUser_id(), Toast.LENGTH_SHORT).show();
 
             }
         });

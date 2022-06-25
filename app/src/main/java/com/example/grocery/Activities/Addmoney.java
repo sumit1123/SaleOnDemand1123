@@ -30,8 +30,6 @@ import com.example.grocery.utils.LoaderColorChanger;
 import com.example.grocery.utils.ResponseHandler;
 import com.example.grocery.utils.ToolbarSettings;
 import com.example.grocery.utils.VolleyTask;
-import com.payumoney.sdkui.ui.activities.PayUmoneyActivity;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,74 +16,72 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-<com.example.grocery.CustomViews.CustomTextView
-    android:layout_marginRight="@dimen/dimen_20dp"
-    android:layout_marginTop="20dp"
-    android:textColor="@color/black"
-    android:text="Enter Delivery Pincode"
-    android:textSize="18dp"
-    android:textStyle="bold"    android:layout_marginLeft="20dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+        <com.example.grocery.CustomViews.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Enter Delivery Pincode"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
 
+        <com.example.grocery.CustomViews.CustomEditText
+            android:id="@+id/etpincode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:layout_gravity="start"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittextselector"
+            android:gravity="top"
+            android:hint="Enter Pincode"
+            android:inputType="number"
+            android:maxLines="2"
+            android:padding="10dp"
+            android:textAlignment="viewStart"
+            android:textSize="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <com.example.grocery.CustomViews.CustomButton
+
+                android:id="@+id/etcancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="5"
 
 
-            <com.example.grocery.CustomViews.CustomEditText
-                android:background="@drawable/edittextselector"
-android:padding="@dimen/dimen_10dp"
-                android:layout_gravity="start"
-               
-                android:textAlignment="viewStart"
-                android:layout_marginTop="10dp"
-                android:gravity="top"
-android:textSize="@dimen/dimen_15dp"
-                android:inputType="number"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/etpincode"
-                android:layout_width="match_parent"
-                android:maxLines="2"
-                android:layout_height="50dp"
-                android:hint="Enter Pincode"
-           />
-<LinearLayout
-    android:layout_marginTop="25dp"
-    android:weightSum="10"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+                android:background="@drawable/custom_border"
+                android:text="cancel"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-    <com.example.grocery.CustomViews.CustomButton
-
-        android:layout_weight="5"
-        android:id="@+id/etcancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-       
+            <com.example.grocery.CustomViews.CustomButton
+                android:id="@+id/etcheck"
 
 
-        android:background="@drawable/custom_border"
-        android:text="cancel"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:background="@drawable/custom_border"
 
-    <com.example.grocery.CustomViews.CustomButton
-        android:background="@drawable/custom_border"
-       
+                android:text="Update"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
 
-        android:layout_weight="5"
-        android:id="@+id/etcheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-
-        android:text="Update"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp" />
-
-</LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

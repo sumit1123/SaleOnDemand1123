@@ -1,6 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.17447916666666666" />
+        <entry key="../../../../.gradle/caches/transforms-2/files-2.1/2c900234cae0fda9eac6577bcf5b371e/jetified-magicretry-1.0.6/res/drawable-v21/ripple_drawable.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable/bg_rounded_button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/chatadaptercurved.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/circlegrey.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/custom_border.xml" value="0.1835" />
+        <entry key="app/src/main/res/drawable/darkborder.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ripple_drawable.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable/selectedvariantbackground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/selectedvariantshort.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/shadowback.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-v11/magicretry_fragment.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_account.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_add_new_complaint.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_addmoney.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_apply_filter.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_cart_products.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_contact__us.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_failure_order.xml" value="0.11822916666666666" />
+        <entry key="app/src/main/res/layout/activity_filter.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.11822916666666666" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_my_addreses.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_my_address.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/activity_my_orders.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/activity_online_support.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/activity_otp_veri_fication.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/activity_password_reset.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/activity_payment_details.xml" value="0.11" />
+        <entry key="app/src/main/res/layout/activity_payment_type.xml" value="0.18125" />
+        <entry key="app/src/main/res/layout/activity_paytm.xml" value="0.1328125" />
+        <entry key="app/src/main/res/layout/activity_product.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/layout/activity_product_display.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_seller.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/activity_seller_details.xml" value="0.129981884057971" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_sub_categories.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_success_order.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_transfer_money.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_wallet.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_wallet_transfer_confirmation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_wallet_transfer_sucessful.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/addquantity.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/layout/addressadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/addreviews.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/allcategoriesadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/app_bar_dashboard.xml" value="0.18125" />
+        <entry key="app/src/main/res/layout/bitmapadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/cartadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/cartadapter_test.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/cartproductadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/cashondeliverypopup.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/change_password_layout.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/changepassword.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/chatadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/cityadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/complaintadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/content_dashboard.xml" value="0.18125" />
+        <entry key="app/src/main/res/layout/custom_toast.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/dashpopularadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/displaycoloradapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/displayimageadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/featuredbrandadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/languageadapter.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/latestproductadapter.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/layout/logout_dialog.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/layout/maxviewedproductsadapter.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/layout/nav_header_dashboard.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/nav_list_view.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/navigationadapter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/new_activity_about_us.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/newaddressadapter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/newaddresspopup.xml" value="0.11875" />
+        <entry key="app/src/main/res/layout/notificationadapter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/offerblockadapter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/orderadapter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/paynowpopup.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/pincodepopup.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/policyadapter.xml" value="0.11458333333333333" />
+        <entry key="app/src/main/res/layout/postremove.xml" value="0.11458333333333333" />
+        <entry key="app/src/main/res/layout/postremoveorder.xml" value="0.11458333333333333" />
+        <entry key="app/src/main/res/layout/productadapter.xml" value="0.27228682170542634" />
+        <entry key="app/src/main/res/layout/productadapterhorizontal.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/productaddquantity.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/productaddvariantadapter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/recentviewadapter.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/layout/reviewadapter.xml" value="0.1203125" />
+        <entry key="app/src/main/res/layout/searchactivitytoolbar.xml" value="0.1203125" />
+        <entry key="app/src/main/res/layout/seller_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/shopbycategoryadapter.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/sorting.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/toolbarback.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/tv.xml" value="0.14635416666666667" />
+        <entry key="app/src/main/res/layout/variantsadapter.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/walletadapter.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/whiteloader.xml" value="0.18125" />
+        <entry key="app/src/main/res/layout/wishlistadapter.xml" value="0.11302083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

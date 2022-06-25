@@ -137,7 +137,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            app:cardElevation="@dimen/dimen_10dp"
+                            app:cardElevation="10dp"
 
                             app:cardUseCompatPadding="true">
 
@@ -147,8 +147,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:paddingBottom="@dimen/dimen_10dp"
-                                android:paddingTop="@dimen/dimen_10dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
                                 android:text="@string/change_password"
                                 android:textColor="@color/black"
                                 android:textSize="15dp" />
@@ -167,7 +167,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            app:cardElevation="@dimen/dimen_10dp"
+                            app:cardElevation="10dp"
                             app:cardUseCompatPadding="true">
 
                             <com.example.grocery.CustomViews.CustomTextView
@@ -212,7 +212,7 @@
                                 android:id="@+id/myOrderText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
                                 android:layout_marginStart="10dp"
                                 android:text="@string/my_orders"
                                 android:textColor="@color/black"
@@ -222,7 +222,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimen_1dp"
+                            android:layout_height="1dp"
                             android:background="@color/backgroundfaint">
 
                         </LinearLayout>
@@ -243,7 +243,7 @@
                                 android:id="@+id/myaddressesText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
                                 android:layout_marginStart="10dp"
                                 android:text="@string/my_addresses"
                                 android:textColor="@color/black"
@@ -253,7 +253,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimen_1dp"
+                            android:layout_height="1dp"
                             android:background="@color/backgroundfaint">
 
                         </LinearLayout>
@@ -275,7 +275,7 @@
                                 android:id="@+id/myCartText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
                                 android:layout_marginStart="10dp"
                                 android:text="@string/my_cart"
                                 android:textColor="@color/black"
@@ -285,7 +285,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimen_1dp"
+                            android:layout_height="1dp"
                             android:background="@color/backgroundfaint">
 
                         </LinearLayout>
@@ -308,7 +308,7 @@
                                 android:id="@+id/myWishText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
                                 android:layout_marginStart="10dp"
                                 android:text="@string/my_wishlist"
                                 android:textColor="@color/black"
@@ -318,7 +318,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimen_1dp"
+                            android:layout_height="1dp"
                             android:background="@color/backgroundfaint">
 
                         </LinearLayout>
@@ -340,7 +340,7 @@
                                 android:id="@+id/logoutText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
                                 android:layout_marginStart="10dp"
                                 android:text="@string/logout"
                                 android:textColor="@color/black"

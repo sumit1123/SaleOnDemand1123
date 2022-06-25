@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center_horizontal"
             android:text="We have sent you an OTP via SMS for mobile number verification"
@@ -82,7 +82,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/dimen_10dp">
+                android:paddingBottom="10dp">
 
                 <com.example.grocery.CustomViews.CustomTextView
                    
@@ -91,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:layout_marginTop="20dp"
                     android:text="enter code here"
                     android:textColor="@color/colorPrimary" />
 
@@ -104,8 +104,8 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/dimen_10dp"
-                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/custom_borderdark"
                     android:gravity="center"
@@ -123,16 +123,16 @@
                     android:layout_gravity="center"
                     android:text="00:21"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/dimen_15dp" />
+                    android:textSize="15dp" />
 
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnotpverify"
-                    android:layout_width="@dimen/dimen_50dp"
-                    android:layout_height="@dimen/dimen_50dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/dimen_20dp"
-                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
                     app:srcCompat="@drawable/rightforward" />
 
                 <com.example.grocery.CustomViews.CustomTextView

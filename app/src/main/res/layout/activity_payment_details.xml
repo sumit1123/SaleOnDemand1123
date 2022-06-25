@@ -261,7 +261,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_1dp"
+                        android:layout_height="1dp"
                         android:layout_marginTop="5dp"
                         android:background="@color/backgroundfaint">
 
@@ -272,9 +272,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="@dimen/dimen_15dp"
-                        android:layout_marginStart="@dimen/dimen_15dp"
-                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
                         android:text="You will save 199 on this order"
                         android:textColor="@color/green" />
 
@@ -282,7 +282,7 @@
                         android:id="@+id/promocodeVisibility"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="@dimen/dimen_1dp">
+                        app:cardElevation="1dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -294,7 +294,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginTop="@dimen/dimen_5dp"
+                                android:layout_marginTop="5dp"
                                 android:textColor="@android:color/holo_red_light"
                                 android:visibility="gone" />
 
@@ -311,12 +311,12 @@
                                     android:layout_height="40dp"
                                     android:layout_alignParentStart="true"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginEnd="@dimen/dimen_10dp"
-                                    android:layout_marginStart="@dimen/dimen_10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginStart="10dp"
                                     android:layout_toStartOf="@+id/etcheck"
                                     android:background="@drawable/edittextselector"
-                                    android:paddingStart="@dimen/dimen_10dp"
-                                    android:textSize="@dimen/dimen_12dp" />
+                                    android:paddingStart="10dp"
+                                    android:textSize="12dp" />
 
                                 <com.example.grocery.CustomViews.CustomButton
                                     android:id="@+id/etcheck"
@@ -325,7 +325,7 @@
                                     android:layout_alignParentEnd="true"
                                     android:layout_centerVertical="true"
                                     android:layout_gravity="center"
-                                    android:layout_marginEnd="@dimen/dimen_10dp"
+                                    android:layout_marginEnd="10dp"
                                     android:background="@drawable/custom_border"
                                     android:text="Add"
                                     android:textColor="@color/colorPrimaryDark"
@@ -427,9 +427,9 @@
                                 android:layout_height="50dp"
                                 android:layout_gravity="start"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
-                                android:layout_marginStart="@dimen/dimen_10dp"
-                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
                                 android:background="@drawable/edittextselector"
                                 android:drawablePadding="10dp"
                                 android:drawableStart="@drawable/accountloginstart"
@@ -440,9 +440,9 @@
                                 android:inputType="textEmailAddress"
                                 android:maxLines="1"
                                 android:nextFocusDown="@+id/card_name_et"
-                                android:paddingStart="@dimen/dimen_10dp"
+                                android:paddingStart="10dp"
                                 android:textAlignment="viewStart"
-                                android:textColor="@color/payumoney_black"
+                                android:textColor="@color/black"
                                 android:textSize="16sp" />
 
 
@@ -452,8 +452,8 @@
                                 android:layout_height="50dp"
                                 android:layout_gravity="start"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
-                                android:layout_marginStart="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
                                 android:background="@drawable/edittextselector"
                                 android:drawablePadding="10dp"
                                 android:drawableStart="@drawable/emailiconstart"
@@ -463,9 +463,9 @@
                                 android:inputType="textEmailAddress"
                                 android:maxLines="1"
                                 android:nextFocusDown="@+id/card_name_et"
-                                android:paddingStart="@dimen/dimen_10dp"
+                                android:paddingStart="10dp"
                                 android:textAlignment="viewStart"
-                                android:textColor="@color/payumoney_black"
+                                android:textColor="@color/black"
                                 android:textSize="16sp" />
 
 
@@ -475,8 +475,8 @@
                                 android:layout_height="50dp"
                                 android:layout_gravity="start"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
-                                android:layout_marginStart="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
                                 android:background="@drawable/edittextselector"
                                 android:drawablePadding="10dp"
                                 android:drawableStart="@drawable/mobileiconstart"
@@ -487,9 +487,9 @@
                                 android:maxLength="10"
                                 android:maxLines="1"
                                 android:nextFocusDown="@+id/card_name_et"
-                                android:paddingStart="@dimen/dimen_10dp"
+                                android:paddingStart="10dp"
                                 android:textAlignment="viewStart"
-                                android:textColor="@color/payumoney_black"
+                                android:textColor="@color/black"
                                 android:textSize="16sp" />
 
                             <RelativeLayout
@@ -503,8 +503,8 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_gravity="start"
-                                    android:layout_marginEnd="@dimen/dimen_10dp"
-                                    android:layout_marginStart="@dimen/dimen_10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginStart="10dp"
                                     android:background="@drawable/edittextselector"
                                     android:drawablePadding="10dp"
                                     android:editable="false"
@@ -515,7 +515,7 @@
                                     android:maxLines="1"
                                     android:paddingStart="41dp"
                                     android:textAlignment="viewStart"
-                                    android:textColor="@color/payumoney_black"
+                                    android:textColor="@color/black"
                                     android:textSize="16sp" />
 
                                 <com.example.grocery.CustomViews.CustomTextView
@@ -526,11 +526,11 @@
                                     android:layout_alignParentStart="true"
                                     android:layout_centerInParent="true"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginBottom="@dimen/dimen_10dp"
+                                    android:layout_marginBottom="10dp"
                                     android:layout_marginStart="20dp"
                                    
                                     android:gravity="center"
-                                    android:paddingTop="@dimen/dimen_0dp"
+                                    android:paddingTop="0dp"
                                     android:text="$"
                                     android:textColor="@color/iconColor"
                                     android:textSize="18dp" />
@@ -543,8 +543,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
-                                android:layout_marginStart="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
                                 android:background="@drawable/edittextselector"
                                 android:drawablePadding="10dp"
                                 android:drawableStart="@drawable/home"
@@ -555,10 +555,10 @@
                                 android:nextFocusDown="@+id/card_name_et"
                                 android:paddingBottom="15dp"
                                 android:paddingEnd="10dp"
-                                android:paddingStart="@dimen/dimen_10dp"
+                                android:paddingStart="10dp"
                                 android:paddingTop="15dp"
                                 android:textAlignment="viewStart"
-                                android:textColor="@color/payumoney_black"
+                                android:textColor="@color/black"
                                 android:textSize="16sp" />
 
                            <com.example.grocery.CustomViews.CustomEditText
@@ -567,8 +567,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
-                                android:layout_marginStart="@dimen/dimen_10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
                                 android:background="@drawable/edittextselector"
                                 android:drawablePadding="10dp"
                                 android:drawableStart="@drawable/comment"
@@ -580,10 +580,10 @@
                                 android:nextFocusDown="@+id/card_name_et"
                                 android:paddingBottom="15dp"
                                 android:paddingEnd="10dp"
-                                android:paddingStart="@dimen/dimen_10dp"
+                                android:paddingStart="10dp"
                                 android:paddingTop="15dp"
                                 android:textAlignment="viewStart"
-                                android:textColor="@color/payumoney_black"
+                                android:textColor="@color/black"
                                 android:textSize="16sp" />
 
                             <Spinner
@@ -591,7 +591,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_gravity="start"
-                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_marginTop="10dp"
                                 android:drawablePadding="10dp"
                                 android:drawableStart="@drawable/addressicon"
                                
@@ -608,7 +608,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_gravity="start"
-                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_marginTop="10dp"
                                 android:drawablePadding="10dp"
                                 android:drawableStart="@drawable/addressicon"
                                
@@ -625,7 +625,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_gravity="start"
-                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_marginTop="10dp"
                                 android:drawablePadding="10dp"
                                 android:drawableStart="@drawable/addressicon"
                                
@@ -642,7 +642,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_gravity="start"
-                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_marginTop="10dp"
                                 android:drawableStart="@drawable/addressicon"
                                
                                 android:hint="Pincode"
@@ -658,7 +658,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_gravity="start"
-                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_marginTop="10dp"
                                 android:drawableStart="@drawable/addressicon"
                                
                                 android:hint="Pincode"
@@ -677,7 +677,7 @@
                                 android:layout_marginTop="20dp"
                                 android:background="@drawable/custom_border"
                                 android:orientation="horizontal"
-                                android:padding="@dimen/dimen_10dp">
+                                android:padding="10dp">
 
                                 <com.example.grocery.CustomViews.CustomTextView
                                     android:id="@+id/selectOtherAddress"
@@ -692,10 +692,10 @@
 
                                 <ImageView
                                     android:id="@+id/location"
-                                    android:layout_width="@dimen/dimen_30dp"
-                                    android:layout_height="@dimen/dimen_30dp"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
                                     android:layout_gravity="center"
-                                    android:layout_marginStart="@dimen/dimen_20dp"
+                                    android:layout_marginStart="20dp"
                                     app:srcCompat="@drawable/location" />
 
                             </LinearLayout>
@@ -714,7 +714,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="@dimen/dimen_25dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/shadow_finaltop"
             android:gravity="center"
             android:orientation="horizontal"

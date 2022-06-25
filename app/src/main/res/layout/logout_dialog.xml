@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <com.example.grocery.CustomViews.CustomTextView
-        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_marginStart="10dp"
         android:id="@+id/dialog_title"
         android:layout_width="wrap_content"
         android:layout_height="50dp"

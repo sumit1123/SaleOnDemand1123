@@ -9,9 +9,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
 
-    app:cardElevation="@dimen/dimen_1dp"
-
-    >
+    app:cardElevation="1dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,8 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginEnd="@dimen/dimen_10dp"
-                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:orientation="vertical">
 
 
@@ -114,8 +112,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="center"
-                                android:layout_marginEnd="@dimen/dimen_5dp"
-                                android:layout_marginStart="@dimen/dimen_5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
                                 android:layout_toRightOf="@+id/sellingprice"
                                
                                 android:text="actualprice"
@@ -191,8 +189,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="end"
-                android:layout_marginEnd="@dimen/dimen_10dp"
-                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:gravity="end">
 
                 <ProgressBar
@@ -231,7 +229,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_marginStart="5dp"
                             android:layout_marginTop="5dp">
 
                             <com.example.grocery.CustomViews.CustomTextView
@@ -292,8 +290,8 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginBottom="16dp"
-                    android:layout_marginEnd="@dimen/dimen_10dp"
-                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="16dp"
                     app:srcCompat="@drawable/wishlist" />
 
@@ -319,8 +317,8 @@
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:layout_marginBottom="16dp"
-                    android:layout_marginEnd="@dimen/dimen_10dp"
-                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="16dp"
                     app:srcCompat="@drawable/deleta" />
 

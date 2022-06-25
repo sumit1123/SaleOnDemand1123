@@ -11,9 +11,7 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbarback" />
 
-
     <RelativeLayout
-
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
 
@@ -49,7 +47,7 @@
                         android:id="@+id/pincodeCardVisibility"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="@dimen/dimen_1dp">
+                        app:cardElevation="1dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -61,13 +59,13 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginBottom="15dp"
                                 android:layout_marginLeft="15dp"
-                                android:layout_marginRight="@dimen/dimen_15dp"
+                                android:layout_marginRight="15dp"
                                 android:layout_marginTop="15dp">
 
                                 <ImageView
                                     android:id="@+id/pincodeImage"
-                                    android:layout_width="@dimen/dimen_20dp"
-                                    android:layout_height="@dimen/dimen_20dp"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
                                     app:srcCompat="@drawable/location" />
 
                                 <com.example.grocery.CustomViews.CustomTextView
@@ -75,7 +73,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="5dp"
-                                    android:layout_marginRight="@dimen/dimen_5dp"
+                                    android:layout_marginRight="5dp"
                                     android:text="@string/pincode"
                                     android:textColor="#000"
                                     android:textSize="14dp" />
@@ -98,7 +96,7 @@
                                 android:layout_alignParentEnd="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_centerVertical="true"
-                                android:layout_marginLeft="@dimen/dimen_15dp"
+                                android:layout_marginLeft="15dp"
                                 android:layout_marginRight="15dp"
                                 android:background="@drawable/darkborder"
 
@@ -130,7 +128,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:background="@color/backgroundfaint"
-                        app:cardElevation="@dimen/dimen_1dp">
+                        app:cardElevation="1dp">
 
 
                     </androidx.recyclerview.widget.RecyclerView>
@@ -142,7 +140,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/reccart"
                         android:layout_marginTop="10dp"
-                        app:cardElevation="@dimen/dimen_1dp">
+                        app:cardElevation="1dp">
 
                         <LinearLayout
 
@@ -306,7 +304,7 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/dimen_1dp"
+                                android:layout_height="1dp"
                                 android:layout_marginTop="5dp"
                                 android:background="@color/backgroundfaint">
 
@@ -317,9 +315,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginEnd="@dimen/dimen_15dp"
-                                android:layout_marginStart="@dimen/dimen_15dp"
-                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="10dp"
                                 android:text="You will save 199 on this order"
                                 android:textColor="@color/green" />
 
@@ -391,8 +389,8 @@
                 android:id="@+id/finaltotal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/dimen_15dp"
-                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:textColor="#000"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -402,8 +400,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/finaltotal"
-                android:layout_marginEnd="@dimen/dimen_15dp"
-                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="10dp" />
 

@@ -93,7 +93,7 @@
             android:layout_below="@+id/total_amount"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="@dimen/dimen_40dp"
+            android:layout_marginLeft="40dp"
             android:layout_toRightOf="@+id/line2">
 
             <ImageView
@@ -121,7 +121,7 @@
         <LinearLayout
             android:id="@+id/line"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_1dp"
+            android:layout_height="1dp"
             android:layout_below="@+id/line2"
             android:layout_marginTop="30dp"
             android:background="@color/backgroundfaint"
@@ -145,7 +145,7 @@
         <LinearLayout
             android:id="@+id/line1"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_1dp"
+            android:layout_height="1dp"
             android:layout_below="@+id/txnDetails"
             android:background="@color/backgroundfaint"
             android:orientation="horizontal">

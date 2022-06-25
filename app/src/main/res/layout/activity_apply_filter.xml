@@ -31,7 +31,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
                     <com.example.grocery.CustomViews.CustomTextView
@@ -40,8 +40,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerInParent="true"
-                        android:layout_marginEnd="@dimen/dimen_10dp"
-                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:text="@string/min" />
 
 
@@ -70,8 +70,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerInParent="true"
-                        android:layout_marginEnd="@dimen/dimen_10dp"
-                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:text="@string/max" />
 
                 </RelativeLayout>
@@ -136,7 +136,7 @@
                 android:background="@android:color/transparent"
                 android:drawableEnd="@drawable/searchicongrey_content"
                 android:hint="@string/search_by_brand_name"
-                android:paddingEnd="@dimen/dimen_10dp"
+                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
                 android:textColorHighlight="#fff"
                 android:textColorHint="#d3d3d3"
@@ -165,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/asd"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/select_brands"
                     android:textSize="10dp"
@@ -173,7 +173,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_height="1dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/grey">
 

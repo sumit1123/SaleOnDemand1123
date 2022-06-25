@@ -59,15 +59,15 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginEnd="@dimen/dimen_15dp"
+                                android:layout_marginEnd="15dp"
                                 android:layout_marginStart="15dp"
                                 android:paddingBottom="10dp"
                                 android:paddingTop="10dp">
 
                                 <ImageView
                                     android:id="@+id/giftImage"
-                                    android:layout_width="@dimen/dimen_20dp"
-                                    android:layout_height="@dimen/dimen_20dp"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
                                     android:layout_gravity="center"
                                     app:srcCompat="@drawable/gift" />
 
@@ -138,7 +138,7 @@
                                 android:layout_alignParentEnd="true"
                                 android:layout_alignParentTop="true"
                                 android:layout_marginEnd="20dp"
-                                android:layout_marginTop="@dimen/dimen_20dp"
+                                android:layout_marginTop="20dp"
                                 android:background="@color/backgroundfaint"
                                 android:visibility="gone"
                                 app:cardUseCompatPadding="true">
@@ -161,11 +161,11 @@
                               android:background="@color/white"
                               android:layout_marginTop="14dp"
                               android:layout_alignParentEnd="true"
-                              android:layout_marginEnd="@dimen/dimen_20dp"
+                              android:layout_marginEnd="20dp"
                               android:layout_marginLeft="260dp"
                               android:text="Return"
                               android:visibility="gone"
-                              android:textSize="@dimen/dimen_10dp"/>
+                              android:textSize="10dp"/>
 
                             <Button
                                 android:id="@+id/replace_item"
@@ -175,11 +175,11 @@
                                 android:background="@color/white"
                                 android:layout_marginTop="14dp"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="@dimen/dimen_20dp"
+                                android:layout_marginEnd="20dp"
                                 android:layout_marginLeft="260dp"
                                 android:text="Return and Replace"
                                 android:visibility="gone"
-                                android:textSize="@dimen/dimen_10dp"/>
+                                android:textSize="10dp"/>
 
 
                             <RelativeLayout
@@ -406,7 +406,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="13dp"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="@dimen/dimen_10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="13dp"
                                 android:text="SHIPPING DETAILS"
                                 android:textSize="11dp" />
@@ -424,7 +424,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="@dimen/dimen_10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="10dp"
                                 android:textColor="#000"
                                 android:textSize="13dp" />
@@ -448,7 +448,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="@dimen/dimen_10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="2dp"
                                 android:textColor="#000"
                                 android:textSize="13dp" />
@@ -460,7 +460,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="@dimen/dimen_10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="5dp"
                                 android:textColor="#000"
                                 android:textSize="13dp" />
@@ -472,7 +472,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="@dimen/dimen_10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="2dp"
                                 android:textColor="#000"
                                 android:textSize="13dp" />
@@ -483,7 +483,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="@dimen/dimen_10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="2dp"
                                 android:textColor="#000"
                                 android:textSize="13dp" />
@@ -512,7 +512,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="13dp"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="@dimen/dimen_10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="13dp"
                                 android:text="PRICE DETAILS"
                                 android:textSize="11dp" />
@@ -619,7 +619,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_marginRight="@dimen/dimen_10dp"
+                                    android:layout_marginRight="10dp"
                                     android:text="Total Price"
                                     android:textColor="#000" />
 
@@ -653,7 +653,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="13dp"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_marginRight="@dimen/dimen_15dp"
+                                    android:layout_marginRight="15dp"
                                     android:layout_marginTop="13dp"
                                     android:text="Payment Mode : Cash on delivery"
                                     android:textColor="#000"

@@ -23,7 +23,7 @@
            
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="@dimen/dimen_20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
             android:text="Rate And Write A Review"
             android:textColor="@color/black"
@@ -47,10 +47,10 @@
                 android:layout_gravity="center"
                 android:text="Your Rating"
                 android:textColor="@color/black"
-                android:textSize="@dimen/dimen_15dp" />
+                android:textSize="15dp" />
 
             <com.willy.ratingbar.ScaleRatingBar
-                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/ratingBar"
                 style="@style/Base.Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
 
         <com.example.grocery.CustomViews.CustomEditText
             android:id="@+id/reviewDescription"
-            android:padding="@dimen/dimen_10dp"
+            android:padding="10dp"
             android:background="@drawable/edittextselector"
            
 
@@ -76,7 +76,7 @@
             android:layout_gravity="start"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="@dimen/dimen_30dp"
+            android:layout_marginTop="30dp"
             android:gravity="start"
 
 
@@ -91,10 +91,10 @@
 
       </androidx.recyclerview.widget.RecyclerView>
 <com.example.grocery.CustomViews.CustomButton
-    android:layout_marginTop="@dimen/dimen_10dp"
+    android:layout_marginTop="10dp"
     android:visibility="gone"
-    android:paddingEnd="@dimen/dimen_10dp"
-    android:paddingStart="@dimen/dimen_10dp"
+    android:paddingEnd="10dp"
+    android:paddingStart="10dp"
     android:textSize="12dp"
     android:layout_gravity="center"
     android:textColor="@color/black"

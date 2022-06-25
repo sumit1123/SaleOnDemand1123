@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -119,7 +120,6 @@ public class SellerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SellerActivity.this, CartActivity.class);
-
                 startActivity(intent);
             }
         });
@@ -182,6 +182,7 @@ public class SellerActivity extends AppCompatActivity {
             jsonObject.put("token","");
             jsonObject.put("language_id", languageid);
 
+            Log.v("jsonobjhhhhhhhhhhhh==",""+jsonObject);
         } catch (JSONException e) {
             e.printStackTrace();
         }

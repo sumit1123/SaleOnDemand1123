@@ -19,7 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="@dimen/dimen_10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:text="OrderId"
                 android:textColor="#000"
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="@dimen/dimen_10dp"
+                android:layout_marginRight="10dp"
                 android:text="1500"
                 android:textColor="#000"
                 android:textSize="15dp" />
@@ -58,7 +58,7 @@
                     android:layout_height="10dp"
                     android:layout_gravity="bottom"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/circlebackground" />
 
                 <com.example.grocery.CustomViews.CustomTextView

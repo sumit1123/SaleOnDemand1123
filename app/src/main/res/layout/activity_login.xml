@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/appName"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginTop="5dp"
             android:text="Tagline"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -126,7 +126,7 @@
                                 android:textColor="@color/white" />
 
                             <ImageView
-                                android:layout_width="@dimen/dimen_30dp"
+                                android:layout_width="30dp"
                                 android:layout_height="25dp"
                                 android:layout_marginBottom="5dp"
                                 android:layout_toRightOf="@id/facebooktext"
@@ -168,8 +168,8 @@
                                 android:textColor="@color/white" />
 
                             <ImageView
-                                android:layout_width="@dimen/dimen_30dp"
-                                android:layout_height="@dimen/dimen_30dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
                                 android:background="@drawable/googleicon" />
                         </LinearLayout>
                     </RelativeLayout>
@@ -197,8 +197,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/or"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="@dimen/dimen_15dp"
-            android:layout_marginRight="@dimen/dimen_15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
 
@@ -210,12 +210,12 @@
                 android:layout_below="@+id/or"
                 android:layout_gravity="start"
                 android:background="@drawable/edittextselector"
-                android:drawablePadding="@dimen/dimen_10dp"
+                android:drawablePadding="10dp"
                 android:drawableStart="@drawable/accountloginstart"
                 android:gravity="center"
                 android:hint="Email/Mobile no."
                 android:inputType="textEmailAddress"
-                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingStart="10dp"
                 android:textAlignment="viewStart"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -231,7 +231,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="start"
                     android:background="@drawable/edittextselector"
-                    android:drawablePadding="@dimen/dimen_10dp"
+                    android:drawablePadding="10dp"
                     android:drawableStart="@drawable/passed"
                     android:hint="@string/password"
                     android:inputType="textPassword"
@@ -242,12 +242,12 @@
 
                 <ImageView
                     android:id="@+id/eyedrawableold"
-                    android:layout_width="@dimen/dimen_20dp"
-                    android:layout_height="@dimen/dimen_20dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginEnd="10dp"
                     app:srcCompat="@drawable/eye" />
             </RelativeLayout>
 
@@ -301,9 +301,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/dimen_10dp"
-                android:layout_marginTop="@dimen/dimen_20dp"
-                android:padding="@dimen/dimen_10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
                 android:textSize="14sp"
             android:text="@string/forgot_password" />
 

@@ -9,18 +9,16 @@ import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.util.Log;
-
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.example.grocery.Activities.ProductDetails;
 import com.example.grocery.R;
 import com.example.grocery.utils.Config;
 import com.example.grocery.utils.NotificationUtils;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
@@ -34,6 +32,21 @@ private static final String TAG = "MessagingService";
     private NotificationUtils notificationUtils;
     private SharedPreferences labelsShared;
     private String class_name;
+
+    @Override
+    public void onNewToken(@NonNull String token) {
+        super.onNewToken(token);
+        storeRegIdInPref(token);
+    }
+
+    private void storeRegIdInPref(String token) {
+        SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("regId", token);
+        editor.commit();
+        Log.i(TAG, "TOKENSTORED");
+
+    }
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {

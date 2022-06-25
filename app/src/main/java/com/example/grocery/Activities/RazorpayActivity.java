@@ -12,13 +12,11 @@ import com.example.grocery.R;
 import com.example.grocery.paymentpackage.AppPreference;
 import com.example.grocery.utils.LoaderColorChanger;
 import com.example.grocery.utils.ToolbarSettings;
-import com.payumoney.core.PayUmoneySdkInitializer;
-
 import org.json.JSONObject;
 
 public class RazorpayActivity extends AppCompatActivity {
     private AppPreference mAppPreference;
-    private PayUmoneySdkInitializer.PaymentParam mPaymentParams;
+   // private PayUmoneySdkInitializer.PaymentParam mPaymentParams;
     private JSONObject jsonObject;
     public static String name;
     public static String pin;

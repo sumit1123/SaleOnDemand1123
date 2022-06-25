@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_marginStart="@dimen/dimen_8dp"
-    android:layout_marginEnd="@dimen/dimen_8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="vertical">
@@ -82,7 +82,7 @@
             android:layout_height="80dp"
             android:layout_alignParentTop="true"
             android:layout_marginBottom="5dp"
-            android:layout_marginEnd="@dimen/dimen_20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp">
 
@@ -107,8 +107,8 @@
 
                     <ImageView
                         android:id="@+id/wishlistImage"
-                        android:layout_width="@dimen/dimen_15dp"
-                        android:layout_height="@dimen/dimen_15dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/wishlist" />
 
@@ -136,7 +136,7 @@
             android:orientation="vertical">
 
             <com.example.grocery.CustomViews.CustomTextView
-                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginEnd="10dp"
                 android:id="@+id/productname"
                 android:layout_width="wrap_content"
 
@@ -175,17 +175,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginEnd="10dp"
                     android:background="@drawable/darkborderbold"
                     android:drawableEnd="@drawable/dropdownend"
                     android:ellipsize="end"
                     android:gravity="start"
                     android:maxLines="1"
-                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:paddingBottom="5dp"
 
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
-                    android:paddingTop="@dimen/dimen_5dp"
+                    android:paddingTop="5dp"
                     android:text="Tag1"
                     android:textDirection="locale"
                     android:textSize="13dp" />
@@ -218,7 +218,7 @@
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginRight="@dimen/dimen_5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_toRightOf="@+id/sellingprice"
                     android:text="actualprice"
                     android:textColor="#A9A9A9"
@@ -296,7 +296,7 @@
                         <com.willy.ratingbar.ScaleRatingBar
                             android:id="@+id/raingbar"
                             android:layout_gravity="center"
-                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginStart="10dp"
                             style="@style/Base.Widget.AppCompat.RatingBar.Small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -305,8 +305,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
-                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
                             android:text="(2,875)"
 
                             android:textColor="#A9A9A9"
@@ -322,9 +322,9 @@
                         android:layout_alignParentEnd="true"
                         android:layout_gravity="end"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:layout_marginRight="@dimen/dimen_10dp"
-                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
                         android:background="@drawable/darkborder"
                         android:elevation="0dp"
                         android:gravity="center"
@@ -342,7 +342,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:layout_marginTop="5dp"
 
                         android:background="@drawable/darkborder"
                         android:orientation="horizontal"

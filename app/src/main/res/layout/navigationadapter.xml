@@ -15,7 +15,7 @@
             android:layout_height="20dp"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
-            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/iconColor"
             app:srcCompat="@drawable/right" />
 
@@ -24,7 +24,7 @@
             android:id="@+id/atom"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginStart="10dp"
            
             android:gravity="center"
             android:text="Order History"

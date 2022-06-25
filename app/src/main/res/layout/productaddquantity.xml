@@ -1,74 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/custom_border"
-    android:orientation="vertical"
+    android:layout_height="300dp"
     android:adjustViewBounds="true"
+    android:background="@drawable/custom_border"
     android:maxHeight="350dp"
 
     android:minHeight="100dp"
-    android:layout_height="300dp">
+    android:orientation="vertical">
+
     <RelativeLayout
-        android:adjustViewBounds="true"
-        android:maxHeight="300dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxHeight="300dp">
 
         <LinearLayout
-            android:background="@color/backgroundfaint"
             android:id="@+id/layout"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-
-        <com.example.grocery.CustomViews.CustomTextView
-
-android:textStyle="bold"
-            android:layout_marginRight="@dimen/dimen_10dp"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:layout_marginBottom="@dimen/dimen_10dp"
-            android:gravity="center"
-            android:text="Available variations for"
-            android:textColor="@color/silvr"
-            android:textSize="12dp"
-            android:id="@+id/availableVariationforText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <com.example.grocery.CustomViews.CustomTextView
-            android:textStyle="bold"
-            android:layout_below="@+id/availableVariationforText"
-            android:layout_marginRight="@dimen/dimen_10dp"
-            android:layout_marginBottom="@dimen/dimen_10dp"
-            android:gravity="center"
-            android:text="Red Color Tshrt"
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:id="@+id/productName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:id="@+id/line"
+            android:layout_height="wrap_content"
             android:background="@color/backgroundfaint"
-            android:layout_below="@+id/layout"
+            android:orientation="vertical">
+
+
+            <com.example.grocery.CustomViews.CustomTextView
+
+                android:id="@+id/availableVariationforText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Available variations for"
+                android:textColor="@color/silvr"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <com.example.grocery.CustomViews.CustomTextView
+                android:id="@+id/productName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/availableVariationforText"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Red Color Tshrt"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line"
             android:layout_width="match_parent"
-            android:layout_height="1dp">
+            android:layout_height="1dp"
+            android:layout_below="@+id/layout"
+            android:background="@color/backgroundfaint"
+            android:orientation="vertical">
 
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
-            android:paddingBottom="50dp"
-            android:scrollbars="vertical"
-            android:fadeScrollbars="false"
-            android:scrollIndicators="end"
-            android:layout_below="@+id/line"
             android:id="@+id/productAddRecycler"
-            android:adjustViewBounds="true"
-            android:maxHeight="300dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:adjustViewBounds="true"
+            android:fadeScrollbars="false"
+            android:maxHeight="300dp"
+            android:paddingBottom="50dp"
+            android:scrollIndicators="end"
+            android:scrollbars="vertical">
 
 
         </androidx.recyclerview.widget.RecyclerView>
@@ -77,13 +80,12 @@ android:textStyle="bold"
     </RelativeLayout>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="20dp"
-        android:weightSum="2"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:weightSum="2">
 
 
         <com.example.grocery.CustomViews.CustomButton
@@ -92,7 +94,7 @@ android:textStyle="bold"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-           
+
 
             android:background="@drawable/checked_bg"
             android:text="Scroll for more variations"

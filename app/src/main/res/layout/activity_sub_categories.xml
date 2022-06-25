@@ -49,7 +49,7 @@
     <com.example.grocery.CustomViews.CustomButton
         android:id="@+id/continueshopping"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_marginTop="20dp"
         android:textColor="#fff"
         android:text="Continue Shopping"
         android:background="@color/colorPrimary"

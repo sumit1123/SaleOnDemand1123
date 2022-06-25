@@ -10,7 +10,7 @@
           android:id="@+id/cancelOrderText"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
         android:text="@string/cancel_order"
         android:textColor="@color/black"
@@ -20,10 +20,10 @@
        
 
         android:textColor="@color/black"
-        android:textSize="@dimen/dimen_15dp"
+        android:textSize="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginRight="10dp"
         android:id="@+id/cabncelOrderDescription"
         android:text="Are you sure to cancel this order?"
         android:layout_below="@+id/text"

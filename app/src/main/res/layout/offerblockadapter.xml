@@ -5,7 +5,7 @@
     app:cardCornerRadius="3dp"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginBottom="@dimen/dimen_10dp"
+    android:layout_marginBottom="10dp"
     android:layout_height="wrap_content">
 <ImageView
     android:id="@+id/offerBlockImage"

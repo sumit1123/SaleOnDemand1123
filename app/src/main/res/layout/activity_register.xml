@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/appName"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginTop="5dp"
                 android:text="Online Shopping"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -108,7 +108,7 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:layout_marginLeft="10dp"
                             android:layout_marginRight="5dp"
 
                             android:background="@drawable/facebookcurvedborder"
@@ -133,7 +133,7 @@
                                     android:textColor="@color/white" />
 
                                 <ImageView
-                                    android:layout_width="@dimen/dimen_30dp"
+                                    android:layout_width="30dp"
                                     android:layout_height="25dp"
                                     android:layout_marginBottom="5dp"
                                     android:layout_toRightOf="@id/facebooktext"
@@ -176,8 +176,8 @@
                                     android:textColor="@color/white" />
 
                                 <ImageView
-                                    android:layout_width="@dimen/dimen_30dp"
-                                    android:layout_height="@dimen/dimen_30dp"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
                                     android:layout_toRightOf="@id/googletext"
                                     android:background="@drawable/googleicon" />
                             </LinearLayout>
@@ -218,7 +218,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="start"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edittextselector"
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/accountloginstart"
@@ -234,7 +234,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="start"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edittextselector"
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/mobileiconstart"
@@ -251,7 +251,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="start"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edittextselector"
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/emailiconstart"
@@ -267,8 +267,8 @@
                 <RelativeLayout
                     android:id="@+id/passwordsignuprel"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_50dp"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
                     android:visibility="gone">
 
                     <com.example.grocery.CustomViews.CustomEditText
@@ -290,12 +290,12 @@
 
                     <ImageView
                         android:id="@+id/eyedrawableold"
-                        android:layout_width="@dimen/dimen_20dp"
-                        android:layout_height="@dimen/dimen_20dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_gravity="end"
-                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:layout_marginEnd="10dp"
                         app:srcCompat="@drawable/eye" />
                 </RelativeLayout>
 
@@ -329,7 +329,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="start"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edittextselector"
                     android:baselineAligned="false"
                     android:clickable="true"
@@ -351,7 +351,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="start"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edittextselector"
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/addressicon"
@@ -366,7 +366,7 @@
                     android:id="@+id/countrySignUprel"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/background_spinner"
                     android:visibility="gone">
 
@@ -392,7 +392,7 @@
                     android:id="@+id/stateSignUprel"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/background_spinner"
                     android:visibility="gone">
 
@@ -415,7 +415,7 @@
                     android:id="@+id/citySignUprel"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/background_spinner"
                     android:visibility="gone">
 
@@ -439,7 +439,7 @@
                     android:id="@+id/pinsignuprel"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/background_spinner"
                     android:visibility="gone">
 
@@ -461,7 +461,7 @@
                     android:id="@+id/areaSignUprel"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/background_spinner"
                     android:visibility="gone">
 
@@ -484,7 +484,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="start"
-                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edittextselector"
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/calender"
@@ -527,7 +527,7 @@
 
                 <com.example.grocery.CustomViews.CustomTextView
                     android:id="@+id/guest"
-                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:layout_marginTop="20dp"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"

@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.example.grocery.CustomViews.CustomTextView
-            android:layout_marginRight="@dimen/dimen_20dp"
+            android:layout_marginRight="20dp"
             android:id="@+id/enterQuantityText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:textStyle="bold" />
 
         <com.example.grocery.CustomViews.CustomEditText
-            android:padding="@dimen/dimen_10dp"
+            android:padding="10dp"
             android:id="@+id/quantityadd"
             android:layout_width="match_parent"
             android:layout_height="40dp"

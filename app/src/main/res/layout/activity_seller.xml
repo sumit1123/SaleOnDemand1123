@@ -32,7 +32,7 @@
                 android:id="@+id/recmyorder"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/dimen_10dp">
+                android:layout_marginBottom="10dp">
 
             </androidx.recyclerview.widget.RecyclerView>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

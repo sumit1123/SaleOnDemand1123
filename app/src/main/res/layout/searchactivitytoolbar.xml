@@ -34,7 +34,6 @@
 
             </RelativeLayout>
 
-
             <RelativeLayout
                 android:id="@+id/toolmic"
                 android:layout_width="wrap_content"
@@ -78,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="@dimen/dimen_5dp">
+                android:layout_marginEnd="5dp">
 
                 <ImageView
                     android:id="@+id/cancel1"
@@ -86,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_toEndOf="@+id/inputSearch"
-                    android:padding="@dimen/dimen_5dp"
+                    android:padding="5dp"
                     app:srcCompat="@drawable/close" />
 
                 <RelativeLayout

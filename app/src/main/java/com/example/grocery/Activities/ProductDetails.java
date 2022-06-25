@@ -79,6 +79,7 @@ import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.lang.reflect.Field;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -190,7 +191,7 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
     private BitmapAdapter bitmapAdapter;
     private ArrayList<BitmapModel> bitmapModels;
     private TextView toolBarTitle;
-
+    int selected_position_parent_varient = 0;
 
 
     @Override
@@ -361,7 +362,6 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
                 // Refresh items
                 hideloading = true;
                 getData();
@@ -490,12 +490,11 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
         });
     }
 
-    private void loadParentVariant(final JSONArray jsonArray2) {
+    private void loadParentVariant(final JSONArray parent_varient_array) {
         Gson gson = new Gson();
-        final List<ParentVariantModel> list = Arrays.asList(gson.fromJson(jsonArray2.toString(), ParentVariantModel[].class));
+        final List<ParentVariantModel> parent_varient_list = Arrays.asList(gson.fromJson(parent_varient_array.toString(), ParentVariantModel[].class));
         final TagFlowLayout recyclerView1 = (TagFlowLayout) findViewById(R.id.recsize);
         isLeftToRight = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR;
-
         if (!isLeftToRight) {
             recyclerView1.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
         } else {
@@ -503,42 +502,37 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
 
         }
         final LayoutInflater mInflater = LayoutInflater.from(this);
-        recyclerView1.setAdapter(new TagAdapter<ParentVariantModel>(list) {
+        recyclerView1.setAdapter(new TagAdapter<ParentVariantModel>(parent_varient_list) {
 
             public ParentVariantModel.ParentVariantTranslationBean tanslationBean;
 
             @Override
             public View getView(FlowLayout parent, final int position, ParentVariantModel parentVariantModel) {
-                tv = (TextView) mInflater.inflate(R.layout.tv,
-                        recyclerView1, false);
-                System.out.println("ewwwwwww" + parentVariantId);
+                tv = (TextView) mInflater.inflate(R.layout.tv, recyclerView1, false);
                 final Gson gson = new Gson();
-                final ParentVariantModel productModel = list.get(position);
-                String jsonString = gson.toJson(productModel.getParent_variant_translation());
-                System.out.println("zdnfjc" + jsonString);
-
+                ParentVariantModel variantOptionModel2 = (ParentVariantModel) parent_varient_list.get(position);
+                String jsonString = gson.toJson(variantOptionModel2.getParent_variant_translation());
                 if (jsonString.equals("null")) {
-
-                    jsonString = gson.toJson(productModel.getDefault_parent_variant_translation());
-                    System.out.println("zdnfjc" + jsonString);
+                    ParentVariantModel variantOptionModel = (ParentVariantModel) parent_varient_list.get(position);
+                    jsonString = gson.toJson(variantOptionModel.getDefault_parent_variant_translation());
+                  //  tv.setText(tanslationBean.getParent_variant_name());
                 }
-                tanslationBean = gson.fromJson(jsonString,
-                        ParentVariantModel.ParentVariantTranslationBean.class);
+                this.tanslationBean = (ParentVariantModel.ParentVariantTranslationBean) gson.fromJson(jsonString, ParentVariantModel.ParentVariantTranslationBean.class);
                 if (parentVariantModel.getParent_variant_id() == parentVariantId) {
                     GradientDrawable drawable = (GradientDrawable) ProductDetails.this.getResources().getDrawable(selectedborder);
                     drawable.setStroke(3, Color.parseColor("#" + Appearance.appSettings.getText_color()));
                     tv.setBackgroundDrawable(ProductDetails.this.getResources().getDrawable(R.drawable.selectedborder));
                 } else {
-                    tv.setBackgroundDrawable(ProductDetails.this.getResources().getDrawable(R.drawable.custom_border));
+                     tv.setBackgroundDrawable(ProductDetails.this.getResources().getDrawable(R.drawable.custom_border));
                 }
-               // tv.setText(tanslationBean.getParent_variant_name());
 
+                tv.setText(tanslationBean.getParent_variant_name());
                 recyclerView1.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
                     @Override
                     public boolean onTagClick(View view, int position, FlowLayout parent) {
-                        if (parentVariantId != list.get(position).getParent_variant_id()) {
-                            parentVariantId = list.get(position).getParent_variant_id();
-
+                        selected_position_parent_varient = position;
+                        if (parentVariantId != parent_varient_list.get(position).getParent_variant_id()) {
+                            parentVariantId = parent_varient_list.get(position).getParent_variant_id();
                             recyclerView1.getAdapter().notifyDataChanged();
                             sku_id = 0;
                             whiteLoader = 0;
@@ -654,8 +648,6 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
         addtoCartButton.setOnClickListener(this);
         addReview.setOnClickListener(this);
         viewAllReviews.setOnClickListener(this);
-
-
     }
 
     private void initui() {
@@ -692,8 +684,6 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
 
 
     public void getData() {
-
-
         if (whiteLoader == 1) {
             if (!hideloading) {
                 findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
@@ -715,10 +705,6 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
         String languageid = prefs.getString("language", String.valueOf(1));
 
         boolean checkConnection = new ApplicationUtility().checkConnection(this);
-        System.out.println("sdnj" + !checkConnection);
-        System.out.println("conn" + checkConnection);
-        System.out.println("connection on");
-        System.out.println("sfedcw" + userid);
         final JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("business_id",IConstants.BUSINESS_ID);
@@ -726,33 +712,22 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
             jsonObject.put("password", pwda);
             jsonObject.put("product_id", productid);
             jsonObject.put("sku_id", sku_id);
-            jsonObject.put("parent_variant_id", 1);
-            jsonObject.put("child_variant_id", 1);
+            jsonObject.put("parent_variant_id", parentVariantId);
+            jsonObject.put("child_variant_id", childVariantId);
             jsonObject.put("language_id", languageid);
             jsonObject.put("notification_id",NotificationActivity.noti_id);
-            Log.i("AAAAid", ""+jsonObject.toString());
-            Log.i("AAAAidpassword", pwda);
-            Log.i("AAAAidproduct_id", productid + "");
-            Log.i("AAAAidsku_id", sku_id + "");
-            Log.i("AAAAidparent_variant_id", "" + parentVariantId);
-            Log.i("AAAAidchild_variant_id", "" + childVariantId);
-            Log.i("AAAAidlanguage_id", languageid);
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        System.out.println("dswq2ws" + jsonObject);
         VolleyTask volleyTask = new VolleyTask(this, URL_PRODUCTDETAILS, jsonObject, Request.Method.POST);
         volleyTask.setListener(new VolleyTask.IPostTaskListener() {
             @Override
             public void fnPostTaskCompleted(JSONArray response) {
 
             }
-
             @Override
             public void fnPostTaskCompletedJsonObject(JSONObject response) {
-                System.out.println("hhhs" + response.toString());
+                Log.e("Product response:" ,  response.toString());
                 findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
                 refreshLayout.setRefreshing(false);
                 if (!new ResponseHandler().validateResponse(ProductDetails.this, response)) {
@@ -764,30 +739,28 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                     JSONObject childVariantObject = null;
                     TextView parentVariantName = (TextView) findViewById(R.id.parentVariantName);
                     TextView childVariantName = (TextView) findViewById(R.id.childVariantName);
-                    JSONObject jsonObject1 = response.getJSONObject("data").getJSONObject("data");
-                    JSONObject jsonObject4 = jsonObject1.getJSONObject("sku");
-                    if (!jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("parent_variant").get("variant_translation").equals(null)) {
-                        parentVariantObject = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("parent_variant").getJSONObject("variant_translation");
+
+                    JSONObject data = response.getJSONObject("data").getJSONObject("data");
+                    JSONObject sku = data.getJSONObject("sku");
+                    if (!data.getJSONObject("sku").getJSONObject("product").getJSONObject("parent_variant").get("variant_translation").equals(null)) {
+                        parentVariantObject = data.getJSONObject("sku").getJSONObject("product").getJSONObject("parent_variant").getJSONObject("variant_translation");
 
                     } else {
-                        parentVariantObject = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("parent_variant").getJSONObject("default_variant_translation");
+                        parentVariantObject = data.getJSONObject("sku").getJSONObject("product").getJSONObject("parent_variant").getJSONObject("default_variant_translation");
                     }
-                    if (!jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("child_variant").get("variant_translation").equals(null)) {
-                        childVariantObject = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("child_variant").getJSONObject("variant_translation");
-
+                    if (!data.getJSONObject("sku").getJSONObject("product").getJSONObject("child_variant").get("variant_translation").equals(null)) {
+                        childVariantObject = data.getJSONObject("sku").getJSONObject("product").getJSONObject("child_variant").getJSONObject("variant_translation");
                     } else {
-                        childVariantObject = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("child_variant").getJSONObject("default_variant_translation");
-
+                        childVariantObject = data.getJSONObject("sku").getJSONObject("product").getJSONObject("child_variant").getJSONObject("default_variant_translation");
                     }
                     parentVariantName.setText(parentVariantObject.getString("variant_name"));
                     childVariantName.setText(childVariantObject.getString("variant_name"));
 
-                    quantity = jsonObject4.getInt("quantity");
-                    if (quantity <= 0 && jsonObject1.getJSONObject("sku").getJSONObject("product").getInt("track_inventory") == 1) {
+                    quantity = sku.getInt("quantity");
+                    if (quantity <= 0 && data.getJSONObject("sku").getJSONObject("product").getInt("track_inventory") == 1) {
                         String out_of_stock = getString(R.string.out_of_stock);
                         addtoCartButton.setText(out_of_stock);
-
-                        addtoCartButton.setEnabled(false);
+                        addtoCartButton.setEnabled(false); // make it false
                     } else {
                         String addtocart = getString(R.string.add_to_cart);
                         addtoCartButton.setText(addtocart);
@@ -796,9 +769,9 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                         addtoCartButton.setEnabled(true);
                         isincart = false;
                     }
-                    if (!jsonObject1.get("cart").equals(null)) {
+                    if (!data.get("cart").equals(null)) {
                         isincart = true;
-                        JSONObject jsonObject2 = jsonObject1.getJSONObject("cart");
+                        JSONObject jsonObject2 = data.getJSONObject("cart");
                         displayInteger.setText("" + jsonObject2.getString("quantity"));
                         minimumInteger = jsonObject2.getInt("quantity");
                         String buy = getString(R.string.buy_now);
@@ -809,36 +782,28 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                         displayInteger.setText("" + 1);
                         minimumInteger = 1;
                     }
-                    System.out.println("sdxz" + jsonObject1.getJSONObject("sku").getJSONObject("parent_variant"));
                     JSONObject parentJson = null;
-                    if (jsonObject1.getJSONObject("sku").getJSONObject("parent_variant").get("variant_option_translation").equals(null)) {
-                        parentJson = jsonObject1.getJSONObject("sku").getJSONObject("parent_variant").getJSONObject("default_variant_option_translation");
-
+                    if (data.getJSONObject("sku").getJSONObject("parent_variant").get("variant_option_translation").equals(null)) {
+                        parentJson = data.getJSONObject("sku").getJSONObject("parent_variant").getJSONObject("default_variant_option_translation");
                     } else {
-                        parentJson = jsonObject1.getJSONObject("sku").getJSONObject("parent_variant").getJSONObject("variant_option_translation");
+                        parentJson = data.getJSONObject("sku").getJSONObject("parent_variant").getJSONObject("variant_option_translation");
                     }
                     JSONObject childJson = null;
-                    if (jsonObject1.getJSONObject("sku").getJSONObject("child_variant").get("variant_option_translation").equals(null)) {
-                        childJson = jsonObject1.getJSONObject("sku").getJSONObject("child_variant").getJSONObject("default_variant_option_translation");
+                    if (data.getJSONObject("sku").getJSONObject("child_variant").get("variant_option_translation").equals(null)) {
+                        childJson = data.getJSONObject("sku").getJSONObject("child_variant").getJSONObject("default_variant_option_translation");
                     } else {
-                        childJson = jsonObject1.getJSONObject("sku").getJSONObject("child_variant").getJSONObject("variant_option_translation");
+                        childJson = data.getJSONObject("sku").getJSONObject("child_variant").getJSONObject("variant_option_translation");
                     }
 
                     String child = childJson.getString("variant_option_name");
                     String parent = parentJson.getString("variant_option_name");
 
-                    JSONArray parentVariant = jsonObject1.getJSONArray("parent_variants");
-                    JSONArray childVariant = jsonObject1.getJSONArray("child_variants");
-
-                    parentVariantId = jsonObject1.getInt("parent_variant_id");
-                    childVariantId = jsonObject1.getInt("child_variant_id");
-                    Log.d("parentvarid==",""+parentVariantId);
-                    Log.d("childVariantId==",""+childVariantId);
-                    //JSONArray selectedOptionsId=jsonObject1.getJSONArray("selected_options");
+                    JSONArray parentVariant = data.getJSONArray("parent_variants");
+                    JSONArray childVariant = data.getJSONArray("child_variants");
+                    parentVariantId = data.getInt("parent_variant_id");
+                    childVariantId = data.getInt("child_variant_id");
                     CardView parentVariantCard = (CardView) findViewById(R.id.parentVariantVisibility);
                     CardView childVariantCard = (CardView) findViewById(R.id.childVariantVisibility);
-
-                    System.out.println("sdxz" + childVariant.length() + "sdx" + child);
                     if (childVariant.length() == 0) {
                         childVariantCard.setVisibility(View.GONE);
                     } else {
@@ -851,39 +816,33 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                     }
                     ImageView imageView = (ImageView) findViewById(R.id.wishlisticon);
 
-                    if (!jsonObject1.getJSONObject("sku").get("wishlist").equals(null)) {
+                    if (!data.getJSONObject("sku").get("wishlist").equals(null)) {
                         imageView.setColorFilter(Color.parseColor("#" + Appearance.appSettings.getText_color()));
                         isinWishlist = 1;
                     } else {
                         isinWishlist = 0;
                         imageView.clearColorFilter();
                     }
-
-
-                    sku_id = jsonObject4.getInt("sku_id");
-                    myPrice = jsonObject4.getDouble("my_price");
-                    marketPrice = jsonObject4.getDouble("market_price");
-
-
-                    JSONArray jsonArray = jsonObject1.getJSONArray("images");
-
-
-                    JSONArray jsonArray1 = jsonObject1.getJSONArray("reviews");
+                    sku_id = sku.getInt("sku_id");
+                    myPrice = sku.getDouble("my_price");
+                    marketPrice = sku.getDouble("market_price");
+                    JSONArray jsonArray = data.getJSONArray("images");
+                    JSONArray jsonArray1 = data.getJSONArray("reviews");
                     System.out.println("dcxz" + jsonArray1.length());
                     if (jsonArray1.length() == 0) {
                         viewAllReviews.setVisibility(View.GONE);
                     }
                     JSONObject productTranslationObject = null;
-                    if (jsonObject1.getJSONObject("sku").getJSONObject("product").get("product_translation_full").equals(null)) {
-                        productTranslationObject = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("default_product_translation_full");
+                    if (data.getJSONObject("sku").getJSONObject("product").get("product_translation_full").equals(null)) {
+                        productTranslationObject = data.getJSONObject("sku").getJSONObject("product").getJSONObject("default_product_translation_full");
                     } else {
-                        productTranslationObject = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("product_translation_full");
+                        productTranslationObject = data.getJSONObject("sku").getJSONObject("product").getJSONObject("product_translation_full");
                     }
                     JSONObject brandTranslationObject = null;
-                    if (jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("brand").get("brand_translation").equals(null)) {
-                        brandTranslationObject = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("brand").getJSONObject("default_brand_translation");
+                    if (data.getJSONObject("sku").getJSONObject("product").getJSONObject("brand").get("brand_translation").equals(null)) {
+                        brandTranslationObject = data.getJSONObject("sku").getJSONObject("product").getJSONObject("brand").getJSONObject("default_brand_translation");
                     } else {
-                        brandTranslationObject = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("brand").getJSONObject("brand_translation");
+                        brandTranslationObject = data.getJSONObject("sku").getJSONObject("product").getJSONObject("brand").getJSONObject("brand_translation");
                     }
                     TextView brandName = (TextView) findViewById(R.id.subcatename);
                     if (brandTranslationObject.get("brand_name").equals(null)) {
@@ -896,34 +855,34 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                     Pname = productTranslationObject.getString("product_name");
                     toolBarTitle.setText(Pname);
 
-                    product_image = jsonObject1.getJSONObject("sku").getJSONObject("product").getString("product_image");
+                    product_image = data.getJSONObject("sku").getJSONObject("product").getString("product_image");
                     String product_description = productTranslationObject.getString("description");
                     System.out.println("jecdklxs" + product_description);
 
 
-                    if (jsonObject1.getString("my_review").isEmpty()) {
+                    if (data.getString("my_review").isEmpty()) {
                         myRating = 0;
                         myReview = "";
-                    } else if (jsonObject1.getJSONObject("my_review").get("review").equals(null)) {
-                        myRating = jsonObject1.getJSONObject("my_review").getInt("rating");
+                    } else if (data.getJSONObject("my_review").get("review").equals(null)) {
+                        myRating = data.getJSONObject("my_review").getInt("rating");
                         myReview = "";
                     } else {
-                        myRating = jsonObject1.getJSONObject("my_review").getInt("rating");
-                        myReview = jsonObject1.getJSONObject("my_review").getString("review");
+                        myRating = data.getJSONObject("my_review").getInt("rating");
+                        myReview = data.getJSONObject("my_review").getString("review");
                     }
 
                     cartCountTextView = (TextView) findViewById(R.id.actionbar_notifcation_textview);
                     notificationCountTextview = (TextView) findViewById(R.id.notification_count_textview);
 
-                    Dashboard.cart_count = jsonObject1.getInt("cart_count");
-                    notification_count = jsonObject1.getInt("notification_count");
+                    Dashboard.cart_count = data.getInt("cart_count");
+                    notification_count = data.getInt("notification_count");
                    // Toast.makeText(ProductDetails.this, ""+notification_count, Toast.LENGTH_SHORT).show();
                     new CartCountUtil(ProductDetails.this);
 
-                    if (jsonObject1.getJSONObject("sku").getJSONObject("product").get("review_count").equals(null)) {
+                    if (data.getJSONObject("sku").getJSONObject("product").get("review_count").equals(null)) {
 
                     } else {
-                        double ratingAverage = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("review_count").getDouble("rating");
+                        double ratingAverage = data.getJSONObject("sku").getJSONObject("product").getJSONObject("review_count").getDouble("rating");
 
                         double rating = Double.parseDouble(String.valueOf(ratingAverage));
                         DecimalFormat decimal = new DecimalFormat("0.0");
@@ -938,8 +897,8 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                         ratingLayout.setVisibility(View.VISIBLE);
                         ratings.setText(String.format(Locale.ENGLISH, "%.1f", rating));
                         ratings2.setText(String.format(Locale.ENGLISH, "%.1f", rating));
-                        if (!jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("review_count").get("rating_count").equals(null)) {
-                            int ratingCount = jsonObject1.getJSONObject("sku").getJSONObject("product").getJSONObject("review_count").getInt("rating_count");
+                        if (!data.getJSONObject("sku").getJSONObject("product").getJSONObject("review_count").get("rating_count").equals(null)) {
+                            int ratingCount = data.getJSONObject("sku").getJSONObject("product").getJSONObject("review_count").getInt("rating_count");
 
                             String rating_review = getString(R.string.reviews_and_ratings);
                             ProductDetails.this.ratingCount.setText(String.valueOf(ratingCount) + " " + rating_review);
@@ -1101,13 +1060,11 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
 
             }
         });
-
-
     }
 
     private void loadChildVariant(final JSONArray childVariant) {
         Gson gson = new Gson();
-        final List<ChildVariantModel> list = Arrays.asList(gson.fromJson(childVariant.toString(), ChildVariantModel[].class));
+        final List<ChildVariantModel> child_varient_list = Arrays.asList(gson.fromJson(childVariant.toString(), ChildVariantModel[].class));
         final TagFlowLayout recyclerView1 = (TagFlowLayout) findViewById(R.id.recChildVariant);
         isLeftToRight = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR;
 
@@ -1118,23 +1075,16 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
 
         }
         final LayoutInflater mInflater = LayoutInflater.from(this);
-        recyclerView1.setAdapter(new TagAdapter<ChildVariantModel>(list) {
+        recyclerView1.setAdapter(new TagAdapter<ChildVariantModel>(child_varient_list) {
 
             @Override
             public View getView(FlowLayout parent, final int position, ChildVariantModel childVariantModel) {
-                tv = (TextView) mInflater.inflate(R.layout.tv,
-                        recyclerView1, false);
-                System.out.println("ewwwwwww" + childVariantId);
+                tv = (TextView) mInflater.inflate(R.layout.tv, recyclerView1, false);
                 final Gson gson = new Gson();
-                final ChildVariantModel productModel = list.get(position);
+                final ChildVariantModel productModel = child_varient_list.get(position);
                 String jsonString = gson.toJson(productModel.getChild_variant_translation());
-                System.out.println("zdnfjc" + jsonString);
-
                 if (jsonString.equals("null")) {
-
                     jsonString = gson.toJson(productModel.getDefault_child_variant_translation());
-                    System.out.println("zdnfjc" + jsonString);
-
                 }
                 ChildVariantModel.DefaultChildVariantTranslationBean tanslationBean = gson.fromJson(jsonString,
                         ChildVariantModel.DefaultChildVariantTranslationBean.class);
@@ -1142,8 +1092,6 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                 if (childVariantModel.getChild_variant_id() == childVariantId) {
                     GradientDrawable drawable = (GradientDrawable) ProductDetails.this.getResources().getDrawable(selectedborder);
                     drawable.setStroke(3, Color.parseColor("#" + Appearance.appSettings.getText_color()));
-                   /* Drawable backgroundDrawable = DrawableCompat.wrap(ProductDetails.this.getResources().getDrawable(R.drawable.selectedborder)).mutate();
-                    DrawableCompat.setTint(backgroundDrawable, Color.parseColor("#00FF00"));*/
                     tv.setBackgroundDrawable(ProductDetails.this.getResources().getDrawable(R.drawable.selectedborder));
                 } else {
                     tv.setBackgroundDrawable(ProductDetails.this.getResources().getDrawable(R.drawable.custom_border));
@@ -1152,10 +1100,9 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                 recyclerView1.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
                     @Override
                     public boolean onTagClick(View view, int position, FlowLayout parent) {
-
-                        if (childVariantId != list.get(position).getChild_variant_id()) {
+                        if (childVariantId != child_varient_list.get(position).getChild_variant_id()) {
                             sku_id = 0;
-                            childVariantId = list.get(position).getChild_variant_id();
+                            childVariantId = child_varient_list.get(position).getChild_variant_id();
                             recyclerView1.getAdapter().notifyDataChanged();
                             getData();
                             whiteLoader = 0;
@@ -1164,7 +1111,6 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                     }
                 });
                 return tv;
-
             }
 /* @Override
             public void onSelected(int position, View view) {
@@ -1285,7 +1231,6 @@ public class ProductDetails extends AppCompatActivity implements View.OnClickLis
                     intent10.putExtra("type", "");
                     intent10.putExtra("pager_position", position);
                     intent10.putExtra("name", nameofProduct);
-
                     startActivity(intent10);
                 }
 

@@ -26,7 +26,6 @@ import com.example.grocery.utils.LoaderColorChanger;
 import com.example.grocery.utils.ResponseHandler;
 import com.example.grocery.utils.ToolbarSettings;
 import com.example.grocery.utils.VolleyTask;
-import com.payumoney.core.PayUmoneySdkInitializer;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -40,7 +39,7 @@ import static com.example.grocery.interfaces.IConstants.URL_ADDTOWALLET;
 
 public class RazorPay extends AppCompatActivity  implements PaymentResultListener {
     private AppPreference mAppPreference;
-    private PayUmoneySdkInitializer.PaymentParam mPaymentParams;
+   // private PayUmoneySdkInitializer.PaymentParam mPaymentParams;
     private JSONObject jsonObject;
     public static String name;
     public static String pin;
@@ -65,21 +64,8 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
     }
 
     private void startPayment() {
-        /**
-         * Instantiate Checkout
-         */
-
         Checkout checkout = new Checkout();
-
-        /**
-         * Set your logo here
-         */
-
         checkout.setImage(R.drawable.logo);
-
-        /**
-         * Reference to current activity
-         */
         final Activity activity = this;
 
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
@@ -129,7 +115,6 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
                         } else {
                             new CustomToast(RazorPay.this, response.getString("data"));
                             findViewById(R.id.whiteloader).setVisibility(View.GONE);
-
                         }
 
                     } else {
@@ -153,8 +138,6 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
 
             @Override
             public void fnErrorOccurred(String error) {
-
-
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -176,12 +159,6 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
                 }, 2000);
             }
         });
-
-
-
-        /**
-         * Pass your payment options to the Razorpay Checkout as a JSONObject
-         */
     }
 
     protected void getData() {
@@ -205,7 +182,6 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
         volleyTask.setListener(new VolleyTask.IPostTaskListener() {
             @Override
             public void fnPostTaskCompleted(JSONArray response) {
-
 
             }
 
@@ -252,8 +228,6 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
 
             @Override
             public void fnErrorOccurred(String error) {
-
-
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -275,8 +249,6 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
                 }, 2000);
             }
         });
-
-
     }
 
     private void setToolBar() {
@@ -340,24 +312,16 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
     @Override
     public void onPaymentSuccess(String s) {
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
-
         Configuration configuration = getResources().getConfiguration();
         configuration.setLocale(new Locale(prefs.getString("language_code", "en")));
         configuration.setLayoutDirection(new Locale(prefs.getString("language_code", "en")));
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
-        // Result Code is -1 send from Payumoney activity
-
-        // Check which object is non-null
-        // if (transactionResponse != null && transactionResponse.getPayuResponse() != null) {
         if (PaymentTypeActivity.payment_for.matches("wallet")) {
             JSONObject jsonObject = new JSONObject();
-
             SharedPreferences prefs1 = getSharedPreferences("UserId", MODE_PRIVATE);
-
             String userid = prefs1.getString("user_id", "");
             String pwd = prefs1.getString("pwd", "");
             String languageid = prefs1.getString("language", String.valueOf(1));
-
             try {
                 jsonObject.put("business_id",IConstants.BUSINESS_ID);
                 jsonObject.put("narration", "Added.");
@@ -367,8 +331,6 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
                 jsonObject.put("amount", RazorPay.amount);
                 jsonObject.put("language_id", languageid);
                 jsonObject.put("currency", "INR");
-                // jsonObject.put("amount", total_amount);
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -385,24 +347,15 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
                 @Override
                 public void fnPostTaskCompletedJsonObject(JSONObject response) {
                     System.out.println("hhhs" + response.toString());
-
-
                     if (!new ResponseHandler().validateResponse(RazorPay.this, response)) {
-
-
                         return;
                     }
                     try {
-                        //   displayInteger.setText("" + minimumInteger);
                         String jsonObject1 = response.getJSONObject("data").getString("msg");
                         new CustomToast(RazorPay.this, jsonObject1);
-/*                                    cart_count = response.getJSONObject("data").getJSONObject("data").getInt("cart_count");
-                                    new CartCountUtil(PayuActivity.this);*/
                         Intent intent = new Intent(RazorPay.this, Dashboard.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
-
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -411,15 +364,13 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
 
                 @Override
                 public void fnErrorOccurred(String error) {
-
                     new CustomToast(RazorPay.this, "No connection Available");
-
                 }
             });
 
 
         } else if (PaymentTypeActivity.payment_for.matches("cart_order")) {
-            paymentType = 3;
+             paymentType = 3;
              doPayment();
         }
     }
@@ -427,50 +378,14 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
     private void doPayment() {
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
         SharedPreferences sharedPreferences = getSharedPreferences("paymentdetails", MODE_PRIVATE);
-
-
-        String userid = prefs.getString("user_id", "");
-        String pwd = prefs.getString("pwd", "");
-        String languageid = prefs.getString("language", String.valueOf(1));
-
         JSONObject jsonObject1 = null;
-
         try {
-
-            //   jsonObject.put("id", userid);
-            //  jsonObject.put("password", pwd);
-            //  jsonObject.put("delivery_address", address);
-            //  jsonObject.put("delivery_pincode", pin);
-            //  jsonObject.put("order_type", paymentType);
-            //   jsonObject.put("address_id", selectedAddressId);
-            //   jsonObject.put("cart_ids", cartIds);
-            //  jsonObject.put("language_id", languageid);
-
-            // Toast.makeText(this, ""+userid, Toast.LENGTH_SHORT).show();
-
-            //************************
-
             jsonObject1 = new JSONObject(sharedPreferences.getString("json",""));
-            jsonObject1.put("business_id",IConstants.BUSINESS_ID);
-            //         jsonObject.put("id", userid);
-            //      jsonObject.put("password", pwd);
-            //      jsonObject.put("delivery_address", address_et.getText().toString());
-            //      jsonObject.put("order_type", paymentType);
-            //      jsonObject.put("cart_ids", cartIds);
-            //     jsonObject.put("address_id", selectedAddressId);
-            //          jsonObject.put("language_id", languageid);
-            //          jsonObject.put("country_id", valueCountry == 0 ? 1 : valueCountry);
-//            jsonObject.put("state_id", valuestate == 0 ? 1 : valuestate);
-//            jsonObject.put("city_id", valueCity == 0 ? 1 : valueCity);
-//            jsonObject.put("area_id", valueArea == 0 ? 1 : valueArea);
-//            jsonObject.put("pincode_id", valuePincode == 0 ? 1 : valuePincode);
-//            jsonObject.put("order_amount", amount_et.getText().toString());
-//            jsonObject.put("order_description", comment.getText().toString());
+            jsonObject1.put("business_id", IConstants.BUSINESS_ID);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        System.out.println("xzsdcxz" + jsonObject1);
         VolleyTask volleyTask = new VolleyTask(RazorPay.this, IConstants.URL_SUBMITCArt, jsonObject1, Request.Method.POST);
         volleyTask.setListener(new VolleyTask.IPostTaskListener() {
             @Override
@@ -497,23 +412,13 @@ public class RazorPay extends AppCompatActivity  implements PaymentResultListene
                         } else {
                             new CustomToast(RazorPay.this, response.getString("data"));
                             findViewById(R.id.whiteloader).setVisibility(View.GONE);
-
                         }
-
                     } else {
-                        // new CustomToast(PayuActivity.this, "Product Submitted Sucessfully");
-
                         Dashboard.cart_count = 0;
-                        //  Intent intent = new Intent(PayuActivity.this, SuccessOrder.class);
-                        //  finish();
-                        // stopService(new Intent(PayuActivity.this, PayUmoneyConfig.class));
-                        //  startActivity(intent);
-
                     }
                 } catch (JSONException e) {
 
                 }
-
             }
 
             @Override

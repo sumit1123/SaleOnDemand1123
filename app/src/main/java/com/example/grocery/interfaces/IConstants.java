@@ -1,8 +1,9 @@
 package com.example.grocery.interfaces;
 public interface IConstants {
   // String BASE_URL = "https://demo.kpshopy.com/";
-  String BASE_URL ="https://vshoppng.store/";
-    String BUSINESS_ID="1";
+  String BASE_URL ="https://vshoppng.tech/";
+  //  String BASE_URL="https://saleondemand.in/";
+    String BUSINESS_ID="3";
     String BASE_IMAGE_URL = BASE_URL + "storage/app/";
     String URL_LOGIN = BASE_URL + "postLogin";
     String URL_Register = BASE_URL + "postRegister";

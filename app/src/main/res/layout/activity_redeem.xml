@@ -15,8 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
-        android:layout_marginLeft="@dimen/dimen_15dp"
-        android:layout_marginRight="@dimen/dimen_15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:orientation="vertical">
 
         <com.example.grocery.CustomViews.CustomEditText
@@ -26,12 +26,12 @@
             android:layout_alignStart="@+id/linearLayout2"
             android:layout_gravity="start"
             android:background="@drawable/edittextselector"
-            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawablePadding="10dp"
             android:drawableStart="@drawable/money"
             android:gravity="center"
             android:hint="@string/enter_amount"
             android:inputType="number"
-            android:paddingStart="@dimen/dimen_10dp"
+            android:paddingStart="10dp"
             android:textAlignment="viewStart"
             android:textColor="@color/black"
             android:textSize="15dp" />
@@ -47,7 +47,7 @@
             android:layout_height="100dp"
             android:layout_gravity="start"
             android:background="@drawable/edittextselector"
-            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawablePadding="10dp"
             android:drawableStart="@drawable/redeem_desc"
             android:hint="Bank Account. OR Google Pay Number"
             android:paddingStart="10dp"

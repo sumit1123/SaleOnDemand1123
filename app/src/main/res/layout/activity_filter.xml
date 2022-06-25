@@ -98,7 +98,7 @@
                                 android:id="@+id/imagesort"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginLeft="@dimen/dimen_5dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 app:srcCompat="@drawable/sort" />
 
@@ -108,7 +108,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:layout_marginRight="5dp"
                                 android:layout_toRightOf="@+id/imagesort"
                                 android:text="@string/sort"
                                 android:textColor="#000"
@@ -142,7 +142,7 @@
                                 android:id="@+id/imagefilter"
                                 android:layout_width="15dp"
                                 android:layout_height="13dp"
-                                android:layout_marginLeft="@dimen/dimen_5dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 android:src="@drawable/filter" />
 
@@ -152,7 +152,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:layout_marginRight="5dp"
                                 android:layout_toRightOf="@+id/imagefilter"
                                 android:text="@string/filter"
                                 android:textColor="#000"
@@ -169,7 +169,7 @@
                 android:layout_gravity="center"
                 android:background="@color/backgroundfaint"
                 android:gravity="center"
-                android:paddingLeft="@dimen/dimen_20dp"
+                android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:visibility="gone" />

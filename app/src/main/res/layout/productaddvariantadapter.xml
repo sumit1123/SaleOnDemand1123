@@ -68,7 +68,7 @@
 <LinearLayout
     android:background="@color/variantRecyclerSeperation"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dimen_1dp">
+    android:layout_height="1dp">
 
 </LinearLayout>
 </LinearLayout>

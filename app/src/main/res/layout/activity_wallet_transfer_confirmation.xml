@@ -56,9 +56,9 @@
                 <com.example.grocery.CustomViews.CustomEditText
                     android:background="@drawable/edittextselector"
                     android:inputType="number"
-                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginLeft="20dp"
                 
-                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginTop="30dp"
                     android:layout_gravity="start"
                     android:textAlignment="viewStart"                    android:paddingStart="10dp"
@@ -72,9 +72,9 @@
                     android:hint="Amount"/>
                 <com.example.grocery.CustomViews.CustomEditText
                     android:background="@drawable/edittextselector"
-                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginLeft="20dp"
                    
-                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginTop="30dp"
                     android:layout_gravity="start"
                     android:textAlignment="viewStart"                    android:paddingStart="10dp"
@@ -93,7 +93,7 @@
 android:visibility="gone"
     android:layout_gravity="center"
     android:textColor="@color/black"
-    android:textSize="@dimen/dimen_30dp"
+    android:textSize="30dp"
     android:text="$60"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
@@ -112,8 +112,8 @@ android:visibility="gone"
                         android:layout_height="wrap_content"
                        
                         android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/dimen_20dp"
-                        android:layout_marginRight="@dimen/dimen_20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
 
                         android:background="@drawable/buttonshape"
                         android:text="Send"
@@ -131,8 +131,8 @@ android:visibility="gone"
                    
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/dimen_20dp"
-                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_weight="1"
 
                     android:background="@drawable/buttonshape"
@@ -155,7 +155,7 @@ android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="@dimen/dimen_20dp"
+        android:layout_marginRight="20dp"
         android:text="Name"
         android:textColor="@color/black"
         android:textSize="30dp" />
@@ -167,7 +167,7 @@ android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="@dimen/dimen_20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:text="7566500977"
         android:textColor="@color/black"

@@ -37,12 +37,20 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/app_logo"
+                        />
+
                     <com.example.grocery.CustomViews.CustomTextView
                         android:id="@+id/appname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:paddingBottom="@dimen/dimen_10dp"
+                        android:paddingBottom="10dp"
+                        android:visibility="invisible"
                         android:textColor="#fff"
                         android:textSize="18dp" />
 
@@ -53,12 +61,11 @@
                         android:orientation="horizontal">
 
                         <RelativeLayout
-
                             android:id="@+id/toolsearch"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:padding="10dp"
-                            android:paddingLeft="@dimen/dimen_10dp"
+                            android:paddingLeft="10dp"
                             android:paddingRight="10dp">
 
                             <ImageView
@@ -73,7 +80,7 @@
                             android:id="@+id/toolnoti"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:paddingLeft="@dimen/dimen_10dp"
+                            android:paddingLeft="10dp"
                             android:paddingRight="10dp">
 
                             <ImageView
@@ -106,8 +113,8 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="right"
                             android:clickable="true"
-                            android:paddingLeft="@dimen/dimen_10dp"
-                            android:paddingRight="@dimen/dimen_10dp">
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
 
                             <!-- Menu Item Image -->
                             <ImageView
@@ -156,13 +163,13 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="@dimen/dimen_0dp"
+            android:layout_marginTop="0dp"
             android:background="@drawable/curved_border"
-            android:drawablePadding="@dimen/dimen_5dp"
+            android:drawablePadding="5dp"
             android:drawableStart="@drawable/searchgrey"
             android:imeOptions="actionSearch"
             android:inputType="text"
-            android:paddingStart="@dimen/dimen_10dp"
+            android:paddingStart="10dp"
             android:textAlignment="viewStart"
             android:textSize="12dp" />
     </RelativeLayout>
@@ -289,7 +296,7 @@
                             android:id="@+id/topSellerText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:layout_marginEnd="10dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:text="Top Sellers"
@@ -326,7 +333,7 @@
                             android:id="@+id/latestProductText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:layout_marginEnd="10dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:text="New Arrival"
@@ -369,7 +376,7 @@
                             android:id="@+id/recentViewedProductText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:layout_marginEnd="10dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:text="Recently Viewed Products"
@@ -404,7 +411,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:layout_marginEnd="10dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="15dp"
                             android:text="Featured Brands"
@@ -420,8 +427,8 @@
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentStart="true"
                             android:layout_below="@+id/recentfeaturedBrandText"
-                            android:layout_marginEnd="@dimen/dimen_8dp"
-                            android:layout_marginStart="@dimen/dimen_8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
                             android:nestedScrollingEnabled="false">
 
                         </com.example.grocery.utils.ViewPagerCustomDuration>
@@ -441,7 +448,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_alignStart="@+id/recmaxproduct"
-                            android:layout_marginBottom="@dimen/dimen_8dp"
+                            android:layout_marginBottom="8dp"
                             android:layout_marginStart="6dp"
                             android:layout_marginTop="17dp"
                             android:text="Max Viewed"

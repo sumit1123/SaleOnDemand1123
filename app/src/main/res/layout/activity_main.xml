@@ -1,4 +1,3 @@
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
@@ -11,9 +10,9 @@
     tools:context="com.example.grocery.paymentpackage.MainActivity">
 
     <include
-
         android:id="@+id/toolbar"
         layout="@layout/toolbarback" />
+
     <include
         android:id="@+id/whiteloader"
         layout="@layout/whiteloader" />
@@ -30,28 +29,28 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/dimen_5dp"
             android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="5dp"
             android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/dimen_5dp">
+            android:paddingBottom="5dp">
 
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="@dimen/dimen_10dp"
-                android:layout_marginRight="@dimen/dimen_10dp"
-                android:layout_marginTop="@dimen/dimen_10dp"
-                android:padding="@dimen/dimen_10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
                 app:cardBackgroundColor="#fff"
                 app:cardCornerRadius="3dp"
-                app:cardElevation="@dimen/dimen_5dp"
+                app:cardElevation="5dp"
                 app:cardPreventCornerOverlap="false"
-                app:contentPaddingBottom="@dimen/dimen_5dp"
-                app:contentPaddingLeft="@dimen/dimen_15dp"
-                app:contentPaddingRight="@dimen/dimen_15dp"
-                app:contentPaddingTop="@dimen/dimen_5dp"
+                app:contentPaddingBottom="5dp"
+                app:contentPaddingLeft="15dp"
+                app:contentPaddingRight="15dp"
+                app:contentPaddingTop="5dp"
                 card_view:cardElevation="@dimen/dimen_5dp">
 
                 <LinearLayout
@@ -60,18 +59,18 @@
                     android:orientation="vertical">
 
                     <com.example.grocery.CustomViews.CustomTextView
-                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:text="Enter User details"
-                        android:textColor="@color/payumoney_black"
-                        android:textSize="@dimen/dimen_18sp" />
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-                    <android.support.design.widget.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/name_til"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginTop="10dp"
                         app:errorEnabled="false">
 
                         <EditText
@@ -84,15 +83,15 @@
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
                             android:nextFocusDown="@+id/card_name_et"
-                            android:textColor="@color/payumoney_black"
+                            android:textColor="@color/black"
                             android:textSize="16sp" />
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/email_til"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginTop="10dp"
                         app:errorEnabled="false">
 
                         <EditText
@@ -105,11 +104,11 @@
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
                             android:nextFocusDown="@+id/card_name_et"
-                            android:textColor="@color/payumoney_black"
+                            android:textColor="@color/black"
                             android:textSize="16sp" />
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/mobile_til"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -126,36 +125,36 @@
                             android:maxLength="10"
                             android:maxLines="1"
                             android:nextFocusDown="@+id/card_name_et"
-                            android:textColor="@color/payumoney_black"
+                            android:textColor="@color/black"
                             android:textSize="16sp" />
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/amount_til"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:errorEnabled="false">
 
                         <EditText
-                            android:editable="false"
                             android:id="@+id/amount_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
+                            android:editable="false"
                             android:hint="Amount"
                             android:imeOptions="actionNext"
                             android:inputType="numberDecimal"
                             android:maxLines="1"
-                            android:textColor="@color/payumoney_black"
+                            android:textColor="@color/black"
                             android:textSize="16sp" />
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
-                    <android.support.design.widget.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/address_til"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginTop="10dp"
                         app:errorEnabled="false">
 
                         <EditText
@@ -168,15 +167,15 @@
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
                             android:nextFocusDown="@+id/card_name_et"
-                            android:textColor="@color/payumoney_black"
+                            android:textColor="@color/black"
                             android:textSize="16sp" />
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/pin_til"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginTop="10dp"
                         app:errorEnabled="false">
 
                         <EditText
@@ -190,9 +189,9 @@
                             android:inputType="number"
                             android:maxLines="1"
                             android:nextFocusDown="@+id/card_name_et"
-                            android:textColor="@color/payumoney_black"
+                            android:textColor="@color/black"
                             android:textSize="16sp" />
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -201,10 +200,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_25dp"
+                android:layout_marginTop="25dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingRight="@dimen/dimen_10dp"
+                android:paddingRight="10dp"
                 android:weightSum="2">
 
 
@@ -212,7 +211,7 @@
                     android:id="@+id/cashon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@color/colorPrimary"
                     android:text="Cash On Delivery"
@@ -222,7 +221,7 @@
                     android:id="@+id/pay_now_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@color/colorPrimary"
                     android:text="Pay Now"

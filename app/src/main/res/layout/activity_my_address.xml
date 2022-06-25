@@ -35,15 +35,15 @@
         android:layout_above="@id/addnewAddressText"
         android:background="@color/backgroundfaint"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_1dp"></LinearLayout>
+        android:layout_height="1dp"></LinearLayout>
     <com.example.grocery.CustomViews.CustomTextView
-        android:drawablePadding="@dimen/dimen_10dp"
+        android:drawablePadding="10dp"
         android:layout_centerHorizontal="true"
         android:drawableEnd="@drawable/location"
 android:fontFamily="@font/roboto"
         android:id="@+id/addnewAddressText"
         android:gravity="center"
-        android:padding="@dimen/dimen_10dp"
+        android:padding="10dp"
         android:layout_alignParentBottom="true"
         android:textSize="18dp"
         android:textColor="@color/black"

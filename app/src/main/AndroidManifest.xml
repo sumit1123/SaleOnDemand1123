@@ -5,15 +5,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission
-        android:name="android.permission.READ_SMS"
-        tools:node="remove" />
-    <uses-permission
         android:name="android.permission.READ_PHONE_STATE"
         tools:node="remove" />
-    <uses-permission
-        android:name="android.permission.RECEIVE_SMS"
-        tools:node="remove" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- <uses-permission android:name="android.permission.READ_CONTACTS" /> -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -22,22 +16,26 @@
         android:name=".paymentpackage.BaseApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/vshop"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@drawable/vshop"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         tools:replace="android:allowBackup">
         <activity android:name=".Activities.RazorPay"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".Activities.RazorpayActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity android:name=".Activities.ViewAllReviewSeller" />
@@ -45,6 +43,7 @@
             android:name=".Activities.SellerDetails"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity android:name=".Activities.PaytmActivity" />
@@ -52,6 +51,7 @@
             android:name=".Activities.SplashScreen"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -64,36 +64,42 @@
             android:name=".Activities.Vendor"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.ReferFriendActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.Contact_Us"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.Dashboard"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.Redeem"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.LoginActivity"
             android:configChanges="orientation"
             android:label="@string/title_activity_dashboard"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
@@ -117,30 +123,35 @@
             android:name=".Activities.Categories"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.ProductActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.ProductDetails"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.SearchActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.NotificationActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
@@ -148,46 +159,54 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppBaseTheme"
+            android:exported="true"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.RegisterActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.AccountActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.ViewAllReviews"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.OnlineSupportActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.MyOrdersActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.PolicyActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.ApplyFilter"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivity" />
@@ -195,134 +214,171 @@
             android:name=".Activities.OrderDetails"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.OnlineChatActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.ImageShowActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".paymentpackage.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.SuccessOrder"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.WishlistActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.PaymentDetailsActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.PaymentTypeActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.PayuActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.EditProfileActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.ChangePasswordActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.AboutUsActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.AboutUsActivityNew"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.OtpVeriFicationActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.WalletActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.FailureOrder"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.AddNewAddreses"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.Addmoney"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.AddNewComplaint"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.WalletTransfer"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.WalletTransferConfirmation"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.WalletTransferSucessful"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activities.MyAddress"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name=".Activities.ForgotPassword" />
-        <activity android:name=".Activities.PasswordResetActivity" />
+        <activity android:name=".Activities.ForgotPassword"
+            android:exported="true"
+            />
+        <activity android:name=".Activities.PasswordResetActivity"
+            android:exported="true"
+            />
         <activity
             android:name=".Activities.PaypalActivity"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.SellerActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
 
-u        <meta-data
+        <activity android:name="com.paytm.pgsdk.PaytmPGActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|keyboard"/>
+
+        <activity android:name=".paytm.Checksum"
+            android:exported="true"
+            />
+
+        <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/logo" />
         <meta-data
@@ -339,32 +395,40 @@ u        <meta-data
             android:resource="@array/preloaded_fonts" />
 
 
-     <!--   <meta-data
+      <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_live_kdve1KquZos3KH" />-->
+            android:value="rzp_live_kdve1KquZos3KH" />
 
-        <meta-data
-            android:name="com.razorpay.ApiKey"
-            android:value="rzp_test_GvIIDKImbP2CNT" />
+<!--        <meta-data-->
+<!--            android:name="com.razorpay.ApiKey"-->
+<!--            android:value="rzp_test_GvIIDKImbP2CNT" />-->
 
-
-
-        <receiver android:name=".utils.SmsReceiver">
+        <receiver android:name=".utils.SmsReceiver"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"
+                    />
             </intent-filter>
         </receiver>
-`j
-        <service android:name=".Services.MyFirebaseMessagingService">
+
+        <service android:name=".Services.MyFirebaseMessagingService"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".Services.MyFirebaseInstanceIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
+<!--        <service android:name=".Services.MyFirebaseInstanceIDService"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>

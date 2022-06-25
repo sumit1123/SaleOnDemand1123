@@ -47,8 +47,8 @@
 
                     <ImageView
                         android:id="@+id/wishlistImage"
-                        android:layout_width="@dimen/dimen_15dp"
-                        android:layout_height="@dimen/dimen_15dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/wishlist" />
 
@@ -81,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="7dp"
                     android:ellipsize="end"
                    
@@ -114,7 +114,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:layout_marginEnd="10dp"
                         android:drawableEnd="@drawable/dropdownend"
                         android:ellipsize="end"
                         android:gravity="start"
@@ -149,7 +149,7 @@
                         android:layout_centerVertical="true"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginRight="@dimen/dimen_5dp"
+                        android:layout_marginRight="5dp"
                         android:layout_toRightOf="@+id/sellingprice"
                         android:text="actualprice"
                         android:textColor="#A9A9A9"
@@ -257,8 +257,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="@dimen/dimen_10dp"
-                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:text="(2,875)"
 
                         android:textColor="#A9A9A9"
@@ -333,14 +333,14 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="@dimen/dimen_5dp"
-                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
                         android:background="@drawable/buttonshape"
                         android:elevation="0dp"
                        
                         android:gravity="center"
-                        android:padding="@dimen/dimen_5dp"
-                        android:paddingEnd="@dimen/dimen_10dp"
+                        android:padding="5dp"
+                        android:paddingEnd="10dp"
                         android:stateListAnimator="@null"
                         android:text="ADD"
                         android:textColor="@color/white"
@@ -374,7 +374,7 @@
                                 android:layout_gravity="center"
                                 android:background="@drawable/buttonshape"
                                 android:gravity="center"
-                                android:padding="@dimen/dimen_5dp"
+                                android:padding="5dp"
                                 android:textColor="@color/white"
                                 android:textStyle="bold"
                                 app:srcCompat="@drawable/minuswhite" />
@@ -407,7 +407,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="center"
                                 android:background="@drawable/buttonshape"
-                                android:padding="@dimen/dimen_5dp"
+                                android:padding="5dp"
                                 app:srcCompat="@drawable/addwhite" />
                         </RelativeLayout>
 
@@ -422,7 +422,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/vvv"
-        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginTop="5dp"
         android:background="@color/backgroundfaint">
 
     </LinearLayout>

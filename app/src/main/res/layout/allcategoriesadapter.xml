@@ -7,7 +7,7 @@
         android:id="@+id/imagecate"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_margin="@dimen/dimen_10dp" />
+        android:layout_margin="10dp" />
 
     <com.example.grocery.CustomViews.CustomTextView
         android:id="@+id/textcate"
@@ -26,8 +26,8 @@
 
     <ImageView
         android:id="@+id/addCategoryImage"
-        android:layout_width="@dimen/dimen_20dp"
-        android:layout_height="@dimen/dimen_20dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="15dp"

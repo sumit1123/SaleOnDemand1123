@@ -739,9 +739,9 @@ public class RegisterActivity extends AppCompatActivity implements GoogleApiClie
 
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(RegisterActivity.this,
-                            new String[]{Manifest.permission.READ_SMS},
-                            2);
+//                    ActivityCompat.requestPermissions(RegisterActivity.this,
+//                            new String[]{Manifest.permission.READ_SMS},
+//                            2);
                     //  Toast.makeText(LoginActivity.this, "Permission for Read external storage has been granted ", Toast.LENGTH_SHORT).show();
 
                 } else {

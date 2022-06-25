@@ -150,11 +150,8 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
         configuration.setLocale(new Locale(prefs.getString("language_code", "en")));
         configuration.setLayoutDirection(new Locale(prefs.getString("language_code", "en")));
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
-
-
         isshowDialog = true;
         setContentView(R.layout.activity_payment_details);
-
         promocodeLayout = findViewById(R.id.promocodeVisibility);
         if (Appearance.appSettings.getIs_promocode() == 1) {
             promocodeLayout.setVisibility(View.VISIBLE);
@@ -187,7 +184,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
 
     private void loadAddresses(JSONArray jsonArray) {
-
         Gson gson = new Gson();
         List<AddressModel> list = Arrays.asList(gson.fromJson(jsonArray.toString(), AddressModel[].class));
         dialog.setContentView(R.layout.newaddresspopup);
@@ -279,7 +275,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             jsonObject.put("password", password);
             jsonObject.put("language_id", languageid);
 
-            Log.d("json=====",""+jsonObject);
+            Log.d("json=====", "" + jsonObject);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -577,7 +573,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             jsonObject.put("language_id", languageid);
 
 
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -626,23 +621,20 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                     getCountries(jsonArrayCountries, jsonArrayStates, jsonArrayCity);
                     JSONObject address_setting = response.getJSONObject("data").getJSONObject("data").getJSONObject("address_setting");
                     JSONObject shipping_charges = response.getJSONObject("data").getJSONObject("data").getJSONObject("shipping_charges");
-                    int shipping_order_amount =  shipping_charges.getInt("shipping_order_amount");
-                    int greater_amount_shipping =  shipping_charges.getInt("greater_amount_shipping");
-                    int smaller_amount_shipping =  shipping_charges.getInt("smaller_amount_shipping");
+                    int shipping_order_amount = shipping_charges.getInt("shipping_order_amount");
+                    int greater_amount_shipping = shipping_charges.getInt("greater_amount_shipping");
+                    int smaller_amount_shipping = shipping_charges.getInt("smaller_amount_shipping");
                     double total_amount = sum;
-                    int totals = (int)total_amount;
+                    int totals = (int) total_amount;
 
-                    if(totals > shipping_order_amount)
-                    {
+                    if (totals > shipping_order_amount) {
                         x = greater_amount_shipping;
-                      delivery.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%d", greater_amount_shipping));
+                        delivery.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%d", greater_amount_shipping));
                         sums = sum + x;
                         int i = (int) Math.round(sum);
                         int j = (int) Math.round(sums);
                         total.setText(Appearance.appTranslation.getCurrency() + j);
-                    }
-                    else
-                    {
+                    } else {
                         x = smaller_amount_shipping;
                         delivery.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%d", smaller_amount_shipping));
                         sums = sum + x;
@@ -710,7 +702,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                     walletAmountweb = response.getJSONObject("data").getJSONObject("data").getJSONObject("user").getLong("wallet");
                     cashtobepaid = (sums - deliviry + gst) - walletAmountweb;
                     PayuActivity.amount = cashtobepaid;
-                    RazorPay.amount=cashtobepaid;
+                    RazorPay.amount = cashtobepaid;
                     walletRestPop = walletAmountweb - (sum - deliviry + gst);
                     if (cashtobepaid <= 0) {
                         cashPop = 0;
@@ -884,7 +876,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                             PayuActivity.mobile = mobile_et.getText().toString();
                                             // PayuActivity.amount = cashtobepaid;
                                             PayuActivity.amount = pricePop;
-                                            RazorPay.amount=pricePop;
+                                            RazorPay.amount = pricePop;
                                             PayuActivity.address = address_et.getText().toString();
                                             PayuActivity.pin = address_et.getText().toString();
 
@@ -933,7 +925,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                 PayuActivity.address = address_et.getText().toString();
                                 //  PayuActivity.amount = pricePop;
                                 PayuActivity.amount = cashtobepaid;
-                                RazorPay.amount=cashtobepaid;
+                                RazorPay.amount = cashtobepaid;
                                 paynow.setBackground(PaymentDetailsActivity.this.getResources().getDrawable(R.drawable.buttonshape));
                                 GradientDrawable bgShape = (GradientDrawable) paynow.getBackground();
                                 bgShape.setColor(Color.parseColor("#D3D3D3"));
@@ -1005,15 +997,15 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                     String wallet = getString(R.string.wallet);
                                     walletAmount.setText(wallet);
                                     wallet_amountnet.setText(Appearance.appTranslation.getCurrency() + walletAmountPop);
-                                  String proceed = getString(R.string.proceed_to_pay);
-                                   orderType = "placeOrderwithWallet";
-                                  paynow.setText(proceed + " (" + Appearance.appTranslation.getCurrency() + cashtobepaid + ")");
+                                    String proceed = getString(R.string.proceed_to_pay);
+                                    orderType = "placeOrderwithWallet";
+                                    paynow.setText(proceed + " (" + Appearance.appTranslation.getCurrency() + cashtobepaid + ")");
                                     String wallets = getString(R.string.pay_without_wallet);
                                     paywithoutwallet.setText(wallets + " (" + Appearance.appTranslation.getCurrency() + pricePop + ")");
                                     orderType = "paynow";
                                 }
                                 if (orderType.matches("placeorder")) {
-                                paynow.setVisibility(View.VISIBLE);
+                                    paynow.setVisibility(View.VISIBLE);
                                 }
                                 paynow.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -1023,7 +1015,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                             placeOrder(pricePop, walletAmountPop);
                                         } else {
                                             dialog2.dismiss();
-                                           //    placeOrderwithWallet(cashtobepaid);
+                                            //    placeOrderwithWallet(cashtobepaid);
                                             Intent intent = null;
                                             PaymentTypeActivity.payment_for = "cart_order";
                                             if (pay_u_money == 1 && c_c_avenue == 0 && mobi_kwik == 0 && paytm == 0 && pay_pal == 0) {
@@ -1510,7 +1502,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                     jsonObject.put("order_amount", amount_et.getText().toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
-                     }
+                }
                 System.out.println("sdnzfcklxn" + jsonObject);
                 VolleyTask volleyTask = new VolleyTask(this, Url_MinimumOrderAmount, jsonObject, Request.Method.POST);
                 volleyTask.setListener(new VolleyTask.IPostTaskListener() {
@@ -1522,7 +1514,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                     @Override
                     public void fnPostTaskCompletedJsonObject(JSONObject response) {
                         System.out.println("hhhs" + response.toString());
-                      //  findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
+                        //  findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
 
                         if (!new ResponseHandler().validateResponse(PaymentDetailsActivity.this, response)) {
                             return;
@@ -1562,8 +1554,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                 //   if (Integer.parseInt(amount_et.getText().toString()) >= colorSettings.getInt("min_order_amount", 100)) {
                                 findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
                                 doPayment();
-
-
                             }
                         });
 
@@ -1610,15 +1600,13 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                             } else {
                                 dialog.show();
                             }
-                        }catch (NullPointerException e)
-                        {
-                           e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
                         }
                     }
 
 
-
-                @Override
+                    @Override
                     public void fnErrorOccurred(String error) {
                         //findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
 
@@ -1724,12 +1712,14 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
     private void getinfo() {
         int wallet = Appearance.appSettings.getIs_wallet();
-        if(wallet == 1) {
-            dialog2.show(); }
-        else {
-            dialog2.cancel(); }
+        if (wallet == 1) {
+            dialog2.show();
+        } else {
+            dialog2.cancel();
+        }
 
     }
+
     public void showCart(JSONObject response) {
 
         DecimalFormat df = new DecimalFormat("#.##");
@@ -1818,9 +1808,9 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             shakingtext.setText(prices);
             TextView deliveryText = (TextView) findViewById(R.id.deliveryText);
             deliveryText.setText(deliver);
-         //   int gst = Integer.parseInt(getString(R.string.gst));
+            //   int gst = Integer.parseInt(getString(R.string.gst));
             String gst = getString(R.string.gst);
-             totals = getString(R.string.total_amount);
+            totals = getString(R.string.total_amount);
             TextView gstText = (TextView) findViewById(R.id.gstText);
             gstText.setText(gst);
             TextView totalAmountText = (TextView) findViewById(R.id.totalAmountText);
@@ -1830,23 +1820,23 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                 String amt = getString(R.string.price);
                 String item = getString(R.string.items);
                 setQuantity.setText(amt +
-                        " (" + jsonArray.length() + " " +item + ")");
+                        " (" + jsonArray.length() + " " + item + ")");
             } else {
                 String amt = getString(R.string.price);
                 String item = getString(R.string.items);
                 setQuantity.setText("(" + item + " " + jsonArray.length() + ")"
-                        +amt);
+                        + amt);
             }
             RelativeLayout gstLayout = (RelativeLayout) findViewById(R.id.gstvisibility);
-           // if ( gst > 0 && gstStatus) {
+            // if ( gst > 0 && gstStatus) {
             if (gstStatus) {
                 gstLayout.setVisibility(View.VISIBLE);
                 DecimalFormat decimalFormat = new DecimalFormat("#.#");
-               // gst1.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%.1f", gst));
+                // gst1.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%.1f", gst));
                 sums = sum + x;
                 total.setText(Appearance.appTranslation.getCurrency() + String.valueOf(sums + gst));
             } else {
-            //    gst = 0;
+                //    gst = 0;
                 gstLayout.setVisibility(View.GONE);
                 if (sum % 1 == 0) {
                     sums = sum + x;
@@ -1857,7 +1847,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                 } else {
                     sums = sum + x;
                     total.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%.1f", sums));
-                //    price.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%.1f", sum + deliviry + gst));
+                    //    price.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%.1f", sum + deliviry + gst));
                 }
             }
 
@@ -1872,8 +1862,8 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
                 price.setText(Appearance.appTranslation.getCurrency() + String.format(Locale.ENGLISH, "%.1f", sum));
             }*/
-          //  String free = getString(R.string.free);
-          //  delivery.setText(free);
+            //  String free = getString(R.string.free);
+            //  delivery.setText(free);
             System.out.println("wesa" + sum + deliviry);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1926,7 +1916,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
         Log.i("order_description", comment.getText().toString());
 
         try {
-            jsonObject.put("business_id",IConstants.BUSINESS_ID);
+            jsonObject.put("business_id", IConstants.BUSINESS_ID);
             jsonObject.put("name", name_et.getText().toString());
             jsonObject.put("email", email_et.getText().toString());
             jsonObject.put("mobile", mobile_et.getText().toString());
@@ -1945,10 +1935,9 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             jsonObject.put("order_amount", amount_et.getText().toString());
             jsonObject.put("order_description", comment.getText().toString());
             jsonObject.put("source_id", 2);
-            jsonObject.put("discount_code",discount_code);
-            jsonObject.put("discount_id",discount_id);
+            jsonObject.put("discount_code", discount_code);
+            jsonObject.put("discount_id", discount_id);
             jsonObject.put("token", "");
-
 
 
         } catch (JSONException e) {
@@ -1965,7 +1954,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
             @Override
             public void fnPostTaskCompletedJsonObject(JSONObject response) {
-               // Toast.makeText(PaymentDetailsActivity.this, ""+response, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(PaymentDetailsActivity.this, ""+response, Toast.LENGTH_SHORT).show();
                 if (!new ResponseHandler().validateResponse(PaymentDetailsActivity.this, response)) {
                     Intent intent = new Intent(PaymentDetailsActivity.this, SuccessOrder.class);
                     startActivity(intent);
@@ -1974,8 +1963,8 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                 }
 
                 try {
-                  //  String ms=response.getJSONObject("data").getString("msg");
-                   new CustomToast(PaymentDetailsActivity.this, response.getJSONObject("data").getString("msg"));
+                    //  String ms=response.getJSONObject("data").getString("msg");
+                    new CustomToast(PaymentDetailsActivity.this, response.getJSONObject("data").getString("msg"));
                     Dashboard.cart_count = 0;
                     Intent intent = new Intent(PaymentDetailsActivity.this, SuccessOrder.class);
                     startActivity(intent);
@@ -2071,7 +2060,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
         try {
             jsonObject.put("id", userid);
-            jsonObject.put("business_id",IConstants.BUSINESS_ID);
+            jsonObject.put("business_id", IConstants.BUSINESS_ID);
             jsonObject.put("language_id", languageid);
             jsonObject.put("password", pwd);
             jsonObject.put("email", email_et.getText().toString());
@@ -2092,12 +2081,12 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             jsonObject.put("area_id", valueArea == 0 ? 1 : valueArea);
             jsonObject.put("address_id", selectedAddressId);
 
-           // jsonObject.put("cart_ids", 53);
+            // jsonObject.put("cart_ids", 53);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d("sdnzfcklxn",""+jsonObject);
+        Log.d("sdnzfcklxn", "" + jsonObject);
         System.out.println("sdnzfcklxn" + jsonObject);
         VolleyTask volleyTask = new VolleyTask(this, URL_placeOrderFromWallet, jsonObject, Request.Method.POST);
         volleyTask.setListener(new VolleyTask.IPostTaskListener() {
@@ -2118,7 +2107,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                 }
 
                 try {
-                   new CustomToast(PaymentDetailsActivity.this, response.getJSONObject("data").getString("msg"));
+                    new CustomToast(PaymentDetailsActivity.this, response.getJSONObject("data").getString("msg"));
                     Intent intent = new Intent(PaymentDetailsActivity.this, SuccessOrder.class);
                     finish();
                     startActivity(intent);
@@ -2138,7 +2127,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
 
     private void placeOrderwithWallet(double price) {
-      //  findViewById(R.id.loaderBlurred).setVisibility(View.VISIBLE);
+        //  findViewById(R.id.loaderBlurred).setVisibility(View.VISIBLE);
         JSONObject jsonObject = new JSONObject();
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
         String userid = prefs.getString("user_id", "");
@@ -2147,7 +2136,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
         try {
             jsonObject.put("id", userid);
-            jsonObject.put("business_id",IConstants.BUSINESS_ID);
+            jsonObject.put("business_id", IConstants.BUSINESS_ID);
             jsonObject.put("language_id", languageid);
             jsonObject.put("password", pwd);
             jsonObject.put("email", email_et.getText().toString());
@@ -2167,7 +2156,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             jsonObject.put("state_id", valuestate == 0 ? 1 : valuestate);
             jsonObject.put("area_id", valueArea == 0 ? 1 : valueArea);
             jsonObject.put("address_id", selectedAddressId);
-         //   Toast.makeText(this, ""+, Toast.LENGTH_SHORT).show();
+            //   Toast.makeText(this, ""+, Toast.LENGTH_SHORT).show();
             // jsonObject.put("cart_ids", 53);
 
         } catch (JSONException e) {
@@ -2193,7 +2182,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
                 }
                 try {
-                   new CustomToast(PaymentDetailsActivity.this, response.getJSONObject("data").getString("msg"));
+                    new CustomToast(PaymentDetailsActivity.this, response.getJSONObject("data").getString("msg"));
                     //String msg =response.getJSONObject("data").getString("msg");
                     Intent intent = new Intent(PaymentDetailsActivity.this, SuccessOrder.class);
                     finish();

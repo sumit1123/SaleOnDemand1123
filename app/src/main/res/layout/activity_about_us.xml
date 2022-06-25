@@ -23,8 +23,8 @@
 
             <ImageView
                 android:id="@+id/map"
-                android:layout_width="@dimen/dimen_30dp"
-                android:layout_height="@dimen/dimen_30dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:backgroundTint="@color/colorPrimary"
                 app:srcCompat="@drawable/location" />
 
@@ -64,7 +64,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_below="@+id/appname"
-        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="100dp">
 
         <RelativeLayout
@@ -75,8 +75,8 @@
 
             <ImageView
                 android:id="@+id/call"
-                android:layout_width="@dimen/dimen_30dp"
-                android:layout_height="@dimen/dimen_30dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:backgroundTint="@color/colorPrimary"
                 app:srcCompat="@drawable/callblue" />
 
@@ -111,9 +111,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tagline1"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="@dimen/dimen_10dp"
-        android:layout_marginRight="@dimen/dimen_10dp"
-        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:text=""
         android:textAlignment="center" />
 
@@ -123,8 +123,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/edcs"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="@dimen/dimen_10dp"
-        android:layout_marginRight="@dimen/dimen_10dp"
-        android:layout_marginTop="@dimen/dimen_60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="60dp"
         android:textAlignment="center" />
 </RelativeLayout>

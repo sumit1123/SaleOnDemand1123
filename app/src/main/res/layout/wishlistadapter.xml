@@ -8,18 +8,18 @@
 
     <RelativeLayout
         android:id="@+id/hhh"
-        android:layout_width="@dimen/dimen_30dp"
-        android:layout_height="@dimen/dimen_30dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/dimen_10dp"
-        android:layout_marginStart="@dimen/dimen_10dp"
-        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/custom_borderdark">
 
         <ImageView
             android:id="@+id/deleteproduct"
-            android:layout_width="@dimen/dimen_20dp"
-            android:layout_height="@dimen/dimen_20dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_centerInParent="true"
             app:srcCompat="@drawable/deleta" />
     </RelativeLayout>
@@ -36,7 +36,7 @@
             android:layout_height="120dp"
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp">
 
             <ProgressBar
@@ -59,7 +59,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <com.example.grocery.CustomViews.CustomTextView

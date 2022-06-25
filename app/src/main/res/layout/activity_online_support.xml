@@ -28,8 +28,8 @@
             android:background="@color/backgroundfaint"
            
             android:gravity="center"
-            android:paddingBottom="@dimen/dimen_10dp"
-            android:paddingTop="@dimen/dimen_10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
             android:text="ewsaxz"
             android:textColor="@color/black"
             android:textDirection="locale"
@@ -42,7 +42,7 @@
             android:layout_gravity="center"
             android:background="@color/backgroundfaint"
             android:gravity="center"
-            android:paddingBottom="@dimen/dimen_10dp"
+            android:paddingBottom="10dp"
             android:text="ewsaxz"
             android:textColor="@color/black"
             android:textDirection="locale" />
@@ -87,11 +87,11 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addticket"
-        android:layout_width="@dimen/dimen_50dp"
-        android:layout_height="@dimen/dimen_50dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="@dimen/dimen_20dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginEnd="20dp"
         app:srcCompat="@drawable/addwhite" />
 

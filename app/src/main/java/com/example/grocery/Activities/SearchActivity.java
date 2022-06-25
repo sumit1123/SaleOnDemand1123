@@ -142,7 +142,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         bold = Typeface.create(typeface, Typeface.BOLD);
         normal = Typeface.create(typeface, Typeface.NORMAL);
 
-
         //labelsShared = getSharedPreferences("labels", MODE_PRIVATE);
         sortText = (TextView) findViewById(R.id.sortText);
         filterText = (TextView) findViewById(R.id.filterText);
@@ -569,7 +568,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void getData() {
-
         findViewById(R.id.noitemavalable).setVisibility(View.GONE);
         cardView.setVisibility(View.GONE);
         findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);

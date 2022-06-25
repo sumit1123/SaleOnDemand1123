@@ -22,7 +22,7 @@
             android:id="@+id/hhh"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:elevation="@dimen/dimen_10dp">
+            android:elevation="10dp">
 
 
             <LinearLayout
@@ -32,8 +32,8 @@
                 android:background="#fff"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/dimen_10dp"
-                android:paddingRight="@dimen/dimen_10dp">
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/acccntimmage"
@@ -53,7 +53,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginRight="@dimen/dimen_15dp"
+                        android:layout_marginRight="15dp"
                         android:layout_marginTop="10dp"
                        
                         android:textColor="@color/black"

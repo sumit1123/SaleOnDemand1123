@@ -1,28 +1,29 @@
 package com.example.grocery.Activities;
 
+import static com.example.grocery.Activities.ProductActivity.isViewWithCatalog;
+import static com.example.grocery.interfaces.IConstants.URL_GETDPAYMENTDETAILS;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.cardview.widget.CardView;
-import androidx.core.graphics.drawable.DrawableCompat;
-
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.android.volley.Request;
 import com.example.grocery.Appearances.Appearance;
-import com.example.grocery.Labels.Label;
 import com.example.grocery.R;
 import com.example.grocery.interfaces.IConstants;
+import com.example.grocery.paytm.Checksum;
 import com.example.grocery.utils.CartCountUtil;
 import com.example.grocery.utils.LoaderColorChanger;
 import com.example.grocery.utils.ResponseHandler;
@@ -32,20 +33,17 @@ import com.example.grocery.utils.VolleyTask;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.stringtemplate.v4.ST;
 
 import java.util.Locale;
-
-import static com.example.grocery.Activities.ProductActivity.isViewWithCatalog;
-import static com.example.grocery.interfaces.IConstants.URL_GETDPAYMENTDETAILS;
 
 public class PaymentTypeActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private TextView paypal, payumoney, ccavenue, paytm, mobikwik,razorpay;
     public static String payment_for;
+    String id;
+    float amount;
+    private TextView paypal, payumoney, ccavenue, paytm, mobikwik, razorpay;
     private RelativeLayout bar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +60,7 @@ public class PaymentTypeActivity extends AppCompatActivity implements View.OnCli
         ToolbarSettings toolbarSettings = new ToolbarSettings(this);
         initui();
         setToolBar();
-        getData();
+       // getData();
 
     }
 
@@ -90,15 +88,16 @@ public class PaymentTypeActivity extends AppCompatActivity implements View.OnCli
         ccavenue.setOnClickListener(this);
         paytm.setOnClickListener(this);
         mobikwik.setOnClickListener(this);
+        razorpay.setOnClickListener(this);
         try {
             String razrpay = getString(R.string.razorpay);
             String pay_u = getString(R.string.pay_u_money);
             String paypals = getString(R.string.pay_pal);
-           payumoney.setText(pay_u);
-           paypal.setText(paypals);
-           razorpay.setText(razrpay);
-          //  ccavenue.setText(Label.gatewayLabel.getC_c_avenue());
-          //  paytm.setText(Label.gatewayLabel.getPaytm());
+            payumoney.setText(pay_u);
+            paypal.setText(paypals);
+            razorpay.setText(razrpay);
+            //  ccavenue.setText(Label.gatewayLabel.getC_c_avenue());
+            //  paytm.setText(Label.gatewayLabel.getPaytm());
             //mobikwik.setText(Label.gatewayLabel.getMobi_kwik());
 
         } catch (NullPointerException e) {
@@ -192,6 +191,10 @@ public class PaymentTypeActivity extends AppCompatActivity implements View.OnCli
                 finish();
                 startActivity(intent);
                 break;
+
+            case R.id.paytm:
+                doPayment();
+                break;
         }
 
     }
@@ -199,18 +202,14 @@ public class PaymentTypeActivity extends AppCompatActivity implements View.OnCli
     protected void getData() {
         findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
         findViewById(R.id.retryImage).setVisibility(View.GONE);
-
-
         Button retryButton = (Button) findViewById(R.id.retrybutton);
         retryButton.setVisibility(View.GONE);
-
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbarinner);
         progressBar.setVisibility(View.VISIBLE);
         JSONObject jsonObject = new JSONObject();
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
-
         String userid = prefs.getString("user_id", "");
-       // Toast.makeText(this, "userid"+userid, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "userid"+userid, Toast.LENGTH_SHORT).show();
         String email = prefs.getString("email", "");
 
         String pwd = prefs.getString("pwd", "");
@@ -296,7 +295,7 @@ public class PaymentTypeActivity extends AppCompatActivity implements View.OnCli
                         optionCount++;
                         className = RazorPay.class;
                     }
-                        if (optionCount == 1) {
+                    if (optionCount == 1) {
                         payumoneyCard.setVisibility(View.GONE);
                         findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
 
@@ -310,7 +309,7 @@ public class PaymentTypeActivity extends AppCompatActivity implements View.OnCli
                         findViewById(R.id.whiteloader).setVisibility(View.GONE);
                     }
 
-                    if (optionCount==0){
+                    if (optionCount == 0) {
                         findViewById(R.id.no_options).setVisibility(View.VISIBLE);
                     }
 
@@ -357,5 +356,52 @@ public class PaymentTypeActivity extends AppCompatActivity implements View.OnCli
         super.onResume();
         new CartCountUtil(PaymentTypeActivity.this);
 
+    }
+
+    private void doPayment() {
+        SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("paymentdetails", MODE_PRIVATE);
+        JSONObject jsonObject1 = null;
+        try {
+            jsonObject1 = new JSONObject(sharedPreferences.getString("json", ""));
+            jsonObject1.put("business_id", IConstants.BUSINESS_ID);
+            jsonObject1.put("payment_option_id", "3");
+            id = jsonObject1.getString("id");
+            amount = jsonObject1.getInt("amount");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        VolleyTask volleyTask = new VolleyTask(PaymentTypeActivity.this, IConstants.URL_SUBMITCArt, jsonObject1, Request.Method.POST);
+        volleyTask.setListener(new VolleyTask.IPostTaskListener() {
+            @Override
+            public void fnPostTaskCompleted(JSONArray response) {
+
+            }
+
+            @Override
+            public void fnPostTaskCompletedJsonObject(JSONObject response) {
+                try {
+                    if (response.getString("status").matches("true")) {
+                        Log.e("respons", response + "");
+                        Intent paytm = new Intent(PaymentTypeActivity.this, Checksum.class);
+                        paytm.putExtra("orderid", response.getJSONObject("data").getString("paytm_order_id"));
+                        paytm.putExtra("pay_amt", response.getJSONObject("data").getString("amount"));
+                        paytm.putExtra("custid", prefs.getString("user_id", ""));
+                        startActivity(paytm);
+
+                    } else {
+                        Dashboard.cart_count = 0;
+                    }
+                } catch (JSONException e) {
+
+                }
+            }
+
+            @Override
+            public void fnErrorOccurred(String error) {
+
+            }
+        });
     }
 }

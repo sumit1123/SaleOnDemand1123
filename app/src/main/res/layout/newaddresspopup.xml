@@ -10,7 +10,7 @@
         android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/dimen_10dp">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imageclose"
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="@dimen/dimen_20dp"
+            android:layout_marginStart="20dp"
             android:text="Select Delivery Address"
             android:textColor="@color/black"
             android:textSize="18dp" />
@@ -33,7 +33,7 @@
     <LinearLayout
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_1dp"
+        android:layout_height="1dp"
         android:layout_below="@+id/top"
         android:background="@color/backgroundfaint"
         android:orientation="vertical"></LinearLayout>
@@ -43,14 +43,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/line"
-        android:layout_marginBottom="@dimen/dimen_40dp">
+        android:layout_marginBottom="40dp">
 
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_1dp"
+        android:layout_height="1dp"
         android:layout_above="@+id/addnewAddressText"
         android:background="@color/backgroundfaint">
 
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="@dimen/dimen_10dp"
+            android:padding="10dp"
             android:text="Add new Address"
             android:textColor="@color/black"
             android:textSize="18dp" />

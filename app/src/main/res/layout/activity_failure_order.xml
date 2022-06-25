@@ -13,13 +13,13 @@
 
     <LinearLayout
         android:layout_centerInParent="true"
-        android:layout_marginLeft="@dimen/dimen_20dp"
+        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_marginLeft="@dimen/dimen_20dp"
-            android:layout_marginBottom="@dimen/dimen_20dp"
-            android:layout_marginRight="@dimen/dimen_20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -49,11 +49,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <com.example.grocery.CustomViews.CustomButton
-                android:paddingEnd="@dimen/dimen_10dp"
+                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
                 android:id="@+id/continueshopping"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginTop="20dp"
                 android:textColor="#fff"
                 android:text="@string/continue_shopping"
                 android:background="@drawable/buttonshape"

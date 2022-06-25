@@ -28,12 +28,12 @@ import com.example.grocery.utils.LoaderColorChanger;
 import com.example.grocery.utils.ResponseHandler;
 import com.example.grocery.utils.ToolbarSettings;
 import com.example.grocery.utils.VolleyTask;
-import com.payumoney.core.PayUmoneyConfig;
-import com.payumoney.core.PayUmoneyConstants;
-import com.payumoney.core.PayUmoneySdkInitializer;
-import com.payumoney.core.entity.TransactionResponse;
-import com.payumoney.sdkui.ui.utils.PayUmoneyFlowManager;
-import com.payumoney.sdkui.ui.utils.ResultModel;
+//import com.payumoney.core.PayUmoneyConfig;
+//import com.payumoney.core.PayUmoneyConstants;
+//import com.payumoney.core.PayUmoneySdkInitializer;
+//import com.payumoney.core.entity.TransactionResponse;
+//import com.payumoney.sdkui.ui.utils.PayUmoneyFlowManager;
+//import com.payumoney.sdkui.ui.utils.ResultModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,7 +51,7 @@ import static com.example.grocery.interfaces.IConstants.URL_ADDTOWALLET;
 
 public class PayuActivity extends BaseActivity {
     private AppPreference mAppPreference;
-    private PayUmoneySdkInitializer.PaymentParam mPaymentParams;
+   // private PayUmoneySdkInitializer.PaymentParam mPaymentParams;
     private JSONObject jsonObject;
     public static String name;
     public static String pin;
@@ -192,125 +192,123 @@ public class PayuActivity extends BaseActivity {
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
         // Result Code is -1 send from Payumoney activity
         Log.d("MainActivity", "request code " + requestCode + " resultcode " + resultCode);
-        if (requestCode == PayUmoneyFlowManager.REQUEST_CODE_PAYMENT && resultCode == RESULT_OK && data !=
-                null) {
-            TransactionResponse transactionResponse = data.getParcelableExtra(PayUmoneyFlowManager
-                    .INTENT_EXTRA_TRANSACTION_RESPONSE);
-            ResultModel resultModel = data.getParcelableExtra(PayUmoneyFlowManager.ARG_RESULT);
-
-            // Check which object is non-null
-           // if (transactionResponse != null && transactionResponse.getPayuResponse() != null) {
-                if (transactionResponse.getTransactionStatus().equals(TransactionResponse.TransactionStatus.SUCCESSFUL)) {
-                    if (PaymentTypeActivity.payment_for.matches("wallet")) {
-                        JSONObject jsonObject = new JSONObject();
-
-                        SharedPreferences prefs1 = getSharedPreferences("UserId", MODE_PRIVATE);
-
-                        String userid = prefs1.getString("user_id", "");
-                        String pwd = prefs1.getString("pwd", "");
-
-                        String languageid = prefs1.getString("language", String.valueOf(1));
-
-                        try {
-                            jsonObject.put("business_id",IConstants.BUSINESS_ID);
-                            jsonObject.put("narration", "Added.");
-                            jsonObject.put("transaction_against", "online");
-                            jsonObject.put("id", userid);
-                            jsonObject.put("password", pwd);
-                            jsonObject.put("amount", PayuActivity.amount);
-                            jsonObject.put("language_id", languageid);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        String url = URL_ADDTOWALLET;
-                        System.out.println("sdxz" + jsonObject);
-                        System.out.println("wedxs" + url.trim());
-                        VolleyTask volleyTask = new VolleyTask(PayuActivity.this, url, jsonObject, Request.Method.POST);
-                        volleyTask.setListener(new VolleyTask.IPostTaskListener() {
-                            @Override
-                            public void fnPostTaskCompleted(JSONArray response) {
-                                System.out.println("sed" + response);
-                            }
-
-                            @Override
-                            public void fnPostTaskCompletedJsonObject(JSONObject response) {
-                                System.out.println("hhhs" + response.toString());
-
-
-                                if (!new ResponseHandler().validateResponse(PayuActivity.this, response)) {
-
-
-                                    return;
-                                }
-                                try {
-                                    //   displayInteger.setText("" + minimumInteger);
-                                    String jsonObject1 = response.getJSONObject("data").getString("msg");
-                                    new CustomToast(PayuActivity.this, jsonObject1);
-/*                                    cart_count = response.getJSONObject("data").getJSONObject("data").getInt("cart_count");
-                                    new CartCountUtil(PayuActivity.this);*/
-                                    Intent intent = new Intent(PayuActivity.this, Dashboard.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    startActivity(intent);
-
-
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-
-                            @Override
-                            public void fnErrorOccurred(String error) {
-
-                                new CustomToast(PayuActivity.this, "No connection Available");
-
-                            }
-                        });
-
-
-                    } else if (PaymentTypeActivity.payment_for.matches("cart_order")) {
-                        paymentType = 2;
-                        doPayment();
-                    }
-                }else {
-                    Intent intent = new Intent(PayuActivity.this, SuccessOrder.class);
-                    finish();
-                    startActivity(intent);
-
-                }
-
-                // Response from Payumoney
-                String payuResponse = transactionResponse.getPayuResponse();
-
-                // Response from SURl and FURL
-                String merchantResponse = transactionResponse.getTransactionDetails();
-
-              /*  new AlertDialog.Builder(this)
-                        .setCancelable(false)
-                        .setMessage(ffinish"Payu's Data : " + payuResponse + "\n\n\n Merchant's Data: " + merchantResponse)
-                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                dialog.dismiss();
-                            }
-                        }).show();
-*/
-          /*   else if (resultModel != null && resultModel.getError() != null) {
-                Log.d("dgf", "Error response : " + resultModel.getError().getTransactionResponse());
-            } else {
-                Log.d("Rfdc", "Both objects are null!");
-            }*/
-        } else {
-            finish();
-        }
+//        if (requestCode == PayUmoneyFlowManager.REQUEST_CODE_PAYMENT && resultCode == RESULT_OK && data !=
+//                null) {
+//            TransactionResponse transactionResponse = data.getParcelableExtra(PayUmoneyFlowManager
+//                    .INTENT_EXTRA_TRANSACTION_RESPONSE);
+//            ResultModel resultModel = data.getParcelableExtra(PayUmoneyFlowManager.ARG_RESULT);
+//
+//            // Check which object is non-null
+//           // if (transactionResponse != null && transactionResponse.getPayuResponse() != null) {
+//                if (transactionResponse.getTransactionStatus().equals(TransactionResponse.TransactionStatus.SUCCESSFUL)) {
+//                    if (PaymentTypeActivity.payment_for.matches("wallet")) {
+//                        JSONObject jsonObject = new JSONObject();
+//
+//                        SharedPreferences prefs1 = getSharedPreferences("UserId", MODE_PRIVATE);
+//
+//                        String userid = prefs1.getString("user_id", "");
+//                        String pwd = prefs1.getString("pwd", "");
+//
+//                        String languageid = prefs1.getString("language", String.valueOf(1));
+//
+//                        try {
+//                            jsonObject.put("business_id",IConstants.BUSINESS_ID);
+//                            jsonObject.put("narration", "Added.");
+//                            jsonObject.put("transaction_against", "online");
+//                            jsonObject.put("id", userid);
+//                            jsonObject.put("password", pwd);
+//                            jsonObject.put("amount", PayuActivity.amount);
+//                            jsonObject.put("language_id", languageid);
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                        String url = URL_ADDTOWALLET;
+//                        System.out.println("sdxz" + jsonObject);
+//                        System.out.println("wedxs" + url.trim());
+//                        VolleyTask volleyTask = new VolleyTask(PayuActivity.this, url, jsonObject, Request.Method.POST);
+//                        volleyTask.setListener(new VolleyTask.IPostTaskListener() {
+//                            @Override
+//                            public void fnPostTaskCompleted(JSONArray response) {
+//                                System.out.println("sed" + response);
+//                            }
+//
+//                            @Override
+//                            public void fnPostTaskCompletedJsonObject(JSONObject response) {
+//                                System.out.println("hhhs" + response.toString());
+//
+//
+//                                if (!new ResponseHandler().validateResponse(PayuActivity.this, response)) {
+//
+//
+//                                    return;
+//                                }
+//                                try {
+//                                    //   displayInteger.setText("" + minimumInteger);
+//                                    String jsonObject1 = response.getJSONObject("data").getString("msg");
+//                                    new CustomToast(PayuActivity.this, jsonObject1);
+///*                                    cart_count = response.getJSONObject("data").getJSONObject("data").getInt("cart_count");
+//                                    new CartCountUtil(PayuActivity.this);*/
+//                                    Intent intent = new Intent(PayuActivity.this, Dashboard.class);
+//                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                    startActivity(intent);
+//
+//
+//                                } catch (JSONException e) {
+//                                    e.printStackTrace();
+//                                }
+//
+//                            }
+//
+//                            @Override
+//                            public void fnErrorOccurred(String error) {
+//
+//                                new CustomToast(PayuActivity.this, "No connection Available");
+//
+//                            }
+//                        });
+//
+//
+//                    } else if (PaymentTypeActivity.payment_for.matches("cart_order")) {
+//                        paymentType = 2;
+//                        doPayment();
+//                    }
+//                }else {
+//                    Intent intent = new Intent(PayuActivity.this, SuccessOrder.class);
+//                    finish();
+//                    startActivity(intent);
+//
+//                }
+//
+//                // Response from Payumoney
+//                String payuResponse = transactionResponse.getPayuResponse();
+//
+//                // Response from SURl and FURL
+//                String merchantResponse = transactionResponse.getTransactionDetails();
+//
+//              /*  new AlertDialog.Builder(this)
+//                        .setCancelable(false)
+//                        .setMessage(ffinish"Payu's Data : " + payuResponse + "\n\n\n Merchant's Data: " + merchantResponse)
+//                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int whichButton) {
+//                                dialog.dismiss();
+//                            }
+//                        }).show();
+//*/
+//          /*   else if (resultModel != null && resultModel.getError() != null) {
+//                Log.d("dgf", "Error response : " + resultModel.getError().getTransactionResponse());
+//            } else {
+//                Log.d("Rfdc", "Both objects are null!");
+//            }*/
+//        } else {
+//            finish();
+//        }
     }
 
     private void launchPayUMoneyFlow() {
 
-        PayUmoneyConfig payUmoneyConfig = PayUmoneyConfig.getInstance();
-
-
-        PayUmoneySdkInitializer.PaymentParam.Builder builder = new PayUmoneySdkInitializer.PaymentParam.Builder();
+//        PayUmoneyConfig payUmoneyConfig = PayUmoneyConfig.getInstance();
+//        PayUmoneySdkInitializer.PaymentParam.Builder builder = new PayUmoneySdkInitializer.PaymentParam.Builder();
 
         if (pin==null){
             pin="1";
@@ -330,111 +328,111 @@ public class PayuActivity extends BaseActivity {
         String udf8 = "";
         String udf9 = "";
         String udf10 = "";
-        if (PaymentTypeActivity.payment_for.matches("wallet")) {
-            AppEnvironment appEnvironment = ((BaseApplication) getApplication()).getAppEnvironment();
-            builder.setAmount(PayuActivity.amount)
-                    .setTxnId(txnId)
-                    .setPhone(phone)
-                    .setProductName(productName)
-                    .setFirstName(firstName)
-                    .setEmail(email_payu)
-                    .setsUrl(appEnvironment.surl())
-                    .setfUrl(appEnvironment.furl())
-                    .setUdf1(udf1)
-                    .setUdf2(udf2)
-                    .setUdf3(udf3)
-                    .setUdf4(udf4)
-                    .setUdf5(udf5)
-                    .setUdf6(udf6)
-                    .setUdf7(udf7)
-                    .setUdf8(udf8)
-                    .setUdf9(udf9)
-                    .setUdf10(udf10)
-                    .setIsDebug(appEnvironment.debug())
-                    .setKey(merchantKey)
-                    .setMerchantId(merchantId);
-        }
-        if (PaymentTypeActivity.payment_for.matches("cart_order")) {
-            AppEnvironment appEnvironment = ((BaseApplication) getApplication()).getAppEnvironment();
-            builder.setAmount(PayuActivity.amount)
-                    .setTxnId(txnId)
-                    .setPhone(phone)
-                    .setProductName(productName)
-                    .setFirstName(firstName)
-                    .setEmail(email_payu)
-                    .setsUrl(appEnvironment.surl())
-                    .setfUrl(appEnvironment.furl())
-                    .setUdf1(udf1)
-                    .setUdf2(udf2)
-                    .setUdf3(udf3)
-                    .setUdf4(udf4)
-                    .setUdf5(udf5)
-                    .setUdf6(udf6)
-                    .setUdf7(udf7)
-                    .setUdf8(udf8)
-                    .setUdf9(udf9)
-                    .setUdf10(udf10)
-                    .setIsDebug(appEnvironment.debug())
-                    .setKey(merchantKey)
-                    .setMerchantId(merchantId);
-        }
-
-        //  System.out.println("dscx"+merchantKey+merchantId+saltKey+"efds"+appEnvironment.merchant_Key()+appEnvironment.merchant_ID()+appEnvironment.salt());
-
-        JSONObject jsonObject = new JSONObject();
-
-        try {
-
-            mPaymentParams = builder.build();
-
-
-            /*
-            * Hash should always be generated from your server side.
-            * */
-            ;
-            calculateServerSideHashAndInitiatePayment1(mPaymentParams);
-
-        } catch (Exception e) {
-            // some exception occurred
-           // Toast.makeText(this, "Money added", Toast.LENGTH_SHORT).show();
-            new CustomToast(PayuActivity.this, e.getMessage());
-            System.out.println("sdxz" + e.getMessage());
-        }
+//        if (PaymentTypeActivity.payment_for.matches("wallet")) {
+//            AppEnvironment appEnvironment = ((BaseApplication) getApplication()).getAppEnvironment();
+//            builder.setAmount(String.valueOf(amount))
+//                    .setTxnId(txnId)
+//                    .setPhone(phone)
+//                    .setProductName(productName)
+//                    .setFirstName(firstName)
+//                    .setEmail(email_payu)
+//                    .setsUrl(appEnvironment.surl())
+//                    .setfUrl(appEnvironment.furl())
+//                    .setUdf1(udf1)
+//                    .setUdf2(udf2)
+//                    .setUdf3(udf3)
+//                    .setUdf4(udf4)
+//                    .setUdf5(udf5)
+//                    .setUdf6(udf6)
+//                    .setUdf7(udf7)
+//                    .setUdf8(udf8)
+//                    .setUdf9(udf9)
+//                    .setUdf10(udf10)
+//                    .setIsDebug(appEnvironment.debug())
+//                    .setKey(merchantKey)
+//                    .setMerchantId(merchantId);
+//        }
+//        if (PaymentTypeActivity.payment_for.matches("cart_order")) {
+//            AppEnvironment appEnvironment = ((BaseApplication) getApplication()).getAppEnvironment();
+//            builder.setAmount(String.valueOf(amount))
+//                    .setTxnId(txnId)
+//                    .setPhone(phone)
+//                    .setProductName(productName)
+//                    .setFirstName(firstName)
+//                    .setEmail(email_payu)
+//                    .setsUrl(appEnvironment.surl())
+//                    .setfUrl(appEnvironment.furl())
+//                    .setUdf1(udf1)
+//                    .setUdf2(udf2)
+//                    .setUdf3(udf3)
+//                    .setUdf4(udf4)
+//                    .setUdf5(udf5)
+//                    .setUdf6(udf6)
+//                    .setUdf7(udf7)
+//                    .setUdf8(udf8)
+//                    .setUdf9(udf9)
+//                    .setUdf10(udf10)
+//                    .setIsDebug(appEnvironment.debug())
+//                    .setKey(merchantKey)
+//                    .setMerchantId(merchantId);
+//        }
+//
+//        //  System.out.println("dscx"+merchantKey+merchantId+saltKey+"efds"+appEnvironment.merchant_Key()+appEnvironment.merchant_ID()+appEnvironment.salt());
+//
+//        JSONObject jsonObject = new JSONObject();
+//
+//        try {
+//
+//            mPaymentParams = builder.build();
+//
+//
+//            /*
+//            * Hash should always be generated from your server side.
+//            * */
+//            ;
+//            calculateServerSideHashAndInitiatePayment1(mPaymentParams);
+//
+//        } catch (Exception e) {
+//            // some exception occurred
+//           // Toast.makeText(this, "Money added", Toast.LENGTH_SHORT).show();
+//            new CustomToast(PayuActivity.this, e.getMessage());
+//            System.out.println("sdxz" + e.getMessage());
+//        }
     }
 
-    private PayUmoneySdkInitializer.PaymentParam calculateServerSideHashAndInitiatePayment1(final PayUmoneySdkInitializer.PaymentParam paymentParam) {
-
-        StringBuilder stringBuilder = new StringBuilder();
-        HashMap<String, String> params = paymentParam.getParams();
-        stringBuilder.append(params.get(PayUmoneyConstants.KEY) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.TXNID) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.AMOUNT) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.PRODUCT_INFO) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.FIRSTNAME) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.EMAIL) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.UDF1) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.UDF2) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.UDF3) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.UDF4) + "|");
-        stringBuilder.append(params.get(PayUmoneyConstants.UDF5) + "||||||");
-
-        AppEnvironment appEnvironment = ((BaseApplication) getApplication()).getAppEnvironment();
-        stringBuilder.append(saltKey);
-
-        String hash = hashCal(stringBuilder.toString());
-        System.out.println("wdsxz" + hash);
-        paymentParam.setMerchantHash(hash);
-        if (hash.isEmpty() || hash.equals("")) {
-            //new CustomToast(PayuActivity.this, "Could not generate hash");
-
-        } else {
-            mPaymentParams.setMerchantHash(hash);
-
-            //  finish();
-            PayUmoneyFlowManager.startPayUMoneyFlow(mPaymentParams, PayuActivity.this, R.style.ToolBarStyle, true);
-        }
-        return paymentParam;
-    }
+//    private PayUmoneySdkInitializer.PaymentParam calculateServerSideHashAndInitiatePayment1(final PayUmoneySdkInitializer.PaymentParam paymentParam) {
+//
+//        StringBuilder stringBuilder = new StringBuilder();
+//        HashMap<String, String> params = paymentParam.getParams();
+//        stringBuilder.append(params.get(PayUmoneyConstants.KEY) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.TXNID) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.AMOUNT) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.PRODUCT_INFO) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.FIRSTNAME) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.EMAIL) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.UDF1) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.UDF2) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.UDF3) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.UDF4) + "|");
+//        stringBuilder.append(params.get(PayUmoneyConstants.UDF5) + "||||||");
+//
+//        AppEnvironment appEnvironment = ((BaseApplication) getApplication()).getAppEnvironment();
+//        stringBuilder.append(saltKey);
+//
+//        String hash = hashCal(stringBuilder.toString());
+//        System.out.println("wdsxz" + hash);
+//        paymentParam.setMerchantHash(hash);
+//        if (hash.isEmpty() || hash.equals("")) {
+//            //new CustomToast(PayuActivity.this, "Could not generate hash");
+//
+//        } else {
+//            mPaymentParams.setMerchantHash(hash);
+//
+//            //  finish();
+//            PayUmoneyFlowManager.startPayUMoneyFlow(mPaymentParams, PayuActivity.this, R.style.ToolBarStyle, true);
+//        }
+//        return paymentParam;
+//    }
 
 
     /* private class GetHashesFromServerTask extends AsyncTask<String, String, String> {

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:ns1="http://schemas.android.com/apk/res-auto">
     <style name="ToolBarStyle" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">#00044C</item>
         <item name="android:textColor">@color/black</item>
@@ -13,6 +13,16 @@
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:textColorHint">#d3d3d3</item>
+    </style>
+
+    <style name="AlertDialogStyle_Default" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/green</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
     </style>
     <style name="ToolbarTheme" parent="Widget.AppCompat.Toolbar">
         <item name="actionMenuTextColor">@color/green</item>
@@ -67,21 +77,25 @@
     <style name="ButtonStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingBottom">@dimen/dimen_10dp</item>
-        <item name="android:paddingTop">@dimen/dimen_10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/dimen_18sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:background">@drawable/bg_rounded_button</item>
         <item name="android:gravity">center</item>
     </style>
     <style name="ActionBar" parent="Theme.AppCompat">
-        <item name="android:background">@color/actionbar_background</item>
+        <item name="android:background">@color/primary_blue</item>
     </style>
 
     <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="android:spinnerItemStyle">@style/TextViewSpinnerItem</item>
 
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar" ns1:ignore="NewApi">
+        <item name="android:background">#6ac451</item>
     </style>
     <style name="TextViewSpinnerItem" parent="@android:style/Widget.TextView.SpinnerItem">
 

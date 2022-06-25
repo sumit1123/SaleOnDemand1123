@@ -9,16 +9,13 @@
     tools:context="com.example.grocery.Activities.ProductActivity">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <include
             android:id="@+id/toolbar"
@@ -40,8 +37,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:id="@+id/changelayout"
@@ -55,17 +51,18 @@
                         android:id="@+id/changeview"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_centerHorizontal="true"
                         android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/navigation" />
 
                 </RelativeLayout>
+
                 <LinearLayout
-                    android:weightSum="10"
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
 
 
                     <RelativeLayout
@@ -95,17 +92,17 @@
                                 android:id="@+id/imagesort"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:layout_marginLeft="@dimen/dimen_5dp"
                                 app:srcCompat="@drawable/sort" />
 
                             <com.example.grocery.CustomViews.CustomTextView
-                                android:layout_width="wrap_content"
                                 android:id="@+id/sortText"
-                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
                                 android:layout_toRightOf="@+id/imagesort"
                                 android:text="Sort"
                                 android:textColor="#000"
@@ -141,18 +138,18 @@
                                 android:id="@+id/imagefilter"
                                 android:layout_width="15dp"
                                 android:layout_height="13dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:layout_marginLeft="@dimen/dimen_5dp"
                                 android:src="@drawable/filter" />
 
                             <com.example.grocery.CustomViews.CustomTextView
-                                android:layout_width="wrap_content"
-                               
                                 android:id="@+id/filterText"
-                                android:layout_marginRight="@dimen/dimen_5dp"
+
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
                                 android:layout_toRightOf="@+id/imagefilter"
                                 android:text="Filter"
                                 android:textColor="#000"
@@ -173,24 +170,24 @@
             android:visibility="gone">
 
             <com.example.grocery.CustomViews.CustomTextView
-               
+
                 android:id="@+id/similarProductText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:background="@color/backgroundfaint"
                 android:gravity="center"
-                android:paddingLeft="@dimen/dimen_20dp"
+                android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:layout_marginStart="@dimen/dimen_4dp"
-            android:layout_marginEnd="@dimen/dimen_4dp"
             android:id="@+id/swipeRefreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/searchrec"
@@ -202,9 +199,11 @@
             </androidx.recyclerview.widget.RecyclerView>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </LinearLayout>
+
     <include
         android:id="@+id/noitemavalable"
         layout="@layout/noitemavalable" />
+
     <include
         android:id="@+id/loaderBlurred"
         layout="@layout/blurredloader" />

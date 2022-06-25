@@ -31,8 +31,6 @@ import static com.example.grocery.Appearances.Appearance.appSettings;
 
 public class AboutUsActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

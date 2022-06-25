@@ -4,7 +4,6 @@ public class VendorModel
 {
     private String name;
     private String contact_number;
-
     public int getVendor_call_id() {
         return vendor_call_id;
     }

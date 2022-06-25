@@ -252,10 +252,8 @@ public class Dashboard extends AppCompatActivity
         toolbarCart = (RelativeLayout) toolbar.findViewById(R.id.toolcart);
         setSupportActionBar(toolbar);
         shouldExecuteOnResume = false;
-
         initui();
         getData();
-
         toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.getDrawerArrowDrawable().setColor((Color.parseColor("#" + Appearance.appSettings.getApp_text_color())));
@@ -770,10 +768,7 @@ public class Dashboard extends AppCompatActivity
                 drawer7.closeDrawer(GravityCompat.START);
                 intent = new Intent(this, PolicyActivity.class);
                 startActivity(intent);
-
                 break;
-
-
 
             case R.id.navsharewithfrnds:
                 DrawerLayout drawer17 = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -1169,16 +1164,11 @@ public class Dashboard extends AppCompatActivity
         if (!hideloading) {
             findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
         }
-
         findViewById(R.id.retryImage).setVisibility(View.GONE);
-
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
-
-
         Configuration configuration = getResources().getConfiguration();
         configuration.setLayoutDirection(new Locale(prefs.getString("language_code", "en")));
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
-
         Button retryButton = (Button) findViewById(R.id.retrybutton);
         retryButton.setVisibility(View.GONE);
 
@@ -1232,18 +1222,12 @@ public class Dashboard extends AppCompatActivity
                 try {
                     JSONObject jsonObject1 = response.getJSONObject("data");
 //                    JSONObject application_appearance = jsonObject1.getJSONObject("data").getJSONObject("application_appearance");
-
                     String welcome = (String) getText(R.string.welcome);
                     welcomeText.setText(welcome);
-
-
                     if (jsonObject1.getJSONObject("data").get("user").equals(null)) {
                         String guest = getString(R.string.guest);
                         welcomeText2.setText(guest);
-
-
                     } else {
-
                         if (jsonObject1.getJSONObject("data").getJSONObject("user").get("name").equals(null)) {
                             welcomeText2.setText("");
                         } else {
@@ -1313,16 +1297,7 @@ public class Dashboard extends AppCompatActivity
                     notification_count = jsonObject1.getJSONObject("data").getInt("notification_count");
                     //Toast.makeText(Dashboard.this, ""+notification_count, Toast.LENGTH_SHORT).show();
                     notificationcount = (TextView) toolbar.findViewById(R.id.notification_count_textview);
-                   /* if(Dashboard.notification_count!=0)
-                    {
-                        notificationcount.setVisibility(View.VISIBLE);
-                        notificationcount.setText(String.valueOf(Dashboard.notification_count));
-                    }*/
-
-
                     new CartCountUtil(Dashboard.this);
-
-
                     Gson gson = new Gson();
                     RelativeLayout slidervisibility = (RelativeLayout) findViewById(R.id.sliderVisibility);
                     if (Appearance.appSettings.getIs_slider() == 0) {
@@ -1352,14 +1327,7 @@ public class Dashboard extends AppCompatActivity
                             init(list);
                         }
                     }
-
-                 /*   if (jsonObject1.getJSONObject("data").getJSONArray("offer_zone_products").length() == 0) {
-                        RelativeLayout cardOffer = (RelativeLayout) findViewById(R.id.cardoffer);
-                        cardOffer.setVisibility(View.GONE);
-
-                    }*/
                     RecyclerView offerBlocks = (RecyclerView) findViewById(R.id.offerBlocks);
-
                     if (jsonObject1.getJSONObject("data").getJSONArray("offer_blocks").length() > 0) {
                         offerBlocks.setVisibility(View.VISIBLE);
 
@@ -1384,8 +1352,6 @@ public class Dashboard extends AppCompatActivity
                         button.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-
-
                                 findViewById(R.id.noitemavalable1).setVisibility(View.GONE);
                                 refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout1);
                                 refreshLayout.setColorSchemeColors((Color.parseColor("#" + Appearance.appSettings.getApp_text_color())));
@@ -1398,19 +1364,14 @@ public class Dashboard extends AppCompatActivity
                                         hideloading = true;
                                         getData();
                                         Log.i("getData", "2222222");
-
-
                                     }
                                 });
                             }
                         });
-
                     } else {
                         cardLatest.setVisibility(View.VISIBLE);
-
                     }
                     RelativeLayout cardRecent = (RelativeLayout) findViewById(R.id.cardrecentproducts);
-
                     if (jsonObject1.getJSONObject("data").getJSONArray("recent_view_products").length() == 0 || Appearance.appSettings.getShow_recent_view_product() == 0) {
                         cardRecent.setVisibility(View.GONE);
                     } else {
@@ -1444,19 +1405,8 @@ public class Dashboard extends AppCompatActivity
 
                     System.out.println("esdxz" + jsonObject1.getJSONObject("data").getJSONArray("categories"));
                     int productCount = jsonObject1.getJSONObject("data").getInt("product_count");
-                 /*   String productCountString = "";
-                    if (productCount != 0) {
-                        productCountString = "" + productCount + "+ ";
-                    }
-                    String search  = getString(R.string.search);
-                    String products = getString(R.string.products);
-                    editTextSearch.setHint(search +
-                            " " + productCountString + products);*/
-
                     setRecentView(jsonObject1.getJSONObject("data").getJSONArray("recent_view_products"));
                     RelativeLayout relativeLayout1 = (RelativeLayout) findViewById(R.id.cardmaxproducts);
-
-
                     if(Appearance.appSettings.getIs_show_product_count() == 1)
                     {
                         String search_1  = getString(R.string.search);
@@ -1470,8 +1420,6 @@ public class Dashboard extends AppCompatActivity
                         String products_1 = getString(R.string.products);
                         editTextSearch.setHint(search_1 +" "+ products_1);
                     }
-
-
                     if (jsonObject1.getJSONObject("data").getJSONArray("max_view_products").length() == 0 || Appearance.appSettings.getShow_max_view_product() == 0) {
                         relativeLayout1.setVisibility(View.GONE);
                     } else {
@@ -1482,11 +1430,9 @@ public class Dashboard extends AppCompatActivity
                     setShopBycategory(jsonObject1.getJSONObject("data").getJSONArray("categories"));
                     setTopSellers(jsonObject1.getJSONObject("data").getJSONArray("top_sellers"));
                     Log.i("getData", "setlMax&SHop_1292");
-
                     RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.featuredbrands);
                     if (jsonObject1.getJSONObject("data").getJSONArray("featured_brand").length() > 0 && Appearance.appSettings.getShow_featured_brands() == 1) {
                         relativeLayout.setVisibility(View.VISIBLE);
-
                         setFeaturedBrands(jsonObject1.getJSONObject("data").getJSONArray("featured_brand"));
                     } else {
                         relativeLayout.setVisibility(View.GONE);
@@ -1807,11 +1753,6 @@ public class Dashboard extends AppCompatActivity
     private void setTopSellers(JSONArray top_sellers) {
         Gson gson = new Gson();
         List<BusinessModel> list = Arrays.asList(gson.fromJson(top_sellers.toString(), BusinessModel[].class));
-      //  islatestProduct = false;
-/*List<ProductModel> list=new ArrayList<>();
-        for (int i = 0; i < 2; i++) {
-            list.add(list1.get(i));
-        }*/
         System.out.println("dada" + list);
         RecyclerView recylertopseller = (RecyclerView) findViewById(R.id.rectopsellers);
         recylertopseller.setNestedScrollingEnabled(false);

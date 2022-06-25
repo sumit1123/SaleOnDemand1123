@@ -138,12 +138,11 @@
                         android:orientation="horizontal">
 
                         <com.example.grocery.CustomViews.CustomTextView
-
                             android:id="@+id/deliveryText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
                             android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
                             android:layout_centerVertical="true"
                             android:text="Delivery"
                             android:textColor="#000" />
@@ -743,12 +742,10 @@
         </LinearLayout>
 
         <include
-
             android:id="@+id/whiteloader"
             layout="@layout/whiteloader" />
 
         <include
-
             android:id="@+id/loaderBlurred"
             layout="@layout/blurredloader" />
     </RelativeLayout>

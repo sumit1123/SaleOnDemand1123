@@ -37,6 +37,7 @@ public interface IConstants {
     String URL_POLICY = BASE_URL + "getPolicy";
     String URL_ABOUTUS = BASE_URL + "getAbout";
     String URL_FIlteredPRoduct = BASE_URL + "getProductFilter";
+     String URL_FIlteredSeller = BASE_URL + "getBusinessListSearch";
     String URL_GETPRODUCTADDTOCARTT = BASE_URL + "addToCart";
     String URL_GETPADDREVIEW = BASE_URL + "postProductReview";
     String URL_ALLReviews = BASE_URL + "getAllReviews";

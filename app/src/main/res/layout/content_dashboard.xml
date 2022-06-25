@@ -511,12 +511,10 @@
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-
     <include
         android:id="@+id/noitemavalable1"
         layout="@layout/activity_noitem"
         android:visibility="gone" />
-
 
 </RelativeLayout>
 

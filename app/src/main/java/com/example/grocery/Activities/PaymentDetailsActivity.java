@@ -249,7 +249,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
     }
 
     public void getData() {
-
         if (!hideloading) {
             findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
         }
@@ -756,7 +755,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.linear:
                 loadAddresses(jsonArray);
@@ -784,11 +782,9 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                     public void fnPostTaskCompleted(JSONArray response) {
 
                     }
-
                     @Override
                     public void fnPostTaskCompletedJsonObject(JSONObject response) {
                         System.out.println("hhhs" + response.toString());
-                        //  findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
                         if (!new ResponseHandler().validateResponse(PaymentDetailsActivity.this, response)) {
                             return;
                         }
@@ -843,10 +839,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                 new CustomToast(PaymentDetailsActivity.this, err);
                             } else {
                                 address_et.setError(null);
-
-
                                 dialog2.setContentView(R.layout.paynowpopup);
-
                                 TextView result = (TextView) dialog2.findViewById(R.id.result);
                                 final Button paynow = (Button) dialog2.findViewById(R.id.paywithwallet);
                                 TextView resultAmount = (TextView) dialog2.findViewById(R.id.resultamount);
@@ -969,11 +962,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                 priceDetailsText = (TextView) dialog2.findViewById(R.id.priceDetailsText);
                                 String price = getString(R.string.pay_using_wallet);
                                 priceDetailsText.setText(price);
-
-                             /*   String pay = getString(R.string.continue_to_pay);
-                                paynow.setText(pay + " (" + Appearance.appTranslation.getCurrency() + (pricePop - walletAmountPop) + ")");*/
-
-
                                 if (cashPop == 0) {
                                     try {
                                         String amt = getString(R.string.order_amount);
@@ -1115,15 +1103,11 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                     }
                                     sharedPreferences.putString("json", jsonObject.toString());
                                     sharedPreferences.apply();
-
                                     SharedPreferences sharedPreferences1 = getSharedPreferences("paymentdetails", MODE_PRIVATE);
                                     String s = sharedPreferences1.getString("json", "");
                                     Log.i("Rajat", "LOG " + s);
-
                                     JSONObject o = new JSONObject(s);
                                     System.out.println("Rajat JSON" + o);
-
-
                                     finish();
                                     startActivity(intent);
                                 } else {
@@ -1135,357 +1119,12 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
-
                     }
-
                     @Override
                     public void fnErrorOccurred(String error) {
-                        //findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
-
                     }
                 });
                 break;
-
-              /*  try {
-                    if (name_et.getText().toString().isEmpty()) {
-                        name_et.requestFocus();
-                        String err = getString(R.string.name_empty);
-                        name_et.setError(err);
-                        return;
-                    } else {
-                        name_et.setError(null);
-                    }
-                    if (email_et.getText().toString().isEmpty()) {
-                        email_et.requestFocus();
-                        String err = getString(R.string.email_empty);
-                        email_et.setError(err);
-                        return;
-                    } else {
-                        email_et.setError(null);
-                    }
-                    if (mobile_et.getText().toString().isEmpty()) {
-                        mobile_et.requestFocus();
-                        String err = getString(R.string.contact_number_empty);
-                        mobile_et.setError(err);
-
-                        return;
-                    } else {
-                        mobile_et.setError(null);
-                    }
-                    if (mobile_et.getText().toString().length() != 10) {
-                        mobile_et.requestFocus();
-                        String err = getString(R.string.please_enter_a_valid_number);
-                        mobile_et.setError(err);
-                        return;
-                    } else {
-                        mobile_et.setError(null);
-                    }
-                    if (address_et.getText().toString().isEmpty()) {
-                        address_et.requestFocus();
-                        String err = getString(R.string.address_empty);
-                        address_et.setError(err);
-                        return;
-                    } else if (valueCountry == 0 && country.isShown()) {
-                        new CustomToast(PaymentDetailsActivity.this, "Please select country from drop down");
-                    } else if (valuestate == 0 && state.isShown()) {
-                        new CustomToast(PaymentDetailsActivity.this, "Please select state from drop down");
-                    } else if (valueCity == 0 && city.isShown()) {
-                        new CustomToast(PaymentDetailsActivity.this, "Please select city from drop down");
-                    } else if (pin.getSelectedItemPosition() == 0 && pin.isShown()) {
-                        System.out.println("valueCity" + valueCity);
-                        String err = getString(R.string.pincode_empty);
-                        new CustomToast(PaymentDetailsActivity.this, err);
-                    } else {
-                        address_et.setError(null);
-
-
-                        dialog2.setContentView(R.layout.paynowpopup);
-
-                        TextView result = (TextView) dialog2.findViewById(R.id.result);
-                        Button paynow = (Button) dialog2.findViewById(R.id.paywithwallet);
-                        TextView resultAmount = (TextView) dialog2.findViewById(R.id.resultamount);
-                        TextView wallet_amountnet = (TextView) dialog2.findViewById(R.id.wallet_amountnet);
-                        TextView walletAmount = (TextView) dialog2.findViewById(R.id.walletAmount);
-                        Button cancel = (Button) dialog2.findViewById(R.id.cancel);
-                        final Button paywithoutwallet = (Button) dialog2.findViewById(R.id.paywithoutwallet);
-                        paywithoutwallet.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Intent intent = null;
-                                PaymentTypeActivity.payment_for = "cart_order";
-                                if (pay_u_money == 1 && c_c_avenue == 0 && mobi_kwik == 0 && paytm == 0 && pay_pal == 0) {
-                                    intent = new Intent(PaymentDetailsActivity.this, PayuActivity.class);
-                                } else {
-                                    intent = new Intent(PaymentDetailsActivity.this, PaymentTypeActivity.class);
-                                }
-                                SharedPreferences.Editor sharedPreferences = getSharedPreferences("paymentdetails", MODE_PRIVATE).edit();
-                                SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
-                                String userid = prefs.getString("user_id", "");
-                                String pwd = prefs.getString("pwd", "");
-                                String languageid = prefs.getString("language", String.valueOf(1));
-                                JSONObject jsonObject = new JSONObject();
-                                try {
-                                    PayuActivity.name = name_et.getText().toString();
-                                    PayuActivity.email = email_et.getText().toString();
-                                    PayuActivity.mobile = mobile_et.getText().toString();
-                                    // PayuActivity.amount = cashtobepaid;
-                                    PayuActivity.amount = pricePop;
-                                    PayuActivity.address = address_et.getText().toString();
-                                    PayuActivity.pin = address_et.getText().toString();
-
-
-                                    jsonObject.put("name", name_et.getText().toString());
-                                    jsonObject.put("email", email_et.getText().toString());
-                                    jsonObject.put("mobile", mobile_et.getText().toString());
-                                    jsonObject.put("amount", cashtobepaid);
-                                    jsonObject.put("address", address_et.getText().toString());
-                                    jsonObject.put("id", userid);
-                                    jsonObject.put("password", pwd);
-                                    jsonObject.put("delivery_address", address_et.getText().toString());
-                                    jsonObject.put("order_type", paymentType);
-                                    jsonObject.put("cart_ids", cartIds);
-                                    jsonObject.put("token", "");
-                                    jsonObject.put("address_id", selectedAddressId);
-                                    jsonObject.put("language_id", languageid);
-                                    jsonObject.put("country_id", valueCountry == 0 ? 1 : valueCountry);
-                                    jsonObject.put("state_id", valuestate == 0 ? 1 : valuestate);
-                                    jsonObject.put("city_id", valueCity == 0 ? 1 : valueCity);
-                                    jsonObject.put("area_id", valueArea == 0 ? 1 : valueArea);
-                                    jsonObject.put("pincode_id", valuePincode == 0 ? 1 : valuePincode);
-                                    jsonObject.put("order_amount", amount_et.getText().toString());
-                                    jsonObject.put("order_description", comment.getText().toString());
-                                    jsonObject.put("source_id", 2);
-
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-
-                                sharedPreferences.putString("json", jsonObject.toString());
-                                sharedPreferences.apply();
-
-
-                                SharedPreferences sharedPreferences1 = getSharedPreferences("paymentdetails", MODE_PRIVATE);
-                                String s = sharedPreferences1.getString("json", "");
-                                Log.i("Rajat", "onClick: " + s);
-                                finish();
-                                startActivity(intent);
-                            }
-                        });
-                        PayuActivity.name = name_et.getText().toString();
-                        PayuActivity.email = email_et.getText().toString();
-                        PayuActivity.mobile = mobile_et.getText().toString();
-                        PayuActivity.address = address_et.getText().toString();
-                        //  PayuActivity.amount = pricePop;
-                        PayuActivity.amount = cashtobepaid;
-                        paynow.setBackground(PaymentDetailsActivity.this.getResources().getDrawable(R.drawable.buttonshape));
-                        GradientDrawable bgShape = (GradientDrawable) paynow.getBackground();
-                        bgShape.setColor(Color.parseColor("#D3D3D3"));
-                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                            ColorStateList stateListDrawable = new ColorStateList(
-                                    new int[][]
-                                            {
-                                                    new int[]{android.R.attr.state_pressed},
-                                                    new int[]{android.R.attr.state_focused},
-                                                    new int[]{android.R.attr.state_activated},
-                                                    new int[]{}
-                                            },
-                                    new int[]
-                                            {
-                                                    Color.parseColor("#" + Appearance.appSettings.getApp_back_color()),
-                                                    Color.parseColor("#" + Appearance.appSettings.getApp_back_color()),
-                                                    Color.parseColor("#" + Appearance.appSettings.getApp_back_color()),
-                                                    Color.parseColor("#" + Appearance.appSettings.getApp_back_color())
-                                            }
-                            );
-                            paywithoutwallet.setBackgroundTintList(stateListDrawable);
-                            paywithoutwallet.setTextColor(Color.parseColor("#" + Appearance.appSettings.getApp_text_color()));
-                        } else {
-                            paywithoutwallet.setBackground(PaymentDetailsActivity.this.getResources().getDrawable(R.drawable.buttonshape));
-                            GradientDrawable bgShape1 = (GradientDrawable) paywithoutwallet.getBackground();
-                            bgShape1.setColor(Color.parseColor("#" + Appearance.appSettings.getApp_back_color()));
-                            paywithoutwallet.setTextColor(Color.parseColor("#" + Appearance.appSettings.getApp_text_color()));
-
-                        }
-                        cancel.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                dialog2.dismiss();
-                            }
-                        });
-                        String cancels = getString(R.string.cancel);
-
-                        cancel.setText(cancels);
-                        cancel.setTextColor(Color.parseColor("#" + Appearance.appSettings.getText_color()));
-
-                        priceDetailsText = (TextView) dialog2.findViewById(R.id.priceDetailsText);
-                        String price = getString(R.string.pay_using_wallet);
-                        priceDetailsText.setText(price);
-
-                        String pay = getString(R.string.continue_to_pay);
-                        paynow.setText(pay + " (" + Appearance.appTranslation.getCurrency() + (pricePop - walletAmountPop) + ")");
-
-
-                        if (cashPop == 0) {
-
-                            try {
-                                String amt = getString(R.string.order_amount);
-                                result.setText(amt);
-                                resultAmount.setText(Appearance.appTranslation.getCurrency() + pricePop);
-                                String wallet = getString(R.string.wallet);
-                                walletAmount.setText(wallet);
-                                wallet_amountnet.setText(Appearance.appTranslation.getCurrency() + walletAmountPop);
-                                paynow.setText("Place Order With wallet");
-                                String without_wallet = getString(R.string.pay_without_wallet);
-                                paywithoutwallet.setText(without_wallet + " (" + Appearance.appTranslation.getCurrency() + pricePop + ")");
-                            } catch (NullPointerException e) {
-                                e.printStackTrace();
-                            }
-                            orderType = "placeorder";
-
-                        } else {
-                            String amt = getString(R.string.total_amount);
-                            result.setText(amt);
-                            resultAmount.setText(Appearance.appTranslation.getCurrency() + pricePop);
-                            String wallet = getString(R.string.wallet);
-                            walletAmount.setText(wallet);
-                            wallet_amountnet.setText(Appearance.appTranslation.getCurrency() + walletAmountPop);
-                            String proceed = getString(R.string.proceed_to_pay);
-                            orderType = "placeOrderwithWallet";
-                            paynow.setText(proceed + " (" + Appearance.appTranslation.getCurrency() + cashtobepaid + ")");
-                            String wallets = getString(R.string.pay_without_wallet);
-                            paywithoutwallet.setText(wallets + " (" + Appearance.appTranslation.getCurrency() + pricePop + ")");
-                            orderType = "paynow";
-                        }
-                        paynow.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                if (orderType.matches("placeorder")) {
-                                    dialog2.dismiss();
-                                    placeOrder(pricePop, walletAmountPop);
-                                } else {
-                                    dialog2.dismiss();
-                                    //   placeOrderwithWallet(cashtobepaid);
-                                    Intent intent = null;
-                                    PaymentTypeActivity.payment_for = "cart_order";
-                                    if (pay_u_money == 1 && c_c_avenue == 0 && mobi_kwik == 0 && paytm == 0 && pay_pal == 0) {
-                                        intent = new Intent(PaymentDetailsActivity.this, PayuActivity.class);
-                                    } else {
-                                        intent = new Intent(PaymentDetailsActivity.this, PaymentTypeActivity.class);
-                                    }
-                                    SharedPreferences.Editor sharedPreferences = getSharedPreferences("paymentdetails", MODE_PRIVATE).edit();
-                                    SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
-                                    String userid = prefs.getString("user_id", "");
-                                    String pwd = prefs.getString("pwd", "");
-                                    String languageid = prefs.getString("language", String.valueOf(1));
-                                    JSONObject jsonObject = new JSONObject();
-                                    try {
-                                        PayuActivity.name = name_et.getText().toString();
-                                        PayuActivity.email = email_et.getText().toString();
-                                        PayuActivity.mobile = mobile_et.getText().toString();
-                                        PayuActivity.amount = cashtobepaid;
-                                        // PayuActivity.amount =  pricePop;
-                                        PayuActivity.address = address_et.getText().toString();
-                                        PayuActivity.pin = address_et.getText().toString();
-
-                                        jsonObject.put("name", name_et.getText().toString());
-                                        jsonObject.put("email", email_et.getText().toString());
-                                        jsonObject.put("mobile", mobile_et.getText().toString());
-                                        jsonObject.put("amount", cashtobepaid);
-                                        jsonObject.put("address", address_et.getText().toString());
-                                        jsonObject.put("id", userid);
-                                        jsonObject.put("password", pwd);
-                                        jsonObject.put("delivery_address", address_et.getText().toString());
-                                        jsonObject.put("order_type", paymentType);
-                                        jsonObject.put("cart_ids", cartIds);
-                                        jsonObject.put("token", "");
-                                        jsonObject.put("address_id", selectedAddressId);
-                                        jsonObject.put("language_id", languageid);
-                                        jsonObject.put("country_id", valueCountry == 0 ? 1 : valueCountry);
-                                        jsonObject.put("state_id", valuestate == 0 ? 1 : valuestate);
-                                        jsonObject.put("city_id", valueCity == 0 ? 1 : valueCity);
-                                        jsonObject.put("area_id", valueArea == 0 ? 1 : valueArea);
-                                        jsonObject.put("pincode_id", valuePincode == 0 ? 1 : valuePincode);
-                                        jsonObject.put("order_amount",   .getText().toString());
-                                        jsonObject.put("order_description", comment.getText().toString());
-                                        jsonObject.put("source_id", 2);
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                    sharedPreferences.putString("json", jsonObject.toString());
-                                    sharedPreferences.apply();
-                                    finish();
-                                    startActivity(intent);
-                                }
-                            }
-                        });
-
-                        if (((int) walletAmountPop) == 0 || Appearance.appSettings.getIs_wallet() == 0) {
-                            dialog2.dismiss();
-                            PaymentTypeActivity.payment_for = "cart_order";
-                            Intent intent = null;
-                            if (pay_u_money == 1 && c_c_avenue == 0 && mobi_kwik == 0 && paytm == 0 && pay_pal == 0) {
-                                intent = new Intent(PaymentDetailsActivity.this, PayuActivity.class);
-                            } else {
-                                intent = new Intent(PaymentDetailsActivity.this, PaymentTypeActivity.class);
-                            }
-                            SharedPreferences.Editor sharedPreferences = getSharedPreferences("paymentdetails", MODE_PRIVATE).edit();
-                            SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
-                            String userid = prefs.getString("user_id", "");
-                            String pwd = prefs.getString("pwd", "");
-                            String languageid = prefs.getString("language", String.valueOf(1));
-                            JSONObject jsonObject = new JSONObject();
-                            try {
-                                jsonObject.put("name", name_et.getText().toString());
-                                jsonObject.put("email", email_et.getText().toString());
-                                jsonObject.put("mobile", mobile_et.getText().toString());
-                                jsonObject.put("amount", cashtobepaid);
-                                jsonObject.put("address", address_et.getText().toString());
-                                jsonObject.put("id", userid);
-                                jsonObject.put("password", pwd);
-                                jsonObject.put("delivery_address", address_et.getText().toString());
-                                jsonObject.put("order_type", paymentType);
-                                jsonObject.put("cart_ids", cartIds);
-                                jsonObject.put("address_id", selectedAddressId);
-                                jsonObject.put("language_id", languageid);
-                                jsonObject.put("country_id", valueCountry == 0 ? 1 : valueCountry);
-                                jsonObject.put("state_id", valuestate == 0 ? 1 : valuestate);
-                                jsonObject.put("city_id", valueCity == 0 ? 1 : valueCity);
-                                jsonObject.put("area_id", valueArea == 0 ? 1 : valueArea);
-                                jsonObject.put("pincode_id", valuePincode == 0 ? 1 : valuePincode);
-                                jsonObject.put("order_amount", amount_et.getText().toString());
-                                jsonObject.put("order_description", comment.getText().toString());
-                                jsonObject.put("source_id", 2);
-                                jsonObject.put("token", "");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            sharedPreferences.putString("json", jsonObject.toString());
-                            sharedPreferences.apply();
-
-                            SharedPreferences sharedPreferences1 = getSharedPreferences("paymentdetails", MODE_PRIVATE);
-                            String s = sharedPreferences1.getString("json", "");
-                            Log.i("Rajat", "LOG " + s);
-
-                            JSONObject o = new JSONObject(s);
-                            System.out.println("Rajat JSON" + o);
-
-
-                            finish();
-                            startActivity(intent);
-                        } else {
-                            dialog2.show();
-                        }
-                    }
-                } catch (NullPointerException e) {
-                    e.printStackTrace();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                break;
-*/
 
             case R.id.cashon:
                 SharedPreferences.Editor sharedPreferences = getSharedPreferences("paymentdetails", MODE_PRIVATE).edit();
@@ -1604,110 +1243,12 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                             e.printStackTrace();
                         }
                     }
-
-
                     @Override
                     public void fnErrorOccurred(String error) {
-                        //findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
-
                     }
                 });
         }
 
-               /* final Dialog dialog = new Dialog(PaymentDetailsActivity.this, R.style.AlertDialogStyle_Default);
-                dialog.setContentView(R.layout.cashondeliverypopup);
-                Button dialogOkButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-                TextView codmessege = (TextView) dialog.findViewById(R.id.codmessege);
-                TextView codTitle = (TextView) dialog.findViewById(R.id.codTitle);
-                Button dialogCancelButton = (Button) dialog.findViewById(R.id.canceldialogue);
-                try {
-                    String no = getString(R.string.no);
-                    String yes = getString(R.string.yes);
-                    String confirm = getString(R.string.confirm_your_order);
-                    String cash = getString(R.string.cash_on_delivery);
-                    dialogCancelButton.setText(no);
-                    dialogOkButton.setText(yes);
-                    codmessege.setText(confirm);
-                    codTitle.setText(cash);
-                } catch (NullPointerException e) {
-                    e.printStackTrace();
-                }
-                dialogCancelButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-                dialogOkButton.setTextColor(Color.parseColor("#" + Appearance.appSettings.getText_color()));
-                dialogOkButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        dialog.dismiss();
-                        paymentType = 1;
-                        // System.out.println(colorSettings.getInt("min_order_amount", 100) + "fcnsc" + Integer.parseInt(amount_et.getText().toString()));
-                        //   if (Integer.parseInt(amount_et.getText().toString()) >= colorSettings.getInt("min_order_amount", 100)) {
-                        findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
-
-                        doPayment();
-                       *//* } else {
-                            Toast.makeText(PaymentDetailsActivity.this, "Sorry you must order atleast for " + colorSettings.getInt("min_order_amount", 100), Toast.LENGTH_SHORT).show();
-                        }*//*
-
-
-                    }
-                });
-                try {
-                    if (name_et.getText().toString().isEmpty()) {
-                        name_et.requestFocus();
-                        String err = getString(R.string.name_empty);
-                        name_et.setError(err);
-
-                    } else if (email_et.getText().toString().isEmpty()) {
-                        email_et.requestFocus();
-                        String err = getString(R.string.email_empty);
-                        email_et.setError(err);
-
-                    } else if (mobile_et.getText().toString().isEmpty()) {
-                        mobile_et.requestFocus();
-                        String err = getString(R.string.contact_number_empty);
-                        mobile_et.setError(err);
-
-
-                    } else if (mobile_et.getText().toString().length() != 10) {
-                        mobile_et.requestFocus();
-                        String err = getString(R.string.please_enter_a_valid_number);
-                        mobile_et.setError(err);
-
-
-                    } else if (address_et.getText().toString().isEmpty()) {
-                        address_et.requestFocus();
-                        String err = getString(R.string.address_empty);
-                        address_et.setError(err);
-
-
-
-                    } else if (valueCountry == 0 && country.isShown()) {
-                        new CustomToast(PaymentDetailsActivity.this, "Please select country from drop down");
-                    } else if (valuestate == 0 && state.isShown()) {
-                        new CustomToast(PaymentDetailsActivity.this, "Please select state from drop down");
-                    } else if (valueCity == 0 && city.isShown()) {
-                        new CustomToast(PaymentDetailsActivity.this, "Please select city from drop down");
-                    } else if (pin.getSelectedItemPosition() == 0 && pin.isShown()) {
-                        System.out.println("valueCity" + valueCity);
-                        String pin = getString(R.string.pincode_empty);
-
-                        new CustomToast(PaymentDetailsActivity.this, pin);
-                    } else {
-                        dialog.show();
-                    }
-
-
-                } catch (NullPointerException e) {
-                    e.printStackTrace();
-                }
-        }
-    */
     }
 
     private void getinfo() {
@@ -1721,11 +1262,8 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
     }
 
     public void showCart(JSONObject response) {
-
         DecimalFormat df = new DecimalFormat("#.##");
         System.out.println("asddd" + response);
-        //  findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
-
         try {
             ResponseHandler responseHandler = new ResponseHandler();
             if (!responseHandler.validateResponse(PaymentDetailsActivity.this, response)) {

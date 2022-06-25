@@ -113,7 +113,6 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public ProductAdapter(SearchActivity searchActivity, List<ProductModel> list) {
         set = true;
         layouttype = "";
-
         this.context = searchActivity;
         this.list = list;
     }

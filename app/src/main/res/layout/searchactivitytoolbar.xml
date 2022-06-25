@@ -58,11 +58,10 @@
                 android:layout_height="55dp"
                 android:layout_gravity="start"
                 android:layout_marginRight="10dp"
-                android:layout_toEndOf="@+id/toolmic"
                 android:layout_toStartOf="@+id/options"
+                android:layout_toEndOf="@+id/toolmic"
                 android:layout_weight="9"
                 android:background="@android:color/transparent"
-               
                 android:imeOptions="actionSearch"
                 android:inputType="textNoSuggestions"
                 android:maxLines="1"

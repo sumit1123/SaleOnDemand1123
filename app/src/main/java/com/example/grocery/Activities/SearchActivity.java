@@ -36,15 +36,20 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.example.grocery.Adapter.BusinessAdapter;
+import com.example.grocery.Model.BusinessModel;
 import com.google.gson.Gson;
 import com.example.grocery.Adapter.ProductAdapter;
 import com.example.grocery.Appearances.Appearance;
@@ -124,7 +129,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     Typeface typeface = null;
     Typeface bold = null;
     Typeface normal = null;
-
+    String[] category_type = { "Product" , "Seller"};
+    String selected_category = "Product";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -137,7 +143,21 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
         //for colorg
         setContentView(R.layout.activity_filter);
+        Spinner spin = (Spinner) findViewById(R.id.search_category_spinner);
+        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selected_category = category_type[position];
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                selected_category = "Product";
+            }
+        });
+        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,category_type);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(aa);
         typeface = Typeface.createFromAsset(getAssets(), FONTNAME);
         bold = Typeface.create(typeface, Typeface.BOLD);
         normal = Typeface.create(typeface, Typeface.NORMAL);
@@ -242,7 +262,13 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 // TODO Auto-generated method stub
                 if (is_voice) {
                     page_count = 1;
-                    getData();
+                    if(selected_category.equalsIgnoreCase("Product"))
+                    {
+                        getData();
+                    }
+                    else {
+                         searchBySellerApi();
+                    }
                     View view = SearchActivity.this.getCurrentFocus();
                     if (view != null) {
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -269,7 +295,13 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     searchKeyword = editTextSearch.getText().toString();
                     page_count = 1;
-                    getData();
+                    if(selected_category.equalsIgnoreCase("Product"))
+                    {
+                        getData();
+                    }
+                    else {
+                        searchBySellerApi();
+                    }
                     View view = SearchActivity.this.getCurrentFocus();
                     if (view != null) {
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -326,27 +358,205 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
+    private void searchBySellerApi() {
+        findViewById(R.id.noitemavalable).setVisibility(View.GONE);
+        cardView.setVisibility(View.GONE);
+        findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
+        findViewById(R.id.retryImage).setVisibility(View.GONE);
+
+        Button retryButton = (Button) findViewById(R.id.retrybutton);
+        retryButton.setVisibility(View.GONE);
+
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbarinner);
+        progressBar.setVisibility(View.VISIBLE);
+
+        searchActivityRecyycler.setVisibility(View.GONE);
+        searchBrands = ApplyFilter.brandArrays;
+        if (formatedStringSearch.matches("")) {
+            formatedStringSearch = "";
+        } else {
+            formatedStringSearch = searchBrands.toString()
+                    .replace("[", "")  //remove the right bracket
+                    .replace("]", "")
+                    .replace(" ", "")//remove the left bracket
+                    .trim();
+        }
+    /*   if (searchMax.matches("0")) {
+            searchMax = "";
+        }
+        if (searchMin.matches("0")) {
+            searchMin = "";
+        }*/
+        boolean checkConnection = new ApplicationUtility().checkConnection(this);
+        System.out.println("sdnj" + !checkConnection);
+        System.out.println("conn" + checkConnection);
+        System.out.println("connection on");
+        if (maximumSeekBar == null || minimumSeekBar == null) {
+            maximumSeekBar = String.valueOf(5000);
+            minimumSeekBar = String.valueOf(0);
+        }
+        searchKeyword = editTextSearch.getText().toString();
+
+        SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
+
+        String userid = prefs.getString("user_id", "");
+        String email = prefs.getString("email", "");
+        String pwd = prefs.getString("pwd", "");
+        String languageid = prefs.getString("language", String.valueOf(1));
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("business_id",IConstants.BUSINESS_ID);
+            jsonObject.put("id", userid);
+            jsonObject.put("password", pwd);
+            jsonObject.put("category_id", "0");
+            jsonObject.put("max_price", searchMax);
+            jsonObject.put("min_price", searchMin);
+            jsonObject.put("order",sortedida);
+            jsonObject.put("brand", "");
+            jsonObject.put("keyword", searchKeyword);
+            jsonObject.put("product_id", productid);
+            jsonObject.put("page", page_count);
+            jsonObject.put("language_id", languageid);
+            //    Toast.makeText(this, ""+jsonObject, Toast.LENGTH_SHORT).show();
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        System.out.println("adxsz" + jsonObject);
+        VolleyTask volleyTask = new VolleyTask(this, IConstants.URL_FIlteredSeller, jsonObject, Request.Method.POST);
+        volleyTask.setListener(new VolleyTask.IPostTaskListener() {
+            @Override
+            public void fnPostTaskCompleted(JSONArray response) {
+
+            }
+
+            @Override
+            public void fnPostTaskCompletedJsonObject(JSONObject response) {
+                System.out.println("seller search response" + response.toString());
+                if (!new ResponseHandler().validateResponse(SearchActivity.this, response)) {
+                    return;
+                }
+                try {
+                    page_count_number = response.getJSONObject("data").getJSONObject("data").getInt("page_count");
+                    int product_count = response.getJSONObject("data").getJSONObject("data").getInt("total_count");
+                    String productCountString = "";
+                    if (product_count != 0) {
+                        productCountString = "" + product_count + "+ ";
+                    }
+                    JSONArray jsonArray1 = response.getJSONObject("data").getJSONObject("data").getJSONArray("seller");
+                    Dashboard.cart_count = response.getJSONObject("data").getJSONObject("data").getInt("cart_count");
+                    Dashboard.notification_count = response.getJSONObject("data").getJSONObject("data").getInt("notification_count");
+                    String search = getString(R.string.search);
+                    String product = getString(R.string.products);
+                    editTextSearch.setHint(search +
+                            " " + productCountString
+                            + product);
+                    editTextSearch.setHintTextColor(Color.parseColor("#" + Appearance.appSettings.getApp_text_color()));
+                    if (response.getJSONObject("data").getJSONObject("data").getInt("total_count") == 0) {
+                        cardView.setVisibility(View.GONE);
+                        findViewById(R.id.noitemavalable).setVisibility(View.VISIBLE);
+                        Button button = (Button) findViewById(R.id.noitemavailablebutton);
+
+                        button.setBackground(SearchActivity.this.getResources().getDrawable(R.drawable.buttonshape));
+                        GradientDrawable bgShape = (GradientDrawable) button.getBackground();
+                        bgShape.setColor(Color.parseColor("#" + Appearance.appSettings.getApp_back_color()));
+                        button.setTextColor(Color.parseColor("#" + Appearance.appSettings.getApp_text_color()));
+                        TextView textView = (TextView) findViewById(R.id.noitemavailabletext);
+                        //  textView.setText(Label.productLabel.getSearch_empty_title());
+                        TextView textView1 = (TextView) findViewById(R.id.extra);
+                        //   textView1.setText(Label.productLabel.getSearch_empty_description());
+                        findViewById(R.id.imagenoitemAvailable).setBackground(SearchActivity.this.getResources().getDrawable(R.drawable.empty_search_default));
+                        //  button.setText(Label.productLabel.getSearch());
+                        button.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                findViewById(R.id.noitemavalable).setVisibility(View.GONE);
+                                //     editTextSearch.requestFocus();
+                                View view = SearchActivity.this.getCurrentFocus();
+
+                                InputMethodManager imm = (InputMethodManager)
+                                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                                imm.showSoftInput(editTextSearch,
+                                        InputMethodManager.SHOW_IMPLICIT);
+                            }
+                        });
+                    } else {
+                        noProductAvailable.setVisibility(View.GONE);
+                        totalCount = response.getJSONObject("data").getJSONObject("data").getInt("total_count");
+                        String products = getString(R.string.products);
+                        new CustomToast(SearchActivity.this, String.valueOf(response.getJSONObject("data").getJSONObject("data").getString("total_count"))
+                                + " " + products);
+
+                        searchActivityRecyycler.setVisibility(View.VISIBLE);
+                        if (jsonArray1.length() == 0) {
+
+                        }
+                        setTopSellers(jsonArray1);
+                        //setData(jsonArray1);
+                        if (sortChnage) {
+                            makeSortBold();
+                            sortChnage = false;
+                        }
+                    }
+
+                    findViewById(R.id.whiteloader).setVisibility(View.GONE);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void fnErrorOccurred(String error) {
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbarinner);
+                        progressBar.setVisibility(View.GONE);
+                        findViewById(R.id.retryImage).setVisibility(View.VISIBLE);
+                        findViewById(R.id.retryImage).setVisibility(View.VISIBLE);
+                        Button retryButton = (Button) findViewById(R.id.retrybutton);
+                        retryButton.setVisibility(View.VISIBLE);
+                        retryButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                getData();
+                            }
+                        });
+                    }
+                }, 2000);
+            }
+        });
+    }
+
+    private void setTopSellers(JSONArray top_sellers) {
+        Gson gson = new Gson();
+        List<BusinessModel> list = Arrays.asList(gson.fromJson(top_sellers.toString(), BusinessModel[].class));
+        System.out.println("dada" + list);
+        RecyclerView recylertopseller = (RecyclerView) findViewById(R.id.searchrec);
+        recylertopseller.setNestedScrollingEnabled(false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recylertopseller.setLayoutManager(layoutManager);
+        BusinessAdapter businessAdapter = new BusinessAdapter(this, list);
+        recylertopseller.setAdapter(businessAdapter);
+    }
+
+
     private void setData(JSONArray jsonArray1) {
         Gson gson = new Gson();
         list = Arrays.asList(gson.fromJson(jsonArray1.toString(), ProductModel[].class));
-
         List<ProductModel> productModels = new ArrayList<>();
         productModels.addAll(list);
-
         GridLayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        //isViewWithCatalog=true;
-        //Here we have to set dynamic layout manager
-
         final RecyclerView.LayoutManager layoutManager = !isViewWithCatalog ? mLayoutManager : linearLayoutManager;
         cardView.setVisibility(View.VISIBLE);
-
-
         searchActivityRecyycler.setLayoutManager(layoutManager);
        /* SlideInUpAnimator animator = new SlideInUpAnimator(new OvershootInterpolator(1f));
         searchActivityRecyycler.setItemAnimator(animator);*/
         productAdapter = new ProductAdapter(this, productModels);
-
         searchActivityRecyycler.setAdapter(productAdapter);
         productAdapter.notifyDataSetChanged();
     }

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Handler;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.cardview.widget.CardView;
@@ -60,7 +61,6 @@ public class Vendor extends AppCompatActivity {
     private int vendor_call_id;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,10 +79,10 @@ public class Vendor extends AppCompatActivity {
 
 
         vendorrecycler = (RecyclerView) findViewById(R.id.vendorrecycler);
-     LinearLayoutManager  linearLayoutManager = new LinearLayoutManager(this);
-      vendorrecycler.setLayoutManager(linearLayoutManager);
-      vendorAdapter = new VendorAdapter(this, list);
-      getdata();
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        vendorrecycler.setLayoutManager(linearLayoutManager);
+        vendorAdapter = new VendorAdapter(this, list);
+        getdata();
     }
 
 
@@ -122,36 +122,27 @@ public class Vendor extends AppCompatActivity {
                     JSONArray jsonArray1 = jsonObject2.getJSONArray("vendorCalls");
                     setData1(jsonArray1);
                     onItemsLoadComplete();
-                }
-                catch (JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
-
-
             @Override
             public void fnErrorOccurred(String error) {
                 findViewById(R.id.loaderBlurred).setVisibility(View.GONE);
-
-
             }
         });
     }
+
     private void setData1(JSONArray jsonArray) {
         Gson gson = new Gson();
         list = Arrays.asList(gson.fromJson(jsonArray.toString(), VendorModel[].class));
-
         List<VendorModel> vendorModels = new ArrayList<>();
         vendorModels.addAll(list);
-
         vendorrecycler.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-       layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
-       final RecyclerView.LayoutManager linearLayoutManager =  layoutManager;
-       vendorrecycler.setLayoutManager(layoutManager);
-
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        final RecyclerView.LayoutManager linearLayoutManager = layoutManager;
+        vendorrecycler.setLayoutManager(layoutManager);
         vendorAdapter = new VendorAdapter(this, vendorModels);
         vendorrecycler.setAdapter(vendorAdapter);
     }
@@ -160,9 +151,9 @@ public class Vendor extends AppCompatActivity {
         // Update the adapter and notify data set changed
         // ...
 
-    // Stop refresh animation
+        // Stop refresh animation
 //      refreshLayout.setRefreshing(false);
-}
+    }
 }
 
 

@@ -34,7 +34,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#e4e4e4"></LinearLayout>
+        android:background="#e4e4e4"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +46,6 @@
         <com.example.grocery.CustomViews.CustomTextView
             android:id="@+id/result"
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="5"
@@ -57,7 +56,6 @@
 
         <com.example.grocery.CustomViews.CustomTextView
             android:id="@+id/resultamount"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -81,7 +79,6 @@
             android:id="@+id/walletAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_gravity="center"
             android:layout_weight="5"
             android:lineSpacingExtra="5dp"
@@ -115,7 +112,6 @@
         <com.example.grocery.CustomViews.CustomTextView
             android:id="@+id/totalPriceText"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="10dp"
@@ -126,7 +122,6 @@
             android:id="@+id/totalprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_alignParentEnd="true"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="10dp"
@@ -151,7 +146,7 @@
         android:text="Pay Now"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <com.example.grocery.CustomViews.CustomButton
         android:id="@+id/paywithoutwallet"

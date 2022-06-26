@@ -20,6 +20,8 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -140,6 +142,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
     private int discount_id;
     private double sums;
     private int x;
+    boolean isWalletChecked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -539,27 +542,21 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
     protected void onResume() {
         super.onResume();
-
         if (PaymentDetailsActivity.fromLogin == 1) {
             finish();
             PaymentDetailsActivity.fromLogin = 0;
             return;
         }
-
-
         findViewById(R.id.whiteloader).setVisibility(View.VISIBLE);
         findViewById(R.id.retryImage).setVisibility(View.GONE);
         new CartCountUtil(PaymentDetailsActivity.this);
 
-
         Button retryButton = (Button) findViewById(R.id.retrybutton);
         retryButton.setVisibility(View.GONE);
-
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbarinner);
         progressBar.setVisibility(View.VISIBLE);
         final JSONObject jsonObject = new JSONObject();
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
-
         String userid = prefs.getString("user_id", "");
         String email = prefs.getString("email", "");
         String pwd = prefs.getString("pwd", "");
@@ -570,8 +567,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             jsonObject.put("id", userid);
             jsonObject.put("password", pwd);
             jsonObject.put("language_id", languageid);
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -585,14 +580,10 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             @Override
             public void fnPostTaskCompletedJsonObject(JSONObject response) {
                 System.out.println("hhhs" + response.toString());
-
-
                 if (!new ResponseHandler().validateResponse(PaymentDetailsActivity.this, response)) {
                     return;
                 }
-
                 try {
-
                     JSONObject jsonObject3 = response.getJSONObject("data");
                     JSONObject jsonObject7 = response.getJSONObject("data").getJSONObject("data").getJSONObject("user");
                     country_id = jsonObject7.getJSONObject("address").getInt("country_id");
@@ -601,7 +592,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                     city_id = jsonObject7.getJSONObject("address").getInt("city_id");
                     pincode_id = jsonObject7.getJSONObject("address").getInt("pincode_id");
                     area_id = jsonObject7.getJSONObject("address").getInt("area_id");
-
                     selectedAddressId = response.getJSONObject("data").getJSONObject("data").getJSONObject("user").getInt("address_id");
                     pay_u_money = response.getJSONObject("data").getJSONObject("data").getJSONObject("payment_options").getInt("pay_u_money");
                     pay_pal = response.getJSONObject("data").getJSONObject("data").getJSONObject("payment_options").getInt("pay_pal");
@@ -683,10 +673,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                     String address = jsonObject2.getString("address");
                     //String pincode = jsonObject2.getString("pincode");
                     String emailet = jsonObject2.getString("email");
-                    //  address_et.setText(address);
-                 /*   if (emailet.matches(number) && number.contains("@")) {
-                        number = "";
-                    }*/
                     name_et.setText(name.equals("null") ? "" : name);
                     mobile_et.setText(number);
                     //pin_et.setText(pincode);
@@ -782,6 +768,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                     public void fnPostTaskCompleted(JSONArray response) {
 
                     }
+
                     @Override
                     public void fnPostTaskCompletedJsonObject(JSONObject response) {
                         System.out.println("hhhs" + response.toString());
@@ -872,8 +859,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                             RazorPay.amount = pricePop;
                                             PayuActivity.address = address_et.getText().toString();
                                             PayuActivity.pin = address_et.getText().toString();
-
-
                                             jsonObject.put("name", name_et.getText().toString());
                                             jsonObject.put("email", email_et.getText().toString());
                                             jsonObject.put("mobile", mobile_et.getText().toString());
@@ -903,8 +888,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
                                         sharedPreferences.putString("json", jsonObject.toString());
                                         sharedPreferences.apply();
-
-
                                         SharedPreferences sharedPreferences1 = getSharedPreferences("paymentdetails", MODE_PRIVATE);
                                         String s = sharedPreferences1.getString("json", "");
                                         Log.i("Rajat", "onClick: " + s);
@@ -919,7 +902,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                 //  PayuActivity.amount = pricePop;
                                 PayuActivity.amount = cashtobepaid;
                                 RazorPay.amount = cashtobepaid;
-                                paynow.setBackground(PaymentDetailsActivity.this.getResources().getDrawable(R.drawable.buttonshape));
+                                // paynow.setBackground(PaymentDetailsActivity.this.getResources().getDrawable(R.drawable.buttonshape));
                                 GradientDrawable bgShape = (GradientDrawable) paynow.getBackground();
                                 bgShape.setColor(Color.parseColor("#D3D3D3"));
                                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
@@ -955,10 +938,8 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                     }
                                 });
                                 String cancels = getString(R.string.cancel);
-
                                 cancel.setText(cancels);
                                 cancel.setTextColor(Color.parseColor("#" + Appearance.appSettings.getText_color()));
-
                                 priceDetailsText = (TextView) dialog2.findViewById(R.id.priceDetailsText);
                                 String price = getString(R.string.pay_using_wallet);
                                 priceDetailsText.setText(price);
@@ -977,9 +958,14 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                         e.printStackTrace();
                                     }
                                     orderType = "placeorder";
-
                                 } else {
                                     String amt = getString(R.string.total_amount);
+                                    CheckBox ch_wallet = dialog2.findViewById(R.id.ch_wallet);
+                                    if (walletAmountPop < pricePop) {
+                                        ch_wallet.setVisibility(View.VISIBLE);
+                                    } else {
+                                        ch_wallet.setVisibility(View.GONE);
+                                    }
                                     result.setText(amt);
                                     resultAmount.setText(Appearance.appTranslation.getCurrency() + pricePop);
                                     String wallet = getString(R.string.wallet);
@@ -987,7 +973,26 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                     wallet_amountnet.setText(Appearance.appTranslation.getCurrency() + walletAmountPop);
                                     String proceed = getString(R.string.proceed_to_pay);
                                     orderType = "placeOrderwithWallet";
-                                    paynow.setText(proceed + " (" + Appearance.appTranslation.getCurrency() + cashtobepaid + ")");
+                                    if (ch_wallet.isChecked()) {
+                                        isWalletChecked = true;
+                                        paynow.setText(proceed + " (" + Appearance.appTranslation.getCurrency() + cashtobepaid + ")");
+                                    } else {
+                                        isWalletChecked = false;
+                                        paynow.setText(proceed + " (" + Appearance.appTranslation.getCurrency() + pricePop + ")");
+                                    }
+                                    ch_wallet.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                                        @Override
+                                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                                            if (isChecked) {
+                                                isWalletChecked = true;
+                                                paynow.setText(proceed + " (" + Appearance.appTranslation.getCurrency() + cashtobepaid + ")");
+                                            } else {
+                                                isWalletChecked = false;
+                                                cashtobepaid = pricePop;
+                                                paynow.setText(proceed + " (" + Appearance.appTranslation.getCurrency() + pricePop + ")");
+                                            }
+                                        }
+                                    });
                                     String wallets = getString(R.string.pay_without_wallet);
                                     paywithoutwallet.setText(wallets + " (" + Appearance.appTranslation.getCurrency() + pricePop + ")");
                                     orderType = "paynow";
@@ -1003,7 +1008,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                             placeOrder(pricePop, walletAmountPop);
                                         } else {
                                             dialog2.dismiss();
-                                            //    placeOrderwithWallet(cashtobepaid);
                                             Intent intent = null;
                                             PaymentTypeActivity.payment_for = "cart_order";
                                             if (pay_u_money == 1 && c_c_avenue == 0 && mobi_kwik == 0 && paytm == 0 && pay_pal == 0) {
@@ -1025,7 +1029,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                                 // PayuActivity.amount =  pricePop;
                                                 PayuActivity.address = address_et.getText().toString();
                                                 PayuActivity.pin = address_et.getText().toString();
-
                                                 jsonObject.put("name", name_et.getText().toString());
                                                 jsonObject.put("email", email_et.getText().toString());
                                                 jsonObject.put("mobile", mobile_et.getText().toString());
@@ -1055,10 +1058,11 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                                             sharedPreferences.apply();
                                             finish();
                                             startActivity(intent);
-                                            placeOrderwithWallet(cashtobepaid);
+                                            if (isWalletChecked && walletAmountPop > pricePop) {
+                                                placeOrderwithWallet(cashtobepaid);
+                                            }
                                         }
                                     }
-
                                 });
 
                                 if (((int) walletAmountPop) == 0 || Appearance.appSettings.getIs_wallet() == 0) {
@@ -1120,6 +1124,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                             e.printStackTrace();
                         }
                     }
+
                     @Override
                     public void fnErrorOccurred(String error) {
                     }
@@ -1243,6 +1248,7 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
                             e.printStackTrace();
                         }
                     }
+
                     @Override
                     public void fnErrorOccurred(String error) {
                     }
@@ -1591,7 +1597,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
         findViewById(R.id.loaderBlurred).setVisibility(View.VISIBLE);
         JSONObject jsonObject = new JSONObject();
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
-
         String userid = prefs.getString("user_id", "");
         String pwd = prefs.getString("pwd", "");
         String languageid = prefs.getString("language", String.valueOf(1));
@@ -1665,7 +1670,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
 
 
     private void placeOrderwithWallet(double price) {
-        //  findViewById(R.id.loaderBlurred).setVisibility(View.VISIBLE);
         JSONObject jsonObject = new JSONObject();
         SharedPreferences prefs = getSharedPreferences("UserId", MODE_PRIVATE);
         String userid = prefs.getString("user_id", "");
@@ -1694,8 +1698,6 @@ public class PaymentDetailsActivity extends AppCompatActivity implements View.On
             jsonObject.put("state_id", valuestate == 0 ? 1 : valuestate);
             jsonObject.put("area_id", valueArea == 0 ? 1 : valueArea);
             jsonObject.put("address_id", selectedAddressId);
-            //   Toast.makeText(this, ""+, Toast.LENGTH_SHORT).show();
-            // jsonObject.put("cart_ids", 53);
 
         } catch (JSONException e) {
             e.printStackTrace();

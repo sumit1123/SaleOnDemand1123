@@ -36,8 +36,8 @@ android {
         targetSdkVersion 32
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
-        versionCode 12
-        versionName "1.12"
+        versionCode 13
+        versionName "1.13"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 //        ndk {
 //            abiFilters "armeabi-v7a", "x86"
@@ -151,4 +151,4 @@ apply plugin: 'com.google.gms.google-services'
 
 /// keystore name : -ecom.jks
 // alias : -- key0
-// password : -- sale
+// password : -- saleondemand@123

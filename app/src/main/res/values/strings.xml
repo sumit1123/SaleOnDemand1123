@@ -434,6 +434,8 @@
 
     <string name="facebook_app_id">182056112391270</string>
     <string name="fb_login_protocol_scheme">fb182056112391270</string>
+    <string name="product">Product</string>
+    <string name="seller">Seller</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 

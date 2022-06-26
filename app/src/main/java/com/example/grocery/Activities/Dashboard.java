@@ -34,6 +34,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -213,7 +215,7 @@ public class Dashboard extends AppCompatActivity
     TextView navsharewithfrndsText;
     TextView navvendorText;
     Boolean loadSlider = true;
-
+    String search_type = "Product";
     public static int is_language = 0;
 
     @Override
@@ -227,6 +229,7 @@ public class Dashboard extends AppCompatActivity
         setContentView(R.layout.activity_dashboard);
 
      //   displayFirebaseRegId();
+
 
         guestPref = getSharedPreferences("GUESTSETTING", MODE_PRIVATE);
         isGuestActive = guestPref.getBoolean("is_guest_check", false);
@@ -245,7 +248,22 @@ public class Dashboard extends AppCompatActivity
         bigtoolbar = (RelativeLayout) findViewById(R.id.bigtoolbar);
         bigtoolbar.setBackgroundColor(Color.parseColor("#" + Appearance.appSettings.getApp_back_color()));
         cartCount = (TextView) toolbar.findViewById(R.id.actionbar_notifcation_textview);
-
+        RadioGroup search_radio_group = (RadioGroup) findViewById(R.id.search_radio_group);
+        search_radio_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rd_product = (RadioButton)group.findViewById(R.id.rd_product);
+                RadioButton rd_seller = (RadioButton)group.findViewById(R.id.rd_seller);
+                if(rd_product.isChecked())
+                {
+                    search_type = "Product";
+                }
+                if(rd_seller.isChecked())
+                {
+                    search_type = "Seller";
+                }
+            }
+        });
         toolbarSearch = (RelativeLayout) toolbar.findViewById(R.id.toolsearch);
         toolbarNotification = (RelativeLayout) toolbar.findViewById(R.id.toolnoti);
 
@@ -469,9 +487,9 @@ public class Dashboard extends AppCompatActivity
                     formatedStringSearch = "";
                     SearchActivity.imagea = "true";
                     Intent intent = new Intent(Dashboard.this, SearchActivity.class);
+                    intent.putExtra("search_type" ,search_type);
                     startActivity(intent);
                     View view = Dashboard.this.getCurrentFocus();
-
 
                     if (view != null) {
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

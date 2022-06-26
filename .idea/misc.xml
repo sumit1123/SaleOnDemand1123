@@ -6,8 +6,10 @@
         <entry key="../../../../../../layout/custom_preview.xml" value="0.17447916666666666" />
         <entry key="../../../../.gradle/caches/transforms-2/files-2.1/2c900234cae0fda9eac6577bcf5b371e/jetified-magicretry-1.0.6/res/drawable-v21/ripple_drawable.xml" value="0.16" />
         <entry key="app/src/main/res/drawable/bg_rounded_button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/buttonshape.xml" value="0.15" />
         <entry key="app/src/main/res/drawable/chatadaptercurved.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/circlegrey.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/curved_border.xml" value="0.15" />
         <entry key="app/src/main/res/drawable/custom_border.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/darkborder.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ripple_drawable.xml" value="0.16" />
@@ -66,7 +68,7 @@
         <entry key="app/src/main/res/layout/chatadapter.xml" value="0.11145833333333334" />
         <entry key="app/src/main/res/layout/cityadapter.xml" value="0.11145833333333334" />
         <entry key="app/src/main/res/layout/complaintadapter.xml" value="0.11145833333333334" />
-        <entry key="app/src/main/res/layout/content_dashboard.xml" value="0.18125" />
+        <entry key="app/src/main/res/layout/content_dashboard.xml" value="0.33" />
         <entry key="app/src/main/res/layout/custom_toast.xml" value="0.11145833333333334" />
         <entry key="app/src/main/res/layout/dashpopularadapter.xml" value="0.11145833333333334" />
         <entry key="app/src/main/res/layout/displaycoloradapter.xml" value="0.11145833333333334" />

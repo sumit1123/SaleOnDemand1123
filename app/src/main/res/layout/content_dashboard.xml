@@ -150,23 +150,52 @@
 
 
             </RelativeLayout>
-
-
         </androidx.appcompat.widget.Toolbar>
+
+     <RadioGroup
+         android:id="@+id/search_radio_group"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_marginStart="5dp"
+         android:layout_marginEnd="5dp"
+         android:layout_below="@+id/toolbar">
+
+        <RadioButton
+            android:id="@+id/rd_product"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/white"
+            android:checked="true"
+            android:text="@string/product"
+            />
+
+         <RadioButton
+             android:id="@+id/rd_seller"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:buttonTint="@color/white"
+             android:text="@string/seller"
+             />
+
+
+     </RadioGroup>
 
         <com.example.grocery.CustomViews.CustomEditText
             android:id="@+id/editTextSearch"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_below="@+id/toolbar"
-            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/search_radio_group"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/curved_border"
-            android:drawablePadding="5dp"
             android:drawableStart="@drawable/searchgrey"
+            android:drawablePadding="5dp"
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:paddingStart="10dp"

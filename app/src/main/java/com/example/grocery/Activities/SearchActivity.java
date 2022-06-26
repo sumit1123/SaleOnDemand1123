@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.RecognizerIntent;
+
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.cardview.widget.CardView;
@@ -129,7 +130,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     Typeface typeface = null;
     Typeface bold = null;
     Typeface normal = null;
-    String[] category_type = { "Product" , "Seller"};
+    String[] category_type = {"Product", "Seller"};
     String selected_category = "Product";
 
     @Override
@@ -142,6 +143,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         configuration.setLayoutDirection(new Locale(prefs.getString("language_code", "en")));
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
         //for colorg
+        selected_category = getIntent().getStringExtra("search_type");
         setContentView(R.layout.activity_filter);
         Spinner spin = (Spinner) findViewById(R.id.search_category_spinner);
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -155,7 +157,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 selected_category = "Product";
             }
         });
-        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,category_type);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, category_type);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(aa);
         typeface = Typeface.createFromAsset(getAssets(), FONTNAME);
@@ -231,7 +233,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         });
         TextView cartCount = (TextView) findViewById(R.id.actionbar_notifcation_textview);
         TextView notification = (TextView) findViewById(R.id.notification_count_textview);
-        if (Dashboard.cart_count !=0){
+        if (Dashboard.cart_count != 0) {
             cartCount.setVisibility(View.VISIBLE);
             cartCount.setText(String.valueOf(Dashboard.cart_count));
         }
@@ -262,12 +264,10 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 // TODO Auto-generated method stub
                 if (is_voice) {
                     page_count = 1;
-                    if(selected_category.equalsIgnoreCase("Product"))
-                    {
+                    if (selected_category.equalsIgnoreCase("Product")) {
                         getData();
-                    }
-                    else {
-                         searchBySellerApi();
+                    } else {
+                        searchBySellerApi();
                     }
                     View view = SearchActivity.this.getCurrentFocus();
                     if (view != null) {
@@ -295,11 +295,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     searchKeyword = editTextSearch.getText().toString();
                     page_count = 1;
-                    if(selected_category.equalsIgnoreCase("Product"))
-                    {
+                    if (selected_category.equalsIgnoreCase("Product")) {
                         getData();
-                    }
-                    else {
+                    } else {
                         searchBySellerApi();
                     }
                     View view = SearchActivity.this.getCurrentFocus();
@@ -343,7 +341,11 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             }
 
         });
-        getData();
+        if (selected_category.equalsIgnoreCase("Product")) {
+            getData();
+        } else {
+            searchBySellerApi();
+        }
         noProductAvailable = (TextView) findViewById(R.id.noproductavailable);
         if (Appearance.appSettings.getShow_product_type() == 0) {
             SearchActivity.imagea = "true";
@@ -406,13 +408,13 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("business_id",IConstants.BUSINESS_ID);
+            jsonObject.put("business_id", IConstants.BUSINESS_ID);
             jsonObject.put("id", userid);
             jsonObject.put("password", pwd);
             jsonObject.put("category_id", "0");
             jsonObject.put("max_price", searchMax);
             jsonObject.put("min_price", searchMin);
-            jsonObject.put("order",sortedida);
+            jsonObject.put("order", sortedida);
             jsonObject.put("brand", "");
             jsonObject.put("keyword", searchKeyword);
             jsonObject.put("product_id", productid);
@@ -647,9 +649,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 TextView hightolowText = (TextView) dialog.findViewById(R.id.hightolowText);
                 TextView lowtoHighText = (TextView) dialog.findViewById(R.id.lowtoHighText);
                 try {
-                  //  sortByText.setText(Label.productLabel.getSort());
+                    //  sortByText.setText(Label.productLabel.getSort());
                     //newestFirstText.setText(Label.productLabel.getNewest_first());
-                   // assendindorderText.setText(Label.productLabel.getAscending_order());
+                    // assendindorderText.setText(Label.productLabel.getAscending_order());
                     //hightolowText.setText(Label.productLabel.getHigh_to_low());
                     //lowtoHighText.setText(Label.productLabel.getLow_to_high());
 
@@ -825,19 +827,19 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("business_id",IConstants.BUSINESS_ID);
+            jsonObject.put("business_id", IConstants.BUSINESS_ID);
             jsonObject.put("id", userid);
             jsonObject.put("password", pwd);
             jsonObject.put("category_id", "");
             jsonObject.put("max_price", searchMax);
             jsonObject.put("min_price", searchMin);
-            jsonObject.put("order",sortedida);
+            jsonObject.put("order", sortedida);
             jsonObject.put("brand", "");
             jsonObject.put("keyword", searchKeyword);
             jsonObject.put("product_id", productid);
             jsonObject.put("page", page_count);
             jsonObject.put("language_id", languageid);
-        //    Toast.makeText(this, ""+jsonObject, Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(this, ""+jsonObject, Toast.LENGTH_SHORT).show();
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -885,12 +887,12 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                         button.setTextColor(Color.parseColor("#" + Appearance.appSettings.getApp_text_color()));
 
                         TextView textView = (TextView) findViewById(R.id.noitemavailabletext);
-                      //  textView.setText(Label.productLabel.getSearch_empty_title());
+                        //  textView.setText(Label.productLabel.getSearch_empty_title());
                         TextView textView1 = (TextView) findViewById(R.id.extra);
-                     //   textView1.setText(Label.productLabel.getSearch_empty_description());
+                        //   textView1.setText(Label.productLabel.getSearch_empty_description());
                         findViewById(R.id.imagenoitemAvailable).setBackground(SearchActivity.this.getResources().getDrawable(R.drawable.empty_search_default));
 
-                      //  button.setText(Label.productLabel.getSearch());
+                        //  button.setText(Label.productLabel.getSearch());
                         button.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -1031,13 +1033,13 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("business_id",IConstants.BUSINESS_ID);
+            jsonObject.put("business_id", IConstants.BUSINESS_ID);
             jsonObject.put("id", userid);
             jsonObject.put("password", pwd);
             jsonObject.put("category_id", "");
             jsonObject.put("max_price", searchMax);
             jsonObject.put("min_price", searchMin);
-            jsonObject.put("order",sortedida);
+            jsonObject.put("order", sortedida);
             jsonObject.put("brand", "");
             jsonObject.put("keyword", searchKeyword);
             jsonObject.put("product_id", productid);
@@ -1065,7 +1067,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                     page_count_number = response.getJSONObject("data").getJSONObject("data").getInt("page_count");
                     JSONArray jsonArray1 = response.getJSONObject("data").getJSONObject("data").getJSONArray("products");
                     Dashboard.cart_count = response.getJSONObject("data").getJSONObject("data").getInt("cart_count");
-                     Dashboard.notification_count = response.getJSONObject("data").getJSONObject("data").getInt("notification_count");
+                    Dashboard.notification_count = response.getJSONObject("data").getJSONObject("data").getInt("notification_count");
 
                     String search = getString(R.string.search);
                     String product_1 = getString(R.string.products);
@@ -1083,7 +1085,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                         totalCount = response.getJSONObject("data").getJSONObject("data").getInt("total_count");
                         String product = getString(R.string.products);
                         new CustomToast(SearchActivity.this, String.valueOf(response.getJSONObject("data").getJSONObject("data").getString("total_count"))
-                                + " " +product);
+                                + " " + product);
 
                     }
                     searchActivityRecyycler.setVisibility(View.VISIBLE);
@@ -1103,14 +1105,14 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                             TextView textView = (TextView) findViewById(R.id.noitemavailabletext);
                             String title = getString(R.string.search_empty_title);
                             textView.setText(title);
-                          //  textView.setText(Label.productLabel.getSearch_empty_title());
+                            //  textView.setText(Label.productLabel.getSearch_empty_title());
                             TextView textView1 = (TextView) findViewById(R.id.extra);
                             String desc = getString(R.string.search_empty_title);
                             textView1.setText(title);
-                          //  textView1.setText(Label.productLabel.getSearch_empty_description());
+                            //  textView1.setText(Label.productLabel.getSearch_empty_description());
                             findViewById(R.id.imagenoitemAvailable).setBackground(SearchActivity.this.getResources().getDrawable(R.drawable.empty_search_default));
 
-                          //  button.setText(Label.productLabel.getSearch());
+                            //  button.setText(Label.productLabel.getSearch());
                             button.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {

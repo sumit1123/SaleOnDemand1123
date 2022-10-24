@@ -179,8 +179,6 @@
              android:buttonTint="@color/white"
              android:text="@string/seller"
              />
-
-
      </RadioGroup>
 
         <com.example.grocery.CustomViews.CustomEditText
@@ -205,7 +203,6 @@
 
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-
         android:id="@+id/swipeRefreshLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -292,8 +289,9 @@
                             android:id="@+id/recshopby"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="4dp"
                             android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:visibility="gone"
                             android:nestedScrollingEnabled="false" />
 
                         <com.example.grocery.CustomViews.CustomTextView
@@ -313,44 +311,7 @@
                             android:visibility="gone" />
 
                     </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/topseller"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:visibility="gone">
-
-                        <com.example.grocery.CustomViews.CustomTextView
-                            android:id="@+id/topSellerText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Top Sellers"
-                            android:textColor="#333"
-                            android:textSize="17dp"
-                            android:textStyle="bold" />
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rectopsellers"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/topSellerText"
-                            android:layout_marginEnd="4dp"
-                            android:layout_marginStart="4dp"
-                            android:layout_marginTop="8dp"
-                            android:nestedScrollingEnabled="false"
-                            android:orientation="horizontal"
-                            app:reverseLayout="true">
-
-                        </androidx.recyclerview.widget.RecyclerView>
-
-
-                    </RelativeLayout>
-
-
+                    <!--  New Arrival-->
                     <RelativeLayout
                         android:id="@+id/cardlatest"
                         android:layout_width="match_parent"
@@ -379,6 +340,42 @@
                             android:layout_marginStart="4dp"
                             android:layout_marginTop="8dp"
                             android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:reverseLayout="true">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+
+                    </RelativeLayout>
+<!--                    Top Seller-->
+                    <RelativeLayout
+                        android:id="@+id/topseller"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.example.grocery.CustomViews.CustomTextView
+                            android:id="@+id/topSellerText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Top Sellers"
+                            android:textColor="#333"
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rectopsellers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/topSellerText"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="8dp"
+                            android:nestedScrollingEnabled="true"
                             android:orientation="horizontal"
                             app:reverseLayout="true">
 

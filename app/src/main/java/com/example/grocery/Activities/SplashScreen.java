@@ -108,12 +108,9 @@ public class SplashScreen extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         sharedUserId = getSharedPreferences("UserId", MODE_PRIVATE);
         JSONObject jsonObject = new JSONObject();
-
         try {
-//            jsonObject.put("language_id", sharedUserId.getString("language", "1"));
             jsonObject.put("language_id", 1);
             jsonObject.put("business_id", IConstants.BUSINESS_ID);
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -349,7 +346,6 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void fnErrorOccurred(String error) {
-
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
 

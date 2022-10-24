@@ -23,6 +23,8 @@ import org.json.JSONObject;
 
 import java.util.Arrays;
 
+import javax.net.ssl.HttpsURLConnection;
+
 
 public class VolleyTask implements IConstants {
     private IPostTaskListener postTaskListener;
@@ -98,6 +100,7 @@ public class VolleyTask implements IConstants {
     }
 
     private void fnExecuteTaskJsonObject() {
+        HttpsTrustManager.allowAllSSL();
         JsonObjectRequest request = new JsonObjectRequest( method, URL, mJsonObjectData,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -126,7 +129,6 @@ public class VolleyTask implements IConstants {
                 }*/ else if ( error instanceof TimeoutError) {
                     message = ERROR_CONNECTION_TIME_OUT;
                 }
-
                 try {
                     fnErrorOccurred( message );
                 } catch ( Exception e ) {

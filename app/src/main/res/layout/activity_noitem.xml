@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/image"
                 android:layout_marginTop="10dp"
-               
+
                 android:paddingLeft="25dp"
                 android:paddingRight="25dp"
                 android:text="Sorry, no result found"

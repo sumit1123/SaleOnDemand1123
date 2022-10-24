@@ -1032,7 +1032,8 @@ public class Dashboard extends AppCompatActivity
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recpopularproduct);
         recyclerView.setNestedScrollingEnabled(false);
         islatestProduct = false;
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
        /* GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);*/
@@ -1730,9 +1731,7 @@ public class Dashboard extends AppCompatActivity
         System.out.println("dada" + list);
         RecyclerView recyclerRecentProducts = (RecyclerView) findViewById(R.id.recmaxproduct);
         recyclerRecentProducts.setNestedScrollingEnabled(false);
-
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-
         recyclerRecentProducts.setLayoutManager(layoutManager);
         productAdaptermax = new ProductAdapter(this, list, "max");
         recyclerRecentProducts.setAdapter(productAdaptermax);
@@ -1760,7 +1759,6 @@ public class Dashboard extends AppCompatActivity
     private void setShopBycategory(JSONArray gridCategories) {
         Gson gson = new Gson();
         List<AllCategoriesModel> list = Arrays.asList(gson.fromJson(gridCategories.toString(), AllCategoriesModel[].class));
-
         RecyclerView recyclerViewShopBy = (RecyclerView) findViewById(R.id.recshopby);
         recyclerViewShopBy.setNestedScrollingEnabled(false);
         recyclerViewShopBy.setLayoutManager(new GridLayoutManager(this, 3));
@@ -1774,13 +1772,12 @@ public class Dashboard extends AppCompatActivity
         System.out.println("dada" + list);
         RecyclerView recylertopseller = (RecyclerView) findViewById(R.id.rectopsellers);
         recylertopseller.setNestedScrollingEnabled(false);
+        //GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recylertopseller.setLayoutManager(layoutManager);
         businessAdapter = new BusinessAdapter(this, list);
         recylertopseller.setAdapter(businessAdapter);
     }
-
-
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {

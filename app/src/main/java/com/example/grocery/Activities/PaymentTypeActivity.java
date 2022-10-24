@@ -38,7 +38,6 @@ import java.util.Locale;
 
 public class PaymentTypeActivity extends AppCompatActivity implements View.OnClickListener {
 
-
     public static String payment_for;
     String id;
     float amount;
